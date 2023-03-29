@@ -16,7 +16,7 @@
 
         <div class="text-center mt-5">
             `<h1> User Creation Page</h1>
-            <p> MAYBE WE SHOULD USE VALIDATORS FOR ALL THIS SHIT</p>
+            <p> MAYBE WE SHOULD USE VALIDATORS FOR ALL THIS SHIT. THE CODE HAS SOME EXMAPLES</p>
         </div>
 
 
@@ -24,6 +24,7 @@
         <div class="form-group text-center mt-3">
             <h4> Username</h4>
             <asp:TextBox ID="txtBoxUsername" runat="server"></asp:TextBox>
+            <!-- <asp:RequiredFieldValidator runat="server" id="reqUsername" controltovalidate="txtBoxUsername" errormessage="Please enter a value!" /> -->
         </div>
 
 
@@ -43,6 +44,7 @@
         </div>
 
         <div class="form-group text-center mt-3">
+            <h4> User Types</h4>
             <asp:DropDownList ID="ddlUserType" runat="server">
                 <asp:ListItem>Real Estate Agent</asp:ListItem>
                 <asp:ListItem Value="HomeBuyer">Home Buyer</asp:ListItem>
@@ -67,8 +69,8 @@
         </div>
 
 
-        <div class="form-group text-center mt-5">
-            <asp:Button ID="btnCreateUser" runat="server" Text="Create User" />
+        <div class="form-group text-center mt-5 mb-3">
+            <asp:Button ID="btnCreateUser" runat="server" Text="Create User" OnClick="btnCreateUser_Click" />
         </div>
 
         
