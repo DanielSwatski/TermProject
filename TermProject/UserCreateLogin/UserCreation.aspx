@@ -24,7 +24,6 @@
         <div class="form-group text-center mt-3">
             <h4> Username</h4>
             <asp:TextBox ID="txtBoxUsername" runat="server"></asp:TextBox>
-            <!-- <asp:RequiredFieldValidator runat="server" id="reqUsername" controltovalidate="txtBoxUsername" errormessage="Please enter a value!" /> -->
         </div>
 
 
