@@ -88,10 +88,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HouseForm\AddHouse.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Styles\TermProjectStyles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HouseForm\AddHouse.aspx.cs">
+      <DependentUpon>AddHouse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HouseForm\AddHouse.aspx.designer.cs">
+      <DependentUpon>AddHouse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
