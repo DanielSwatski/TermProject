@@ -11,9 +11,10 @@ namespace TermProject
 {
     public partial class Login : System.Web.UI.Page
     {
+        protected static int recoverykey = -1;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
 

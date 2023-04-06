@@ -73,11 +73,15 @@
 
             <div class="form-outline form-white mb-4">
                 <asp:Button ID="btnCreateUser" runat="server" Text="Create User" OnClick="btnCreateUser_Click" />
+                <asp:Button ID="btnSendCode" runat="server" Text="Send Code" OnClick="btnSendCode_Click" />
+                 <asp:TextBox ID="txtBoxCode" runat="server"></asp:TextBox>
             </div>
 
              <div class="form-outline form-white mb-4">
                  <h3> Already have an account</h3>
                  <asp:LinkButton Text="Login Page" runat="server" OnClick="Unnamed1_Click"></asp:LinkButton>
+
+                 
               </div>
             
         </div>

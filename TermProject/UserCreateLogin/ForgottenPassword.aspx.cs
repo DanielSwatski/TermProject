@@ -61,7 +61,7 @@ namespace TermProject.UserCreateLogin
 
         String strTO = txtBoxEmail.Text;
 
-        String strFROM = "tug87965@temple.edu";
+        String strFROM = "ZILLUP";
 
         String strSubject = "Here is the code to reset the password ";
 
