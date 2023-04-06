@@ -26,22 +26,22 @@
                                     <p class="text-white-50 mb-5">Please enter your login and password!</p>
 
                                     <div class="form-outline form-white mb-4">
-                                        <asp:TextBox class="form-control form-control-lg" ID="txtUsername" runat="server" placeholder="Username" required></asp:TextBox>
+                                        <asp:TextBox class="form-control form-control-lg" ID="txtUsername" runat="server" placeholder="Username" required>ashleydavis</asp:TextBox>
                                     </div>
 
                                     <div class="form-outline form-white mb-4">
-                                        <asp:TextBox class="form-control form-control-lg" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password" required></asp:TextBox>
+                                        <asp:TextBox class="form-control form-control-lg" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password" required>password13</asp:TextBox>
                                     </div>
 
                                     <p class="small mb-5 pb-lg-2"><asp:Label ID="lblError" runat="server"></asp:Label></p>
 
-                                    <asp:Button class="btn btn-outline-light btn-lg px-5" ID="btnLogin" runat="server" Text="Login"/>
+                                    <asp:Button class="btn btn-outline-light btn-lg px-5" ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click"/>
                                 </div>
                                 
                                 <div>
                                     <p class="mb-0"> 
                                         Don't have an account? 
-                                        <asp:HyperLink class="text-white-50 fw-bold" ID="MyHyperLinkControl" runat="server">Sign Up</asp:HyperLink>
+                                        <asp:LinkButton class="text-white-50 fw-bold" ID="MyHyperLinkControl" runat="server" OnClick="MyHyperLinkControl_Click">Sign Up</asp:LinkButton>
                                     </p>
                                 </div>
 

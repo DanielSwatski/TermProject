@@ -17,6 +17,8 @@ namespace TermProject
 
         protected void btnCreateUser_Click(object sender, EventArgs e)
         {
+
+            // creates the account
             String username = txtBoxUsername.Text;
             String fullname = txtBoxFullName.Text;
             String email = txtBoxEmail.Text;
@@ -28,6 +30,14 @@ namespace TermProject
 
             StoredProceduresClass.CreateUser(username, fullname, email, password, usertype, question1, question2, question3);
 
+
+            // put redirect to homepage depending upon usertypehere
+
+        }
+
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
         }
     }
 }
