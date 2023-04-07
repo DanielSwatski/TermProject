@@ -66,6 +66,84 @@ namespace TermProject.Classes
         }
 
 
+        public static DataSet login(String username, String password)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_lOGIN";
+
+            SqlParameter input = new SqlParameter("@username", username);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            input = new SqlParameter("@password", password);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            return objDB.GetDataSet(objCommand);
+
+        }
+
+
+        public static Boolean securityQuestion(int number, string answer, string email, string password)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GETUSER";
+
+
+            SqlParameter input = new SqlParameter("@email", email);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+
+            DataSet ds = objDB.GetDataSet(objCommand);
+
+            //ds.Tables[0].Rows[0].ItemArray[0]
+            if(answer == ds.Tables[0].Rows[0][number + 5].ToString())
+            {
+                updatepassword(email, password);
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+
+        }
+
+        public static void updatepassword(string email, string password)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_UPDATEPASSWORD";
+
+            SqlParameter input = new SqlParameter("@email", email);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            input = new SqlParameter("@password", password);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            objDB.DoUpdate(objCommand);
+        }
+
+
 
 
     }

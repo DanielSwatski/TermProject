@@ -89,11 +89,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HouseForm\AddHouse.aspx" />
-    <Content Include="Login.aspx" />
+    <Content Include="HouseForm\SearchForHome.aspx" />
     <Content Include="Styles\TermProjectStyles.css" />
+    <Content Include="UserCreateLogin\Login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Email.cs" />
     <Compile Include="HouseForm\AddHouse.aspx.cs">
       <DependentUpon>AddHouse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -101,19 +103,17 @@
     <Compile Include="HouseForm\AddHouse.aspx.designer.cs">
       <DependentUpon>AddHouse.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
     <Content Include="UserCreateLogin\ForgottenPassword.aspx" />
     <Content Include="UserCreateLogin\UserCreation.aspx" />
-    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\StoredProceduresClass.cs" />
+    <Compile Include="HouseForm\SearchForHome.aspx.cs">
+      <DependentUpon>SearchForHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HouseForm\SearchForHome.aspx.designer.cs">
+      <DependentUpon>SearchForHome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserCreateLogin\ForgottenPassword.aspx.cs">
       <DependentUpon>ForgottenPassword.aspx</DependentUpon>
@@ -121,6 +121,13 @@
     </Compile>
     <Compile Include="UserCreateLogin\ForgottenPassword.aspx.designer.cs">
       <DependentUpon>ForgottenPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCreateLogin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCreateLogin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserCreateLogin\UserCreation.aspx.cs">
       <DependentUpon>UserCreation.aspx</DependentUpon>
@@ -140,6 +147,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\StoredProcedures\StoredProcedures.csproj">
+      <Project>{94BA79BA-25C4-4187-AF9F-370C7574BF2F}</Project>
+      <Name>StoredProcedures</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utilities\Utilities.csproj">
       <Project>{306fffc7-83ba-445c-9fc5-95ba6ab3bb91}</Project>
       <Name>Utilities</Name>
