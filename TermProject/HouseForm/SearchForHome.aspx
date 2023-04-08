@@ -29,6 +29,15 @@
                 </div>
             </div>
         </nav>
+
+
+        <asp:GridView ID="grdViewHouses" runat="server"></asp:GridView>
+
+        <asp:Button id="allHouses" Text="Get it all" runat="server" OnClick="allHouses_Click"/>
+
+
+
+
     </form>
 
 

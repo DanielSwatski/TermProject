@@ -106,6 +106,7 @@
     <Content Include="UserCreateLogin\UserCreation.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HouseForm\Home.cs" />
     <Compile Include="HouseForm\SearchForHome.aspx.cs">
       <DependentUpon>SearchForHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
