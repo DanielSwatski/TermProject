@@ -51,15 +51,6 @@ namespace TermProject.UserCreateLogin
         protected global::System.Web.UI.WebControls.Button btnEmail;
 
         /// <summary>
-        /// lblSecurity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSecurity;
-
-        /// <summary>
         /// txtBoxCode control.
         /// </summary>
         /// <remarks>
@@ -67,6 +58,15 @@ namespace TermProject.UserCreateLogin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBoxCode;
+
+        /// <summary>
+        /// lblSecurity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSecurity;
 
         /// <summary>
         /// txtBoxAnswer control.

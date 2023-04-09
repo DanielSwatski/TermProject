@@ -9,6 +9,7 @@ using Utilities;
 using System.Net;
 using System.Net.Mail;
 using TermProject.Classes;
+using StoredProcedures;
 
 namespace TermProject.UserCreateLogin
 {
@@ -55,32 +56,9 @@ namespace TermProject.UserCreateLogin
         // sends the email to the recovery page
         protected void btnEmail_Click(object sender, EventArgs e)
         {
-            
 
-        Email objEmail = new Email();
-
-        String strTO = txtBoxEmail.Text;
-
-        String strFROM = "ZILLUP";
-
-        String strSubject = "Here is the code to reset the password ";
-
-        String strMessage = "Code: " + recoverykey;
-
-
-
-        try
-            {
-                objEmail.SendMail(strTO, strFROM, strSubject, strMessage);
-                lblEmailSent.Text = "EMAIL SENT";
-                
-            }
-
-            catch (Exception ex)
-            {
-                    throw new Exception("ERROR WITH EMAIL");
-            }
-
+            emailer.emailSender(txtBoxEmail.Text, recoverykey);
+        
         
         }
 

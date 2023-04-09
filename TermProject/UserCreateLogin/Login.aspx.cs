@@ -33,6 +33,8 @@ namespace TermProject
 
             //if(ds.Tables[0].Rows[0].ItemArray[4].ToString() )
 
+
+            // check types of agent here
             Response.Redirect("../Homepage/HomepageRealestate.aspx");
             
 
@@ -42,6 +44,11 @@ namespace TermProject
         protected void MyHyperLinkControl_Click(object sender, EventArgs e)
         {
             Response.Redirect("UserCreation.aspx");
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForgottenPassword.aspx");
         }
     }
 }
