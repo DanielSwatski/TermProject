@@ -88,14 +88,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Agents\AgentHomepage.aspx" />
+    <Content Include="Buyers\BuyerHomepage.aspx" />
     <Content Include="HouseForm\AddHouse.aspx" />
     <Content Include="HouseForm\AddRoom.aspx" />
     <Content Include="HouseForm\SearchForHome.aspx" />
+    <Content Include="Sellers\SellerHomepage.aspx" />
     <Content Include="Styles\TermProjectStyles.css" />
     <Content Include="UserCreateLogin\Login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agents\AgentHomepage.aspx.cs">
+      <DependentUpon>AgentHomepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Agents\AgentHomepage.aspx.designer.cs">
+      <DependentUpon>AgentHomepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Buyers\BuyerHomepage.aspx.cs">
+      <DependentUpon>BuyerHomepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buyers\BuyerHomepage.aspx.designer.cs">
+      <DependentUpon>BuyerHomepage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HouseForm\AddHouse.aspx.cs">
       <DependentUpon>AddHouse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -123,6 +140,13 @@
       <DependentUpon>SearchForHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sellers\SellerHomepage.aspx.cs">
+      <DependentUpon>SellerHomepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sellers\SellerHomepage.aspx.designer.cs">
+      <DependentUpon>SellerHomepage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserCreateLogin\ForgottenPassword.aspx.cs">
       <DependentUpon>ForgottenPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -164,11 +188,7 @@
       <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Agents\" />
-    <Folder Include="Buyers\" />
-    <Folder Include="Sellers\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
