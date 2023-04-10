@@ -43,5 +43,10 @@ namespace TermProject
         {
             Response.Redirect("UserCreation.aspx");
         }
+
+        protected void lnkForgot_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForgottenPassword.aspx");
+        }
     }
 }

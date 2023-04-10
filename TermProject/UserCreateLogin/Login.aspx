@@ -33,6 +33,7 @@
                                         <asp:TextBox class="form-control form-control-lg" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password" required>password13</asp:TextBox>
                                     </div>
 
+                                    <p class="small mb-5 pb-lg-2"><asp:LinkButton runat="server" ID="lnkForgot" class="text-white-50" OnClick="lnkForgot_Click">Forgot password?</asp:LinkButton></p>
                                     <p class="small mb-5 pb-lg-2"><asp:Label ID="lblError" runat="server"></asp:Label></p>
 
                                     <asp:Button class="btn btn-outline-light btn-lg px-5" ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click"/>
