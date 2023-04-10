@@ -95,7 +95,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Email.cs" />
     <Compile Include="HouseForm\AddHouse.aspx.cs">
       <DependentUpon>AddHouse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -107,6 +106,7 @@
     <Content Include="UserCreateLogin\UserCreation.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HouseForm\Home.cs" />
     <Compile Include="HouseForm\SearchForHome.aspx.cs">
       <DependentUpon>SearchForHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -147,9 +147,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StoredProcedures\StoredProcedures.csproj">
+    <ProjectReference Include="..\StoredProcedures\ProjectClasses.csproj">
       <Project>{94BA79BA-25C4-4187-AF9F-370C7574BF2F}</Project>
-      <Name>StoredProcedures</Name>
+      <Name>ProjectClasses</Name>
     </ProjectReference>
     <ProjectReference Include="..\Utilities\Utilities.csproj">
       <Project>{306fffc7-83ba-445c-9fc5-95ba6ab3bb91}</Project>

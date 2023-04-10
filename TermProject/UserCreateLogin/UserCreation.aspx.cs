@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StoredProcedures;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,13 +15,25 @@ namespace TermProject
         protected static int recoverykey = -1;
         protected void Page_Load(object sender, EventArgs e)
         {
-            Random q = new Random();
-            recoverykey = q.Next(10000);
+            if (!IsPostBack)
+            {
+                Random q = new Random();
+                recoverykey = q.Next(10000);
+            }
         }
 
         protected void btnCreateUser_Click(object sender, EventArgs e)
         {
-            if (recoverykey.ToString() == txtBoxCode.Text)
+            if (recoverykey.ToString() == txtBoxCode.Text &&
+                txtBoxUsername.Text != "" &&
+                txtBoxFullName.Text != "" &&
+                txtBoxPassword.Text != "" &&
+                txtBoxEmail.Text != "" &&
+                txtBoxSecurityQuestion1.Text != "" &&
+                txtBoxSecurityQuestion2.Text != "" &&
+                txtBoxSecurityQuestion3.Text != ""
+             
+                )
             {
                 // creates the account
                 String username = txtBoxUsername.Text;
@@ -33,11 +46,13 @@ namespace TermProject
                 String question3 = txtBoxSecurityQuestion3.Text;
 
                 StoredProceduresClass.CreateUser(username, fullname, email, password, usertype, question1, question2, question3);
+                lblWarning.Text = "Account Created";
             }
 
             else
             {
                 // display error here later
+                lblWarning.Text = "You have an error somewhere. FIX IT!!!!";
             }
 
             // put redirect to homepage depending upon usertypehere
@@ -51,30 +66,7 @@ namespace TermProject
 
         protected void btnSendCode_Click(object sender, EventArgs e)
         {
-            Email objEmail = new Email();
-
-            String strTO = txtBoxEmail.Text;
-
-            String strFROM = "ZILLUP";
-
-            String strSubject = "Here is login creation code ";
-
-            String strMessage = "Code: " + recoverykey;
-
-
-
-            try
-            {
-                objEmail.SendMail(strTO, strFROM, strSubject, strMessage);
-                
-
-            }
-
-            catch (Exception ex)
-            {
-                throw new Exception("ERROR WITH EMAIL");
-            }
-
+            emailer.emailSender(txtBoxEmail.Text, recoverykey);
 
         }
     }

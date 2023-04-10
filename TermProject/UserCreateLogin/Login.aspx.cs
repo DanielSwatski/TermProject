@@ -33,6 +33,8 @@ namespace TermProject
 
             //if(ds.Tables[0].Rows[0].ItemArray[4].ToString() )
 
+
+            // check types of agent here
             Response.Redirect("../Homepage/HomepageRealestate.aspx");
             
 
