@@ -53,7 +53,7 @@
                                 <div>
                                     <p class="mb-0"> 
                                        Forgot your password
-                                        <asp:LinkButton class="text-white-50 fw-bold" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Forgot Password</asp:LinkButton>
+                                        <asp:LinkButton class="text-white-50 fw-bold" ID="LinkButton1" runat="server" OnClick="lnkForgot_Click">Forgot Password</asp:LinkButton>
                                     </p>
                                 </div>
 
