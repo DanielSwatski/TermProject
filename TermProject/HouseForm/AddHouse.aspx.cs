@@ -23,5 +23,10 @@ namespace TermProject.HouseForm
         {
 
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

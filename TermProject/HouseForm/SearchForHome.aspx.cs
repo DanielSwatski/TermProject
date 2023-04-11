@@ -1,14 +1,20 @@
 ﻿using System;
+using System.Data;
 using System.IO;
 using System.Net;
 using System.Web.Script.Serialization;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace TermProject.HouseForm
 {
     public partial class SearchForHome : System.Web.UI.Page
     {
+        static private Home[] homelist;
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
+        }
 
 
         // this is acting as a test method
@@ -29,7 +35,7 @@ namespace TermProject.HouseForm
 
             JavaScriptSerializer js = new JavaScriptSerializer();
             // Team team = js.Deserialize<Team>(data);
-            Home[] homelist = js.Deserialize<Home[]>(data);
+           homelist = js.Deserialize<Home[]>(data);
             
 
 
@@ -41,6 +47,28 @@ namespace TermProject.HouseForm
 
         protected void btnModal_Click(object sender, EventArgs e)
         {
+
+            Button btn = (Button)sender;
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+            /*
+            DataTable dt = new DataTable();
+            dt.Columns.Add("HomeAddress");
+            dt.Columns.Add("State");
+
+            DataRow dr = dt.NewRow();
+            dr["HomeAddress"] = grdViewHouses.Rows[gvr.RowIndex].Cells[1].Text;
+            dr["State"] = grdViewHouses.Rows[gvr.RowIndex].Cells[2].Text;
+
+
+            dt.Rows.Add(dr);
+            */
+
+            // Repeater1.DataSource = dt;
+            Home[] h1 = new Home[1];
+            h1[0] = homelist[gvr.RowIndex];
+            Repeater1.DataSource = h1;
+            Repeater1.DataBind();
+            panelExtra.Visible = true;
         }
 
         protected void ddlSearches_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,7 +100,7 @@ namespace TermProject.HouseForm
 
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 // Team team = js.Deserialize<Team>(data);
-                Home[] homelist = js.Deserialize<Home[]>(data);
+                homelist = js.Deserialize<Home[]>(data);
 
 
 
@@ -95,7 +123,7 @@ namespace TermProject.HouseForm
 
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 // Team team = js.Deserialize<Team>(data);
-                Home[] homelist = js.Deserialize<Home[]>(data);
+                 homelist = js.Deserialize<Home[]>(data);
 
 
 
@@ -126,10 +154,87 @@ namespace TermProject.HouseForm
                 grdViewHouses.DataSource = homelist;
                 grdViewHouses.DataBind();
 
+
+
             }
 
 
+            else if (searchval.Equals("PriceAmenities"))
+            {
+                WebRequest request = WebRequest.Create("http://localhost:48362/HomesAPI/GetByPriceAmenities/" + txtBoxPriceMin.Text + "/" + textBoxPriceMax.Text + "/" + txtBoxAmenities.Text);
+                WebResponse response = request.GetResponse();
+                // Read the data from the Web Response, which requires working with streams.
 
+                Stream theDataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(theDataStream);
+                String data = reader.ReadToEnd();
+
+                reader.Close();
+                response.Close();
+
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                // Team team = js.Deserialize<Team>(data);
+                Home[] homelist = js.Deserialize<Home[]>(data);
+
+
+
+                grdViewHouses.DataSource = homelist;
+                grdViewHouses.DataBind();
+            }
+
+            else if (searchval.Equals("StateAmentities"))
+            {
+                WebRequest request = WebRequest.Create("http://localhost:48362/HomesAPI/GetByLocationAmenities/" + txtBoxState.Text+ "/" + txtBoxAmenities.Text);
+                WebResponse response = request.GetResponse();
+                // Read the data from the Web Response, which requires working with streams.
+
+                Stream theDataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(theDataStream);
+                String data = reader.ReadToEnd();
+
+                reader.Close();
+                response.Close();
+
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                // Team team = js.Deserialize<Team>(data);
+                Home[] homelist = js.Deserialize<Home[]>(data);
+
+
+
+                grdViewHouses.DataSource = homelist;
+                grdViewHouses.DataBind();
+            }
+
+            else if (searchval.Equals("StatePricePropertyTypeAmentities"))
+            {
+                WebRequest request = WebRequest.Create("http://localhost:48362/HomesAPI/GetByLocationPriceRoomsAmenities/" + txtBoxState.Text + "/" + txtBoxPriceMin.Text + "/" + textBoxPriceMax.Text + "/" + txtBoxRooms.Text + "/" + txtBoxAmenities.Text);
+                WebResponse response = request.GetResponse();
+                // Read the data from the Web Response, which requires working with streams.
+
+                Stream theDataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(theDataStream);
+                String data = reader.ReadToEnd();
+
+                reader.Close();
+                response.Close();
+
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                // Team team = js.Deserialize<Team>(data);
+                Home[] homelist = js.Deserialize<Home[]>(data);
+
+
+
+                grdViewHouses.DataSource = homelist;
+                grdViewHouses.DataBind();
+            }
+
+
+        }
+
+        protected void btnClose_Click(object sender, EventArgs e)
+        {
+            panelExtra.Visible = false;
+            
         }
     }
 }
