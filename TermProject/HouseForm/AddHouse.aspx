@@ -38,6 +38,15 @@
                         <asp:TextBox ID="txtAddress" class="form-control" runat="server" placeholder="1234 Some St"></asp:TextBox>
                     </div>
                     <div class="col-md-6">
+                        <asp:Label ID="lblState" runat="server" Text="State" class="form-label"></asp:Label>
+                        <asp:TextBox ID="txtState" class="form-control" runat="server" required></asp:TextBox>
+                    </div>
+                    <div class="col-md-6">
+                        <asp:Label ID="lblZipCode" runat="server" Text="ZipCode" class="form-label"></asp:Label>
+                        <asp:TextBox ID="txtZipCode" class="form-control" runat="server" required></asp:TextBox>
+                    </div>
+
+                    <div class="col-md-6">
                         <asp:Label ID="lblPropertyType" runat="server" Text="Property Type" class="form-label"></asp:Label>
                         <asp:DropDownList ID="ddlPropertyType" class="form-select" runat="server">
                             <asp:ListItem>Single Family</asp:ListItem>
@@ -49,6 +58,10 @@
                     <div class="col-md-6">
                         <asp:Label ID="lblHouseSize" runat="server" Text="House Size" class="form-label"></asp:Label>
                         <asp:TextBox ID="txtHouseSize" class="form-control" runat="server" TextMode="Number" required></asp:TextBox>
+                    </div>
+                    <div class="col-md-6">
+                        <asp:Label ID="Label2" runat="server" Text="House Size" class="form-label"></asp:Label>
+                        <asp:TextBox ID="TextBox2" class="form-control" runat="server" TextMode="Number" required></asp:TextBox>
                     </div>
                     <div class="col-md-6">
                         <asp:Label ID="lblBedRooms" runat="server" Text="Number of Bedrooms" class="form-label"></asp:Label>

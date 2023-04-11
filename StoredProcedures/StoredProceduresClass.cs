@@ -65,6 +65,22 @@ namespace TermProject.Classes
 
         }
 
+        public static DataSet loginCheck(String username, String password) 
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand sqlCommand = new SqlCommand();
+
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "TP_LoginCheck";
+
+            SqlParameter input = new SqlParameter("@username", username);
+            sqlCommand.Parameters.Add(input);
+
+            input = new SqlParameter("@password", password);
+            sqlCommand.Parameters.Add(input);
+
+            return objDB.GetDataSet(sqlCommand);
+        }
 
         public static DataSet login(String username, String password)
         {
