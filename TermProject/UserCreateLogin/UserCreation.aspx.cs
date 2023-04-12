@@ -98,6 +98,21 @@ namespace TermProject
 
                 StoredProceduresClass.CreateUser(username, fullname, email, password, usertype, question1, question2, question3);
                 lblWarning.Text = "Account Created";
+
+                // add a user agent here
+
+                if(usertype == "RealEstateAgent")
+                {
+                    Response.Redirect("../Agents/AgentUserCreation.aspx");
+                }
+                else if(usertype == "HomeBuyer")
+                {
+                    Response.Redirect("../Buyers/BuyersUserCreation.aspx");
+                }
+                else
+                {
+                    Response.Redirect("../Sellers/SellerssUserCreation.aspx");
+                }
             }
 
             else
