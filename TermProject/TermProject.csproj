@@ -89,6 +89,7 @@
   <ItemGroup>
     <Content Include="Agents\AgentHomepage.aspx" />
     <Content Include="Buyers\BuyerHomepage.aspx" />
+    <Content Include="Buyers\BuyersUserCreation.aspx" />
     <Content Include="Connected Services\ServiceReference1\TermProject.ServiceReference1.GetTimeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -132,6 +133,13 @@
     </Compile>
     <Compile Include="Buyers\BuyerHomepage.aspx.designer.cs">
       <DependentUpon>BuyerHomepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Buyers\BuyersUserCreation.aspx.cs">
+      <DependentUpon>BuyersUserCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buyers\BuyersUserCreation.aspx.designer.cs">
+      <DependentUpon>BuyersUserCreation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>

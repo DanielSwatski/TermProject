@@ -35,7 +35,7 @@ namespace TermProject.HouseForm
 
             JavaScriptSerializer js = new JavaScriptSerializer();
             // Team team = js.Deserialize<Team>(data);
-           homelist = js.Deserialize<Home[]>(data);
+            homelist = js.Deserialize<Home[]>(data);
             
 
 
