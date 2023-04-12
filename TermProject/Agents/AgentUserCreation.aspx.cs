@@ -15,6 +15,12 @@ namespace TermProject.Agents
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session["username"] != null)
+            {
+                txtBoxUsername.Text = Session["username"].ToString();
+                txtBoxUsername.ReadOnly = true;
+            }
+
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -54,13 +60,14 @@ namespace TermProject.Agents
 
             objDB.DoUpdate(objCommand);
 
-
+            Response.Redirect("AgentHomepage.aspx");
 
         }
 
         protected void lnkHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AgentHomepage.aspx");
+            
+            
         }
     }
 }

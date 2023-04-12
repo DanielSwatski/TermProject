@@ -99,9 +99,26 @@ namespace TermProject
                 StoredProceduresClass.CreateUser(username, fullname, email, password, usertype, question1, question2, question3);
                 lblWarning.Text = "Account Created";
 
+
+                String currentUsername = username;
+                String currentUserType = usertype;
+
+
+                Session["username"] = currentUsername;
+                Session["usertype"] = currentUserType;
+
+                HttpCookie cookie = new HttpCookie("LoginSave");
+
+                cookie.Values["username"] = currentUsername;
+                cookie.Values["usertype"] = currentUserType;
+
+                cookie.Expires = DateTime.Now.AddDays(30);
+                Response.Cookies.Add(cookie);
+
+
                 // add a user agent here
 
-                if(usertype == "RealEstateAgent")
+                if (usertype == "RealEstateAgent")
                 {
                     Response.Redirect("../Agents/AgentUserCreation.aspx");
                 }
