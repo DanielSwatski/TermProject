@@ -160,7 +160,38 @@
             </table>
           </div>
             <asp:Button runat="server" Text="Close" CssClass="btn btn-secondary" OnClick="btnClose_Click" />
-            <asp:Label runat="server" Text="PULL SELLER INFO LATER WITH A SOAP API OR ASMX"></asp:Label>
+
+            <div class="table-responsive">
+    <asp:ListView runat="server" ID="lstViewRealestate" ItemPlaceholderID="itemPlaceholder">
+        <LayoutTemplate>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>License</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Agency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
+                </tbody>
+            </table>
+        </LayoutTemplate>
+        <ItemTemplate>
+            <tr>
+                <td><%# Eval("Username") %></td>
+                <td><%# Eval("License") %></td>
+                <td><%# Eval("Name") %></td>
+                <td><%# Eval("Age") %></td>
+                <td><%# Eval("Agency") %></td>
+            </tr>
+        </ItemTemplate>
+    </asp:ListView>
+</div>
+
+
         </asp:Panel>
 
 
