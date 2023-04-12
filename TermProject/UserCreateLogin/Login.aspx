@@ -33,12 +33,13 @@
                                         <asp:TextBox class="form-control form-control-lg" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password" required>password13</asp:TextBox>
                                     </div>
 
-                                    <p class="small mb-5 pb-lg-2"><asp:LinkButton runat="server" ID="lnkForgot" class="text-white-50" OnClick="lnkForgot_Click">Forgot password?</asp:LinkButton></p>
-                                    <p class="small mb-5 pb-lg-2"><asp:Label ID="lblError" runat="server"></asp:Label></p>
-                                    <div class="form-outline form-white mb-4">
-                                        <p> Save your info</p>
-                                        <asp:CheckBox Id="chkBoxSave" runat="server"/>
+                                    <div class="form-check small mb-2 pb-lg-2">
+                                        <asp:CheckBox class="form-check-input" ID="chkSaveInformation" runat="server"/>
+                                        <asp:Label ID="lblSave" runat="server" Text="Stay Logged In?" class="form-check-label"></asp:Label>
                                     </div>
+
+                                    <p class="small mb-2 pb-lg-2"><asp:LinkButton runat="server" ID="lnkForgot" class="text-white-50" OnClick="lnkForgot_Click">Forgot password?</asp:LinkButton></p>
+                                    <p class="small mb-2 pb-lg-2"><asp:Label ID="lblError" runat="server"></asp:Label></p>
                                     
                                     <asp:Button class="btn btn-outline-light btn-lg px-5" ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click"/>
                                 </div>
@@ -47,13 +48,6 @@
                                     <p class="mb-0"> 
                                         Don't have an account? 
                                         <asp:LinkButton class="text-white-50 fw-bold" ID="MyHyperLinkControl" runat="server" OnClick="MyHyperLinkControl_Click">Sign Up</asp:LinkButton>
-                                    </p>
-                                </div>
-
-                                <div>
-                                    <p class="mb-0"> 
-                                       Forgot your password
-                                        <asp:LinkButton class="text-white-50 fw-bold" ID="LinkButton1" runat="server" OnClick="lnkForgot_Click">Forgot Password</asp:LinkButton>
                                     </p>
                                 </div>
 
