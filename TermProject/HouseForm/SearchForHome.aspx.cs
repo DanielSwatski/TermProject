@@ -69,6 +69,19 @@ namespace TermProject.HouseForm
             Repeater1.DataSource = h1;
             Repeater1.DataBind();
             panelExtra.Visible = true;
+
+
+            // put the soap stuff her
+            SellerTest cur = new SellerTest();
+            //lblTest.Text =  cur.HelloWorld("ididiot");
+
+            // calls the realestateagent 
+            // TP_GETREALESTATE
+
+            DataSet ds = cur.GetSellerInfo(h1[0].SellerUsername);
+            lstViewRealestate.DataSource = ds;
+            lstViewRealestate.DataBind();
+
         }
 
         protected void ddlSearches_SelectedIndexChanged(object sender, EventArgs e)
