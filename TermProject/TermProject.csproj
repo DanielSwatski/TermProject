@@ -88,7 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Agents\AgentHomepage.aspx" />
+    <Content Include="Agents\AgentUserCreation.aspx" />
     <Content Include="Buyers\BuyerHomepage.aspx" />
+    <Content Include="Buyers\BuyerUserCreation.aspx" />
     <Content Include="Connected Services\ServiceReference1\TermProject.ServiceReference1.GetTimeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -113,6 +115,7 @@
     <Content Include="HouseForm\AddRoom.aspx" />
     <Content Include="HouseForm\SearchForHome.aspx" />
     <Content Include="Sellers\SellerHomepage.aspx" />
+    <Content Include="Sellers\SellersUserCreation.aspx" />
     <Content Include="SellerTest.asmx" />
     <Content Include="Styles\TermProjectStyles.css" />
     <Content Include="UserCreateLogin\Login.aspx" />
@@ -126,12 +129,26 @@
     <Compile Include="Agents\AgentHomepage.aspx.designer.cs">
       <DependentUpon>AgentHomepage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Agents\AgentUserCreation.aspx.cs">
+      <DependentUpon>AgentUserCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Agents\AgentUserCreation.aspx.designer.cs">
+      <DependentUpon>AgentUserCreation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Buyers\BuyerHomepage.aspx.cs">
       <DependentUpon>BuyerHomepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Buyers\BuyerHomepage.aspx.designer.cs">
       <DependentUpon>BuyerHomepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Buyers\BuyerUserCreation.aspx.cs">
+      <DependentUpon>BuyerUserCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buyers\BuyerUserCreation.aspx.designer.cs">
+      <DependentUpon>BuyerUserCreation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -176,6 +193,13 @@
     </Compile>
     <Compile Include="Sellers\SellerHomepage.aspx.designer.cs">
       <DependentUpon>SellerHomepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sellers\SellersUserCreation.aspx.cs">
+      <DependentUpon>SellersUserCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sellers\SellersUserCreation.aspx.designer.cs">
+      <DependentUpon>SellersUserCreation.aspx</DependentUpon>
     </Compile>
     <Compile Include="SellerTest.asmx.cs">
       <DependentUpon>SellerTest.asmx</DependentUpon>
