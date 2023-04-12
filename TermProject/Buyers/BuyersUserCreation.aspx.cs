@@ -13,5 +13,10 @@ namespace TermProject.Buyers
         {
 
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("BuyerHomepage.aspx");
+        }
     }
 }
