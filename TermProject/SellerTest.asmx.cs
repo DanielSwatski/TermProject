@@ -39,6 +39,104 @@ namespace TermProject
             return objDB.GetDataSet(objCommand);
         }
 
+
+
+        [WebMethod]
+        public DataSet GetRooms(String address)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GETROOMS";
+
+            SqlParameter input = new SqlParameter("@address", address);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+
+            return objDB.GetDataSet(objCommand);
+        }
+
+
+        [WebMethod]
+        public DataSet GetHouse(String realestate)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GETHOMESBYSELLER";
+
+
+            SqlParameter input = new SqlParameter("@Username", realestate);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            return objDB.GetDataSet(objCommand);
+
+        }
+
+        [WebMethod]
+        public DataSet GetHousePrice(String address)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_HOUSEPRICESTATUS";
+
+            SqlParameter input = new SqlParameter("@address", address);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+
+            return objDB.GetDataSet(objCommand);
+        }
+
+        [WebMethod]
+        public DataSet GetShowings(String address)
+        {
+
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_HOUSESHOWINGS";
+
+            SqlParameter input = new SqlParameter("@address", address);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+
+            return objDB.GetDataSet(objCommand);
+        }
+
+        [WebMethod]
+        public DataSet GetOffers(String address)
+        {
+
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_HOUSEOFFERS";
+
+            SqlParameter input = new SqlParameter("@address", address);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+
+            return objDB.GetDataSet(objCommand);
+        }
+
+
+        /*
         [WebMethod]
         public string HelloWorld(String name)
         {
@@ -49,5 +147,6 @@ namespace TermProject
         {
             throw new NotImplementedException();
         }
+        */
     }
 }

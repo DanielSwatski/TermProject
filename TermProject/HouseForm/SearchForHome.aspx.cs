@@ -13,7 +13,7 @@ namespace TermProject.HouseForm
         static private Home[] homelist;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
 
@@ -76,11 +76,15 @@ namespace TermProject.HouseForm
             //lblTest.Text =  cur.HelloWorld("ididiot");
 
             // calls the realestateagent 
-            // TP_GETREALESTATE
-
             DataSet ds = cur.GetSellerInfo(h1[0].SellerUsername);
             lstViewRealestate.DataSource = ds;
             lstViewRealestate.DataBind();
+
+
+
+            // gets all the rooms
+            grpRooms.DataSource = cur.GetRooms(h1[0].Homeaddress);
+            grpRooms.DataBind();
 
         }
 
