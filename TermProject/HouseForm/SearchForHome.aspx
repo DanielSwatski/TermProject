@@ -39,7 +39,7 @@
         </nav>
 
         <div class="form-group">
-        <asp:GridView ID="grdViewHouses" runat="server" CssClass="table table-bordered table-hover thread-dark" style="background-color: white;" AutoGenerateColumns="False" >
+        <asp:GridView ID="grdViewHouses" runat="server" CssClass="table table-bordered table-hover thread-dark" style="background-color: white;" AutoGenerateColumns="False">
             <Columns>
                 <asp:ImageField DataImageUrlField="Photos" HeaderText="Photo" ControlStyle-Width="100" ControlStyle-Height = "100" >
                     <ControlStyle Height="100px" Width="100px"></ControlStyle>

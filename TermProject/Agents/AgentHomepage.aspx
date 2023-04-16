@@ -76,7 +76,7 @@
         <p> need to be able to change price, home status(for sale,sold,pending sale)</p>
         <p> Needs to be able to delete the home</p>
         <p> Need to be able to see all showings for house from a homebuyer. This should probably be a gridview of all houses the agent might be selling</p>
-        <p> Must receive notifications about offers and showings</p>
+        <p> Must receive notifications about offers and showings. Write that stuff later on </p>
         <p> Need to include a dashboard for all potential things a user can do</p>
 
 

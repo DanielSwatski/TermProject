@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using TermProject.HouseForm;
 using Utilities;
 
 namespace TermProject
@@ -133,6 +134,45 @@ namespace TermProject
 
 
             return objDB.GetDataSet(objCommand);
+        }
+
+
+        [WebMethod]
+        public int UpdateHouse(String address, String description, String status, String photo, int price)
+        {
+
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_HOUSEUPDATES";
+
+            SqlParameter input = new SqlParameter("@address", address);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            input = new SqlParameter("@description", description);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            input = new SqlParameter("@status", status);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            input = new SqlParameter("@photo", photo);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            input = new SqlParameter("@price", price);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.Int;
+            objCommand.Parameters.Add(input);
+
+            return objDB.DoUpdate(objCommand);
         }
 
 
