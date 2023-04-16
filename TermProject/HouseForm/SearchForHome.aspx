@@ -5,29 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Search</title>
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 </head>
 
-<script>
-    $(document).ready(function () {
-        function openModal() {
-            // code to open the modal
-
-        }
-
-        // call the openModal function when a button is clicked
-        $('#my-modal').click(function () {
-            openModal();
-            
-            
-        });
-    });
-</script>
 
 
 <body>
@@ -68,6 +52,10 @@
                 <asp:TemplateField HeaderText="MoreDetails" ShowHeader="False">
                     <ItemTemplate>
                         <asp:Button ID="btnModal" runat="server" Text="More Information"  CssClass="btn btn-primary" autopostback="false" onClick="btnModal_Click" />
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                          Launch demo modal
+                        </button>
+
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
@@ -110,7 +98,7 @@
 
 
         <asp:Panel runat="server" Visible="false" ID="panelExtra">
-          <h3 class="mb-4">MORE HOME INFO</h3>
+          <h3 class="mb-4">Home Info</h3>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -145,7 +133,6 @@
                       <td><%# DataBinder.Eval(Container.DataItem, "HomeSize") %></td>
                       <td><%# DataBinder.Eval(Container.DataItem, "BedRoomNumber") %></td>
                       <td><%# DataBinder.Eval(Container.DataItem, "BathRoomNumber") %></td>
-                      <td><%# DataBinder.Eval(Container.DataItem, "Amenities") %></td>
                       <td><%# DataBinder.Eval(Container.DataItem, "HVAC") %></td>
                       <td><%# DataBinder.Eval(Container.DataItem, "Utilities") %></td>
                       <td><%# DataBinder.Eval(Container.DataItem, "YearBuilt") %></td>
@@ -162,6 +149,8 @@
             <asp:Button runat="server" Text="Close" CssClass="btn btn-secondary" OnClick="btnClose_Click" />
 
             <div class="table-responsive">
+
+                <h3> Seller</h3>
     <asp:ListView runat="server" ID="lstViewRealestate" ItemPlaceholderID="itemPlaceholder">
         <LayoutTemplate>
             <table class="table">
@@ -189,12 +178,26 @@
             </tr>
         </ItemTemplate>
     </asp:ListView>
+
+    <h3> Rooms</h3>
+<asp:GridView runat="server" ID="grpRooms" AutoGenerateColumns="False" CssClass="table table-striped" >
+    <Columns>
+        <asp:BoundField DataField="RoomType" HeaderText="Room Type" ItemStyle-CssClass="text-center" />
+        <asp:BoundField DataField="RoomSize" HeaderText="Room Size" ItemStyle-CssClass="text-center" />
+        <asp:ImageField DataImageUrlField="Photo" HeaderText="Photo" ControlStyle-Width="100">
+            <ControlStyle CssClass="img-thumbnail" />
+        </asp:ImageField>
+    </Columns>
+</asp:GridView>
+
+
+
 </div>
 
 
+
+
         </asp:Panel>
-
-
 
 
     </form>

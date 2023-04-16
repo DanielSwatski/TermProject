@@ -26,10 +26,11 @@ namespace TermProject
                 Session.Remove("usertype");
 
                 HttpCookie cookie = Request.Cookies["LoginSave"];
-
+                
                 if (cookie != null)
                 {
                     string currentUserType = cookie.Values["usertype"];
+
 
                     switch (currentUserType)
                     {

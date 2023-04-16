@@ -113,6 +113,7 @@
     </None>
     <Content Include="HouseForm\AddHouse.aspx" />
     <Content Include="HouseForm\AddRoom.aspx" />
+    <Content Include="HouseForm\ManageHouse.aspx" />
     <Content Include="HouseForm\SearchForHome.aspx" />
     <Content Include="Sellers\SellerHomepage.aspx" />
     <Content Include="Sellers\SellersUserCreation.aspx" />
@@ -179,6 +180,13 @@
       <DependentUpon>AddRoom.aspx</DependentUpon>
     </Compile>
     <Compile Include="HouseForm\Home.cs" />
+    <Compile Include="HouseForm\ManageHouse.aspx.cs">
+      <DependentUpon>ManageHouse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HouseForm\ManageHouse.aspx.designer.cs">
+      <DependentUpon>ManageHouse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HouseForm\SearchForHome.aspx.cs">
       <DependentUpon>SearchForHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
