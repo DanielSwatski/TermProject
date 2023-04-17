@@ -36,6 +36,9 @@ namespace TermProject.HouseForm
 
             grdViewOffers.DataSource = cur.GetOffers(address);
             grdViewOffers.DataBind();
+
+            grdViewSurvey.DataSource = cur.GetSurvery(address);
+            grdViewSurvey.DataBind();
         }
 
 

@@ -42,14 +42,25 @@
                     <asp:BoundField DataField="OfferUsername" HeaderText="Username" />
                     <asp:BoundField DataField="OfferValue" HeaderText="Value" />
                     <asp:BoundField DataField="SaleType" HeaderText="Sale Type" />
-                    <asp:BoundField DataField="Contigencies" HeaderText="Contigencies" />
+                    <asp:BoundField DataField="Contingencies" HeaderText="Contingencies" />
                     <asp:BoundField DataField="SellPrevHome" HeaderText="Previous Home" />
                     <asp:BoundField DataField="Date" HeaderText="Date for Sale" />
                 </Columns>
             </asp:GridView>
 
             <h3> Survey results </h3>
+            <asp:GridView ID="grdViewSurvey" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered">
 
+                 <Columns>
+                    <asp:BoundField DataField="BuyerUsernames" HeaderText="Username of Reviewer" />
+                    <asp:BoundField DataField="PriceOpinion" HeaderText="Price Opinion" />
+                    <asp:BoundField DataField="LocationOpinion" HeaderText="Location Opinion" />
+                    <asp:BoundField DataField="HomeOpinion" HeaderText="Home Opinion" />
+                    <asp:BoundField DataField="Rating" HeaderText="Rating" />
+                </Columns>
+
+            </asp:GridView>
+"
             <h3> COmments on the House</h3>
 
             <asp:Label ID="lblTest" runat="server"></asp:Label>

@@ -40,7 +40,24 @@ namespace TermProject
             return objDB.GetDataSet(objCommand);
         }
 
+        [WebMethod]
+        public DataSet GetSurvery(string address)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
 
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GETSURVEYS";
+
+            SqlParameter input = new SqlParameter("@address", address);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+
+            return objDB.GetDataSet(objCommand);
+        }
+    
 
         [WebMethod]
         public DataSet GetRooms(String address)
