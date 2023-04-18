@@ -26,11 +26,11 @@
                                     <p class="text-white-50 mb-5">Please enter your login and password!</p>
 
                                     <div class="form-outline form-white mb-4">
-                                        <asp:TextBox class="form-control form-control-lg" ID="txtUsername" runat="server" placeholder="Username" required>ashleydavis</asp:TextBox>
+                                        <asp:TextBox class="form-control form-control-lg" ID="txtUsername" runat="server" placeholder="Username" required>user</asp:TextBox>
                                     </div>
 
                                     <div class="form-outline form-white mb-4">
-                                        <asp:TextBox class="form-control form-control-lg" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password" required>password13</asp:TextBox>
+                                        <asp:TextBox class="form-control form-control-lg" ID="txtPassword" runat="server" placeholder="Password" TextMode="Password" required>password</asp:TextBox>
                                     </div>
 
                                     <div class="form-check small mb-2 pb-lg-2">

@@ -23,6 +23,7 @@ namespace TermProject.HouseForm
 
         public void showHouses()
         {
+
             String address = Request.Cookies["House"].Values["HomeAddress"];
 
             // Displays info about the house
@@ -39,6 +40,9 @@ namespace TermProject.HouseForm
 
             grdViewSurvey.DataSource = cur.GetSurvery(address);
             grdViewSurvey.DataBind();
+
+            lstViewComments.DataSource = cur.GetComments(address);
+            lstViewComments.DataBind();
         }
 
 
@@ -61,7 +65,7 @@ namespace TermProject.HouseForm
         protected void grdHouseInfo_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             //   e.NewValues.Key["Photo"].
-            lblTest.Text = e.NewValues["Photo"].ToString();
+            //lblTest.Text = e.NewValues["Photo"].ToString();
             grdHouseInfo.EditIndex = -1;
 
             SellerTest cur = new SellerTest();
@@ -79,5 +83,21 @@ namespace TermProject.HouseForm
             showHouses();
 
         }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+            // Perform some server-side processing here
+
+            // Update the contents of the update panel
+            //lbl.Text += "NEWER";
+            SellerTest cur = new SellerTest();
+            lstViewComments.DataSource = cur.GetComments(Request.Cookies["House"].Values["HomeAddress"]);
+            lstViewComments.DataBind();
+
+            UpdatePanel1.Update();
+
+            // every 10 seconds it checks the comment grid
+        }
+
     }
 }

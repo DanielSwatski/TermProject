@@ -16,29 +16,32 @@ namespace TermProject.Agents
             // delete this later it should be good to work with 
             if (!IsPostBack)
             {
-                Session["username"] = "Daniel";
-
-                SellerTest cur = new SellerTest();
-
-                grdViewHouses.DataSource = cur.GetHouse(Session["username"].ToString());
-                grdViewHouses.DataBind();
+                showHouses();   
             }
 
 
         }
 
-        // this one can probably be deleted
-        protected void btnModal_Click(object sender, EventArgs e)
+        protected void showHouses()
         {
+            Session["username"] = "Daniel";
 
+            SellerTest cur = new SellerTest();
+
+            grdViewHouses.DataSource = cur.GetHouse(Session["username"].ToString());
+            grdViewHouses.DataBind();
         }
-
 
 
         // deletes the home
         protected void btnDelete_Click(object sender, EventArgs e)
         {
+            Button btn = (Button)sender;
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
 
+            SellerTest cur = new SellerTest();
+            cur.DeleteHouse(grdViewHouses.Rows[gvr.RowIndex].Cells[1].Text);
+            showHouses();
         }
 
 
@@ -59,7 +62,7 @@ namespace TermProject.Agents
         // takes you to the add house page
         protected void btnMakeHouse_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

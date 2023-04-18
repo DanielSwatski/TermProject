@@ -193,6 +193,44 @@ namespace TermProject
         }
 
 
+
+        [WebMethod]
+        public int DeleteHouse(String address)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_HOUSEDELETE";
+
+            SqlParameter input = new SqlParameter("@address", address);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+
+            return objDB.DoUpdate(objCommand);
+
+        }
+
+        [WebMethod]
+        public DataSet GetComments(String address)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_HOUSECOMMENTS";
+
+            SqlParameter input = new SqlParameter("@address", address);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+
+            return objDB.GetDataSet(objCommand);
+        }
+
         /*
         [WebMethod]
         public string HelloWorld(String name)
