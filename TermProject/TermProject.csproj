@@ -187,6 +187,7 @@
     <Compile Include="HouseForm\ManageHouse.aspx.designer.cs">
       <DependentUpon>ManageHouse.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HouseForm\Room.cs" />
     <Compile Include="HouseForm\SearchForHome.aspx.cs">
       <DependentUpon>SearchForHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

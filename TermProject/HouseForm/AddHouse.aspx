@@ -60,16 +60,13 @@
                         <asp:TextBox ID="txtHouseSize" class="form-control" runat="server" TextMode="Number" required></asp:TextBox>
                     </div>
                     <div class="col-md-6">
-                        <asp:Label ID="Label2" runat="server" Text="House Size" class="form-label"></asp:Label>
-                        <asp:TextBox ID="TextBox2" class="form-control" runat="server" TextMode="Number" required></asp:TextBox>
-                    </div>
-                    <div class="col-md-6">
-                        <asp:Label ID="lblBedRooms" runat="server" Text="Number of Bedrooms" class="form-label"></asp:Label>
-                        <asp:TextBox ID="txtBedRooms" class="form-control" runat="server" TextMode="Number" required OnTextChanged="txtBedRooms_TextChanged"></asp:TextBox>
-                    </div>
-                    <div class="col-md-6">
-                        <asp:Label ID="lblBathRooms" runat="server" Text="Number of Bathrooms" class="form-label"></asp:Label>
-                        <asp:TextBox ID="txtBathRooms" class="form-control" runat="server" TextMode="Number" required OnTextChanged="txtBathRooms_TextChanged"></asp:TextBox>
+                        <asp:Label ID="lblHVAC" runat="server" Text="HVAC" class="form-label"></asp:Label>
+                        <asp:DropDownList ID="ddlHVAC" class="form-select" runat="server">
+                            <asp:ListItem>Central Air</asp:ListItem>
+                            <asp:ListItem>Forced Air Heat</asp:ListItem>
+                            <asp:ListItem>Propane Heat</asp:ListItem>
+                            <asp:ListItem>Electric Heat</asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                     <div class="col-12">
                         <asp:Label ID="lblAmenities" runat="server" Text="Amenities" class="form-label"></asp:Label>
@@ -134,7 +131,7 @@
                     </div>
 
                     <div class="col-12" style="text-align:center">
-                        <asp:Button ID="btnSubmit" runat="server" Text="Submit" class="btn btn-primary " />
+                        <asp:Button ID="btnSubmit" runat="server" Text="Submit" class="btn btn-primary" OnClick="btnSubmit_Click" />
                     </div>
                 </div>
             </div>

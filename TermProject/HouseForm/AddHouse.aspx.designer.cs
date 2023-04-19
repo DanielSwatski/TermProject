@@ -150,58 +150,22 @@ namespace TermProject.HouseForm
         protected global::System.Web.UI.WebControls.TextBox txtHouseSize;
 
         /// <summary>
-        /// Label2 control.
+        /// lblHVAC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label lblHVAC;
 
         /// <summary>
-        /// TextBox2 control.
+        /// ddlHVAC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
-
-        /// <summary>
-        /// lblBedRooms control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBedRooms;
-
-        /// <summary>
-        /// txtBedRooms control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBedRooms;
-
-        /// <summary>
-        /// lblBathRooms control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBathRooms;
-
-        /// <summary>
-        /// txtBathRooms control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBathRooms;
+        protected global::System.Web.UI.WebControls.DropDownList ddlHVAC;
 
         /// <summary>
         /// lblAmenities control.

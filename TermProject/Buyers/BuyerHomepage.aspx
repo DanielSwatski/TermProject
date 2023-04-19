@@ -30,7 +30,11 @@
             </div>
         </nav>
 
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+        <div>
+            picture
+        </div>
+
+        <asp:GridView ID="grdHomePage" runat="server" AutoGenerateColumns="False">
             <Columns>
                 <asp:ImageField HeaderText="Image">
                 </asp:ImageField>

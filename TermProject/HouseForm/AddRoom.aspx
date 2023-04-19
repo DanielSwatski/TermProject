@@ -52,6 +52,10 @@
                         <asp:Label ID="lblPhoto" runat="server" Text="Photo" class="form-label"></asp:Label>
                         <asp:TextBox ID="txtPhoto" class="form-control" runat="server" required></asp:TextBox>
                     </div>
+
+                    <div class="col-12" style="text-align:center">
+                        <asp:Button ID="btnSubmit" runat="server" Text="Submit" class="btn btn-primary" OnClick="btnSubmit_Click" />
+                    </div>
                 </div>
             </div>
         </div>
