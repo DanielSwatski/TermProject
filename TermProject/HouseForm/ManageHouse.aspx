@@ -31,7 +31,7 @@
                 </Columns>
             </asp:GridView>
 
-
+            <asp:Button ID="txtAddRoom" runat="server" Text="Button" OnClick="txtAddRoom_Click" />
 
              <p> Allow person to manage price, home status. Pulls the address, price, home status</p>
             <p> Show showings for a house in a gridview. </p>

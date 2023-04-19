@@ -23,7 +23,7 @@ namespace TermProject.HouseForm
         {
             Room currentRoom = new Room();
 
-            currentRoom.Address = "123 Sand Street";
+            currentRoom.Address = Request.Cookies["House"].Values["HomeAddress"];
             currentRoom.RoomType = ddlRoomType.SelectedValue;
             currentRoom.RoomSize = int.Parse(txtRoomSize.Text);
             currentRoom.Photo = txtPhoto.Text;

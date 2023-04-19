@@ -22,13 +22,11 @@ namespace TermProject.HouseForm
             grdViewShowing.DataSource = cur.GetShowings(address);
             grdViewShowing.DataBind();
 
+        }
 
-
-
-            // 
-
-
-
+        protected void txtAddRoom_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddRoom.aspx");
         }
     }
 }
