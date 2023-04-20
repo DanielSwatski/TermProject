@@ -69,6 +69,11 @@ namespace TermProject.HouseForm
             }
             amenities = amenities.TrimEnd(',');
 
+            if (amenities == "") 
+            {
+                amenities = "None";
+            }
+
             currentHome.Amenities = amenities;
             currentHome.HVAC = ddlHVAC.SelectedValue;
             currentHome.Utilities = ddlUtilities.SelectedValue;
