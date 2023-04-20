@@ -35,11 +35,11 @@ namespace TermProject.HouseForm
             Home currentHome = new Home();
 
             currentHome.Homeaddress = txtAddress.Text;
-            currentHome.SellerUsername = "danielmiller";
+            currentHome.SellerUsername = Session["username"].ToString();
             currentHome.State = txtState.Text;
             currentHome.ZipCode = int.Parse(txtZipCode.Text);
             currentHome.PropertyType = ddlPropertyType.SelectedValue;
-            currentHome.HomeSize = int.Parse(txtHouseSize.Text);
+            currentHome.HomeSize = 0;
             currentHome.BedRoomNumber = 0;
             currentHome.BathRoomNumber = 0;
 
@@ -68,6 +68,11 @@ namespace TermProject.HouseForm
                 amenities += chkBar.Text + ",";
             }
             amenities = amenities.TrimEnd(',');
+
+            if (amenities == "") 
+            {
+                amenities = "None";
+            }
 
             currentHome.Amenities = amenities;
             currentHome.HVAC = ddlHVAC.SelectedValue;

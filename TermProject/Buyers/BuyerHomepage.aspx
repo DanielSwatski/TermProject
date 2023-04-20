@@ -30,9 +30,51 @@
             </div>
         </nav>
 
-        <div>
-            picture
+        <div class="bg-body d-flex align-items-center justify-content-center" style="background-image: url('https://wallpapers.com/images/hd/modern-cozy-home-garage-autumn-yhdxtarsj79gt4ej.jpg'); background-position: center center; height: 350px;">
+            <div class="rounded bg-light shadow h-auto w-75 mx-auto p-3">
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <asp:Label ID="lblSearch" runat="server" Text="Search By:" class="form-label"></asp:Label>
+                        <asp:DropDownList runat="server" ID="ddlSearch" CssClass="form-select" OnSelectedIndexChanged="ddlSearch_SelectedIndexChanged">
+                            <asp:ListItem disabled selected>Search...</asp:ListItem>
+                            <asp:ListItem>StatePrice</asp:ListItem>
+                            <asp:ListItem>StatePropertyTypePrice</asp:ListItem>
+                            <asp:ListItem>StatePriceRooms</asp:ListItem>
+                            <asp:ListItem>PriceAmenities</asp:ListItem>
+                            <asp:ListItem>StateAmentities</asp:ListItem>
+                            <asp:ListItem>StatePricePropertyTypeAmentities</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <script>
+            const myDropdown = document.getElementById("ddlSearch");
+            myDropdown.addEventListener("change", function () {
+                var selectedOption = this.value;
+
+                // Show the appropriate modal based on the selected option
+                switch (selectedOption) {
+                    case "StatePrice":
+                        const modal1 = new bootstrap.Modal(document.getElementById('exampleModal'));
+                        modal1.show();
+                        break;
+                    case "StatePropertyTypePrice":
+                        const modal2 = new bootstrap.Modal(document.getElementById('exampleModal1'));
+                        modal2.show();
+                        break;
+                    case 'StatePriceRooms':
+                        const modal3 = new bootstrap.Modal(document.getElementById('exampleModal'));
+                        modal3.show();
+                        break;
+                    default:
+                        const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+                        modal.show();
+                        break;
+                }
+            });
+        </script>
 
         <asp:GridView ID="grdHomePage" runat="server" AutoGenerateColumns="False">
             <Columns>
@@ -45,6 +87,49 @@
                 <asp:BoundField DataField="BedRoomNumber" HeaderText="Bed Rooms" />
             </Columns>
         </asp:GridView>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Launch demo modal
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        State Price
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel1">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        State property type price
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div>
             <p> Need to be able to schedule a showing for a home they wish to look at</p>
