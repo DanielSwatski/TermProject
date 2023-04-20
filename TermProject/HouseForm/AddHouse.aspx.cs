@@ -39,7 +39,7 @@ namespace TermProject.HouseForm
             currentHome.State = txtState.Text;
             currentHome.ZipCode = int.Parse(txtZipCode.Text);
             currentHome.PropertyType = ddlPropertyType.SelectedValue;
-            currentHome.HomeSize = int.Parse(txtHouseSize.Text);
+            currentHome.HomeSize = 0;
             currentHome.BedRoomNumber = 0;
             currentHome.BathRoomNumber = 0;
 

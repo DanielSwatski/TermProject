@@ -132,24 +132,6 @@ namespace TermProject.HouseForm
         protected global::System.Web.UI.WebControls.DropDownList ddlPropertyType;
 
         /// <summary>
-        /// lblHouseSize control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHouseSize;
-
-        /// <summary>
-        /// txtHouseSize control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHouseSize;
-
-        /// <summary>
         /// lblHVAC control.
         /// </summary>
         /// <remarks>

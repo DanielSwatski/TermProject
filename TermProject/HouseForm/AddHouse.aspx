@@ -55,10 +55,7 @@
                             <asp:ListItem>Condo</asp:ListItem>
                         </asp:DropDownList>
                     </div>
-                    <div class="col-md-6">
-                        <asp:Label ID="lblHouseSize" runat="server" Text="House Size" class="form-label"></asp:Label>
-                        <asp:TextBox ID="txtHouseSize" class="form-control" runat="server" TextMode="Number" required></asp:TextBox>
-                    </div>
+                    
                     <div class="col-md-6">
                         <asp:Label ID="lblHVAC" runat="server" Text="HVAC" class="form-label"></asp:Label>
                         <asp:DropDownList ID="ddlHVAC" class="form-select" runat="server">
