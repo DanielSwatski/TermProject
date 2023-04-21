@@ -8,7 +8,7 @@
           <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
 
 </head>
 
@@ -39,7 +39,7 @@
         </nav>
 
         <div class="form-group">
-        <asp:GridView ID="grdViewHouses" runat="server" CssClass="table table-bordered table-hover thread-dark" style="background-color: white;" AutoGenerateColumns="False" >
+        <asp:GridView ID="grdViewHouses" runat="server" CssClass="table table-bordered table-hover thread-dark" style="background-color: white;" AutoGenerateColumns="False">
             <Columns>
                 <asp:ImageField DataImageUrlField="Photos" HeaderText="Photo" ControlStyle-Width="100" ControlStyle-Height = "100" >
                     <ControlStyle Height="100px" Width="100px"></ControlStyle>
@@ -49,12 +49,9 @@
                 <asp:BoundField DataField="BedRoomNumber" HeaderText="BedRoomNumber" />
                 <asp:BoundField DataField="BathRoomNumber" HeaderText="BathRoomNumber" />
                 <asp:BoundField DataField="AskingPrice" HeaderText="AskingPrice" />
-                <asp:TemplateField HeaderText="MoreDetails" ShowHeader="False">
+                <asp:TemplateField HeaderText="MoreDetails" ShowHeader="True">
                     <ItemTemplate>
                         <asp:Button ID="btnModal" runat="server" Text="More Information"  CssClass="btn btn-primary" autopostback="false" onClick="btnModal_Click" />
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                          Launch demo modal
-                        </button>
 
                     </ItemTemplate>
                 </asp:TemplateField>
@@ -133,6 +130,7 @@
                       <td><%# DataBinder.Eval(Container.DataItem, "HomeSize") %></td>
                       <td><%# DataBinder.Eval(Container.DataItem, "BedRoomNumber") %></td>
                       <td><%# DataBinder.Eval(Container.DataItem, "BathRoomNumber") %></td>
+                        <td><%# DataBinder.Eval(Container.DataItem, "Amenities") %></td>
                       <td><%# DataBinder.Eval(Container.DataItem, "HVAC") %></td>
                       <td><%# DataBinder.Eval(Container.DataItem, "Utilities") %></td>
                       <td><%# DataBinder.Eval(Container.DataItem, "YearBuilt") %></td>

@@ -11,6 +11,19 @@ namespace TermProject.HouseForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                showHouses();
+            }
+
+
+
+
+        }
+
+        public void showHouses()
+        {
+
             String address = Request.Cookies["House"].Values["HomeAddress"];
 
             // Displays info about the house
@@ -22,11 +35,83 @@ namespace TermProject.HouseForm
             grdViewShowing.DataSource = cur.GetShowings(address);
             grdViewShowing.DataBind();
 
+            grdViewOffers.DataSource = cur.GetOffers(address);
+            grdViewOffers.DataBind();
+
+            grdViewSurvey.DataSource = cur.GetSurvery(address);
+            grdViewSurvey.DataBind();
+
+            lstViewComments.DataSource = cur.GetComments(address);
+            lstViewComments.DataBind();
         }
 
-        protected void txtAddRoom_Click(object sender, EventArgs e)
+
+        // all of these are used for editing the house
+        protected void grdHouseInfo_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            Response.Redirect("AddRoom.aspx");
+
+            grdHouseInfo.EditIndex = e.NewEditIndex;
+            showHouses();
+        }
+
+        // uncessary
+        protected void grdHouseInfo_RowUpdated(object sender, GridViewUpdatedEventArgs e)
+        {
+
+        }
+
+        // fires when you should load the table back 
+        // make sure you reset the edit index
+        protected void grdHouseInfo_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            //   e.NewValues.Key["Photo"].
+            //lblTest.Text = e.NewValues["Photo"].ToString();
+            grdHouseInfo.EditIndex = -1;
+
+            SellerTest cur = new SellerTest();
+            cur.UpdateHouse(e.NewValues["HomeAddress"].ToString(), e.NewValues["Description"].ToString(), e.NewValues["Status"].ToString(), e.NewValues["Photo"].ToString(), int.Parse(e.NewValues["AskingPrice"].ToString()));
+
+
+
+            // make the updare calls here
+            showHouses();
+        }
+
+        protected void grdHouseInfo_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            grdHouseInfo.EditIndex = -1;
+            showHouses();
+
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+            // Perform some server-side processing here
+
+            // Update the contents of the update panel
+            //lbl.Text += "NEWER";
+            SellerTest cur = new SellerTest();
+            lstViewComments.DataSource = cur.GetComments(Request.Cookies["House"].Values["HomeAddress"]);
+            lstViewComments.DataBind();
+
+            UpdatePanel1.Update();
+
+            // every 10 seconds it checks the comment grid
+        }
+
+
+        // acepts an offer
+        protected void btnAccept_Click(object sender, EventArgs e)
+        {
+            SellerTest cur = new SellerTest();
+            cur.AcceptOffer(Request.Cookies["House"].Values["HomeAddress"]);
+
+        }
+
+        // reject offer
+        protected void btnReject_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

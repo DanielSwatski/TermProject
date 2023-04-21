@@ -104,7 +104,7 @@ namespace TermProject.HouseForm
 
             if (searchval.Equals("StatePrice"))
             {
-                WebRequest request = WebRequest.Create("http://localhost:48362/HomesAPI/GetByLocationPrice/" + txtBoxState.Text+"/"+txtBoxPriceMin.Text + "/" + textBoxPriceMax.Text);
+                WebRequest request = WebRequest.Create("http://localhost:3977/HomesAPI/GetByLocationPrice/" + txtBoxState.Text+"/"+txtBoxPriceMin.Text + "/" + textBoxPriceMax.Text);
                 WebResponse response = request.GetResponse();
                 // Read the data from the Web Response, which requires working with streams.
 
@@ -252,6 +252,21 @@ namespace TermProject.HouseForm
         {
             panelExtra.Visible = false;
             
+        }
+
+        protected void grdViewHouses_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+
+        }
+
+        protected void grdViewHouses_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+
+        }
+
+        protected void grdViewHouses_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+
         }
     }
 }
