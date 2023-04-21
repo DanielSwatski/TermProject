@@ -99,5 +99,19 @@ namespace TermProject.HouseForm
             // every 10 seconds it checks the comment grid
         }
 
+
+        // acepts an offer
+        protected void btnAccept_Click(object sender, EventArgs e)
+        {
+            SellerTest cur = new SellerTest();
+            cur.AcceptOffer(Request.Cookies["House"].Values["HomeAddress"]);
+
+        }
+
+        // reject offer
+        protected void btnReject_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

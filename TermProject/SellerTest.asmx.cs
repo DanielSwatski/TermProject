@@ -23,6 +23,81 @@ namespace TermProject
 
 
 
+        // reject offer
+            // just delete record
+
+        // accept offer
+            // update house that status is sold
+            // notify homebuyer that their offer has been accepted
+        [WebMethod]
+        public DataSet NotifyBuyer(String buyer)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_NOTIFYBUYER";
+
+            SqlParameter input = new SqlParameter("@buyer", buyer);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            return objDB.GetDataSet(objCommand);
+        }
+
+
+        [WebMethod]
+        public int AcceptOffer(String house)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_ACCEPTOFFERS";
+
+            SqlParameter input = new SqlParameter("@address", house);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            return objDB.DoUpdate(objCommand);
+        }
+
+        [WebMethod]
+        public DataSet GetNewOffers(String sellerUsername)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GETOFFERS";
+
+            SqlParameter input = new SqlParameter("@agent", sellerUsername);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            return objDB.GetDataSet(objCommand);
+        }
+
+        [WebMethod]
+        public DataSet GetNewShowings(String sellerUsername)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GETSHOWINGS";
+
+            SqlParameter input = new SqlParameter("@agent", sellerUsername);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            return objDB.GetDataSet(objCommand);
+        }
+
         [WebMethod]
         public DataSet GetSellerInfo(String sellerUsername)
         {

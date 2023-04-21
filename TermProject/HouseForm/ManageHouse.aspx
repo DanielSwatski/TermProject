@@ -52,6 +52,20 @@
                     <asp:BoundField DataField="Contingencies" HeaderText="Contingencies" />
                     <asp:BoundField DataField="SellPrevHome" HeaderText="Previous Home" />
                     <asp:BoundField DataField="Date" HeaderText="Date for Sale" />
+                    <asp:TemplateField HeaderText="Accept" ShowHeader="True">
+                    <ItemTemplate>
+                        <asp:Button ID="btnAccept" runat="server" Text="Accept Offer" CssClass="btn btn-primary" onClick="btnAccept_Click" />
+
+                    </ItemTemplate>
+                </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Reject" ShowHeader="True">
+                    <ItemTemplate>
+                        <asp:Button ID="btnReject" runat="server" Text="Accept Offer"  CssClass="btn btn-primary" onClick="btnReject_Click" />
+
+                    </ItemTemplate>
+                </asp:TemplateField>
+
                 </Columns>
             </asp:GridView>
 

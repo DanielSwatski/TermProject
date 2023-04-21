@@ -104,7 +104,7 @@ namespace TermProject.HouseForm
 
             if (searchval.Equals("StatePrice"))
             {
-                WebRequest request = WebRequest.Create("http://localhost:48362/HomesAPI/GetByLocationPrice/" + txtBoxState.Text+"/"+txtBoxPriceMin.Text + "/" + textBoxPriceMax.Text);
+                WebRequest request = WebRequest.Create("http://localhost:3977/HomesAPI/GetByLocationPrice/" + txtBoxState.Text+"/"+txtBoxPriceMin.Text + "/" + textBoxPriceMax.Text);
                 WebResponse response = request.GetResponse();
                 // Read the data from the Web Response, which requires working with streams.
 

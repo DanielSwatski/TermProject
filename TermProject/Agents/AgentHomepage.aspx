@@ -65,14 +65,31 @@
 
         <asp:Button runat="server" ID="btnMakeHouse" Text="Make House. Takes you to the add house page " OnClick="btnMakeHouse_Click"/>
 
-            
-        <p> Gridview for all houses agent is selling and its showing times</p>
 
-        <p> Notifications about showings for a house</p>
-        <p> Notifications about offers for a house</p>
-        <p> Need to add something to the datamodel for all types of data that will be default as false if it hasnt been uploaded and then changed to true to </p>
+        <p> New showings</p>
+        <asp:GridView runat="server" ID="grdViewNewShowings"  CssClass="table table-bordered table-hover thread-dark" style="background-color: white;" AutoGenerateColumns="False">
+            <Columns>
+                  <asp:BoundField DataField="HomeAddress" HeaderText="HomeAddress" />
+                <asp:BoundField DataField="HomeBuyerUsername" HeaderText="Home Buyer" />
+                <asp:BoundField DataField="DateOfShowing" HeaderText="Showing Date" />
+            </Columns>
 
-        <p>Look it up by sellerid later on</p>
+        </asp:GridView>
+
+        <p> NEW OFFERS</p>
+        <asp:GridView runat="server" ID="grdViewNewOffers" CssClass="table table-bordered table-hover thread-dark" style="background-color: white;" AutoGenerateColumns="False">
+            <Columns>
+                  <asp:BoundField DataField="HomeAddress" HeaderText="HomeAddress" />
+                <asp:BoundField DataField="OfferUsername" HeaderText="Offer Username" />
+                <asp:BoundField DataField="OfferValue" HeaderText="Offer Value" />
+                <asp:BoundField DataField="SaleType" HeaderText="SaleType" />
+                <asp:BoundField DataField="Contingencies" HeaderText="Contigencies" />
+                <asp:BoundField DataField="SellPrevHome" HeaderText="Selling Previous Home" />
+                <asp:BoundField DataField="Date" HeaderText="Date" />
+            </Columns>
+
+        </asp:GridView>
+
                 
     </form>
 </body>

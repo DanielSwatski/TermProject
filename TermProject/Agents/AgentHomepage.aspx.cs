@@ -11,7 +11,28 @@ namespace TermProject.Agents
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["username"] = "Daniel";
             // automatically load into the gridview for the house with the stuff from the searching option
+
+            // check to see if multiples need to be done for the showings
+
+            // need to be checked for two types realestate and seller
+            SellerTest cur = new SellerTest();
+            grdViewNewShowings.DataSource = cur.GetNewShowings(Session["username"].ToString()); // gets the showsings
+            grdViewNewShowings.DataBind();
+
+            grdViewNewOffers.DataSource = cur.GetNewOffers(Session["username"].ToString());
+            grdViewNewOffers.DataBind();
+
+
+
+
+
+            
+
+
+            // than update the showings to be true so they have been seen
+
 
             // delete this later it should be good to work with 
             if (!IsPostBack)
@@ -24,7 +45,7 @@ namespace TermProject.Agents
 
         protected void showHouses()
         {
-            Session["username"] = "Daniel";
+            
 
             SellerTest cur = new SellerTest();
 
