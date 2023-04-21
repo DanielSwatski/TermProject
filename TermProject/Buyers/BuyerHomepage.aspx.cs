@@ -14,6 +14,15 @@ namespace TermProject.Buyers
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            Session["username"] = "DanielSwatski";
+
+            // checks to see if any of your offers have been accepted when notify buyer becomes true
+            SellerTest cur = new SellerTest();
+            grdViewAcceptedOffers.DataSource = cur.NotifyBuyer(Session["username"].ToString());
+            grdViewAcceptedOffers.DataBind();
+              
+
+
         }
 
         protected void ddlSearch_SelectedIndexChanged(object sender, EventArgs e)

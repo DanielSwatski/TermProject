@@ -26,7 +26,10 @@ namespace TermProject.HouseForm
             currentRoom.Address = Request.Cookies["House"].Values["HomeAddress"];
             currentRoom.RoomType = ddlRoomType.SelectedValue;
             currentRoom.RoomSize = int.Parse(txtRoomSize.Text);
-            currentRoom.Photo = txtPhoto.Text;
+
+            string filename = this.fileupload1.FileName;
+            this.fileupload1.PostedFile.SaveAs(Server.MapPath($"~/Storage/{filename}"));
+            currentRoom.Photo =  $"~/Storage/{filename}";
 
             JavaScriptSerializer js = new JavaScriptSerializer();
             String jsonCustomer = js.Serialize(currentRoom);

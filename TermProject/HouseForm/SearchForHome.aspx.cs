@@ -253,5 +253,20 @@ namespace TermProject.HouseForm
             panelExtra.Visible = false;
             
         }
+
+        protected void grdViewHouses_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+
+        }
+
+        protected void grdViewHouses_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+
+        }
+
+        protected void grdViewHouses_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+
+        }
     }
 }

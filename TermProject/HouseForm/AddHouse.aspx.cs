@@ -17,7 +17,8 @@ namespace TermProject.HouseForm
         String webApiUrl = "http://localhost:21148/api/TermProject/";
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // remove this later
+            Session["username"] = "Daniel";
         }
 
         protected void txtBedRooms_TextChanged(object sender, EventArgs e)
@@ -82,7 +83,13 @@ namespace TermProject.HouseForm
             currentHome.Description = txtDescription.Text;
             currentHome.AskingPrice = int.Parse(txtAskingPrice.Text);
             currentHome.DateListed = DateTime.Now.ToString();
-            currentHome.Photos = txtPhoto.Text;
+            //currentHome.Photos = txtPhoto.Text;
+
+            string filename = this.fileupload1.FileName;
+            this.fileupload1.PostedFile.SaveAs(Server.MapPath($"~/Storage/{filename}"));
+
+            currentHome.Photos = $"~/Storage/{filename}";
+
 
             JavaScriptSerializer js = new JavaScriptSerializer();
             String jsonCustomer = js.Serialize(currentHome);

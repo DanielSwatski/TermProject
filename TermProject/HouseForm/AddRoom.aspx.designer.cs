@@ -105,13 +105,13 @@ namespace TermProject.HouseForm
         protected global::System.Web.UI.WebControls.Label lblPhoto;
 
         /// <summary>
-        /// txtPhoto control.
+        /// fileupload1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPhoto;
+        protected global::System.Web.UI.WebControls.FileUpload fileupload1;
 
         /// <summary>
         /// btnSubmit control.

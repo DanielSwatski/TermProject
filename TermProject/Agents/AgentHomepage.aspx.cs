@@ -11,34 +11,58 @@ namespace TermProject.Agents
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["username"] = "Daniel";
             // automatically load into the gridview for the house with the stuff from the searching option
+
+            // check to see if multiples need to be done for the showings
+
+            // need to be checked for two types realestate and seller
+            SellerTest cur = new SellerTest();
+            grdViewNewShowings.DataSource = cur.GetNewShowings(Session["username"].ToString()); // gets the showsings
+            grdViewNewShowings.DataBind();
+
+            grdViewNewOffers.DataSource = cur.GetNewOffers(Session["username"].ToString());
+            grdViewNewOffers.DataBind();
+
+
+
+
+
+            
+
+
+            // than update the showings to be true so they have been seen
+
 
             // delete this later it should be good to work with 
             if (!IsPostBack)
             {
-                Session["username"] = "Daniel";
-
-                SellerTest cur = new SellerTest();
-
-                grdViewHouses.DataSource = cur.GetHouse(Session["username"].ToString());
-                grdViewHouses.DataBind();
+                showHouses();   
             }
 
 
         }
 
-        // this one can probably be deleted
-        protected void btnModal_Click(object sender, EventArgs e)
+        protected void showHouses()
         {
+            
 
+            SellerTest cur = new SellerTest();
+
+            grdViewHouses.DataSource = cur.GetHouse(Session["username"].ToString());
+            grdViewHouses.DataBind();
         }
-
 
 
         // deletes the home
         protected void btnDelete_Click(object sender, EventArgs e)
         {
+            Button btn = (Button)sender;
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
 
+            SellerTest cur = new SellerTest();
+            cur.DeleteHouse(grdViewHouses.Rows[gvr.RowIndex].Cells[1].Text);
+            showHouses();
         }
 
 
@@ -59,7 +83,7 @@ namespace TermProject.Agents
         // takes you to the add house page
         protected void btnMakeHouse_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
