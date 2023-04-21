@@ -53,23 +53,35 @@
             const myDropdown = document.getElementById("ddlSearch");
             myDropdown.addEventListener("change", function () {
                 var selectedOption = this.value;
+                var modal;
 
                 // Show the appropriate modal based on the selected option
                 switch (selectedOption) {
                     case "StatePrice":
-                        const modal1 = new bootstrap.Modal(document.getElementById('exampleModal'));
-                        modal1.show();
+                        document.getElementById("states").style.display = "block";
+                        document.getElementById("min").style.display = "block";
+                        document.getElementById("max").style.display = "block";
+                        modal = new bootstrap.Modal(document.getElementById('mdlStatePrice'));
+                        modal.show();
                         break;
                     case "StatePropertyTypePrice":
-                        const modal2 = new bootstrap.Modal(document.getElementById('exampleModal1'));
-                        modal2.show();
+                        modal = new bootstrap.Modal(document.getElementById('mdlStatePrice'));
+                        modal.show();
                         break;
-                    case 'StatePriceRooms':
-                        const modal3 = new bootstrap.Modal(document.getElementById('exampleModal'));
-                        modal3.show();
+                    case "StatePriceRooms":
+                        modal = new bootstrap.Modal(document.getElementById('mdlStatePrice'));
+                        modal.show();
                         break;
-                    default:
-                        const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+                    case "PriceAmenities":
+                        modal = new bootstrap.Modal(document.getElementById('mdlStatePrice'));
+                        modal.show();
+                        break;
+                    case "StateAmentities":
+                        modal = new bootstrap.Modal(document.getElementById('mdlStatePrice'));
+                        modal.show();
+                        break;
+                    case "StatePricePropertyTypeAmentities":
+                        modal = new bootstrap.Modal(document.getElementById('mdlStatePrice'));
                         modal.show();
                         break;
                 }
@@ -93,35 +105,35 @@
             Launch demo modal
         </button>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- Modal StatePrice -->
+        <div class="modal fade" id="mdlSearch" tabindex="-1" aria-labelledby="mdlSearchLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="mdlStatePriceLabel">State Price Search</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        State Price
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <div class="rounded bg-light shadow h-auto w-auto mx-auto p-3">
+                                <div class="row g-3">
+                                    <div id="states" class="col-md-12" style="display:none;">
+                                        <asp:Label ID="lblStates" runat="server" Text="States" class="form-label"></asp:Label>
+                                        <asp:TextBox ID="TextBox3" runat="server" Text="PA" CssClass="form-control"></asp:TextBox>
+                                    </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel1">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        State property type price
+                                    <div id="min" class="col-md-6" style="display:none;">
+                                        <asp:Label ID="lblMin" runat="server" Text="Min" class="form-label"></asp:Label>
+                                        <asp:TextBox ID="txtMin" runat="server" Text="0" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                                    </div>
+
+                                    <div id="max" class="col-md-6" style="display:none;">
+                                        <asp:Label ID="lblMax" runat="server" Text="Max" class="form-label"></asp:Label>
+                                        <asp:TextBox ID="txtMax" runat="server" Text="500" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

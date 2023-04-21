@@ -25,6 +25,7 @@ namespace TermProject.HouseForm
 
         public Home()
         {
+
         }
 
     }
