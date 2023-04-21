@@ -22,7 +22,7 @@ namespace TermProject.HouseForm
         {
             // Create an HTTP Web Request and get the HTTP Web Response from the server.
 
-            WebRequest request = WebRequest.Create("http://localhost:48362/HomesAPI/");
+            WebRequest request = WebRequest.Create("http://localhost:21148/api/TermProject/");
             WebResponse response = request.GetResponse();
             // Read the data from the Web Response, which requires working with streams.
 
@@ -104,7 +104,7 @@ namespace TermProject.HouseForm
 
             if (searchval.Equals("StatePrice"))
             {
-                WebRequest request = WebRequest.Create("http://localhost:48362/HomesAPI/GetByLocationPrice/" + txtBoxState.Text+"/"+txtBoxPriceMin.Text + "/" + textBoxPriceMax.Text);
+                WebRequest request = WebRequest.Create("http://localhost:21148/api/TermProject/GetByLocationPrice/" + txtBoxState.Text+"/"+txtBoxPriceMin.Text + "/" + textBoxPriceMax.Text);
                 WebResponse response = request.GetResponse();
                 // Read the data from the Web Response, which requires working with streams.
 
@@ -127,7 +127,7 @@ namespace TermProject.HouseForm
 
             else if (searchval.Equals("StatePropertyTypePrice"))
             {
-                WebRequest request = WebRequest.Create("http://localhost:48362/HomesAPI/GetByLocationPropertyTypePrice/" + txtBoxState.Text + "/"+ txtBoxPropertyType.Text + "/" + txtBoxPriceMin.Text + "/"+textBoxPriceMax.Text);
+                WebRequest request = WebRequest.Create("http://localhost:21148/api/TermProject/GetByLocationPropertyTypePrice/" + txtBoxState.Text + "/"+ txtBoxPropertyType.Text + "/" + txtBoxPriceMin.Text + "/"+textBoxPriceMax.Text);
                 WebResponse response = request.GetResponse();
                 // Read the data from the Web Response, which requires working with streams.
 
@@ -151,7 +151,7 @@ namespace TermProject.HouseForm
 
             else if (searchval.Equals("StatePriceRooms"))
             {
-                WebRequest request = WebRequest.Create("http://localhost:48362/HomesAPI/GetByLocationPriceRooms/" + txtBoxState.Text + "/" + txtBoxPriceMin.Text + "/" + textBoxPriceMax.Text + "/" + txtBoxRooms.Text);
+                WebRequest request = WebRequest.Create("http://localhost:21148/api/TermProject/GetByLocationPriceRooms/" + txtBoxState.Text + "/" + txtBoxPriceMin.Text + "/" + textBoxPriceMax.Text + "/" + txtBoxRooms.Text);
                 WebResponse response = request.GetResponse();
                 // Read the data from the Web Response, which requires working with streams.
 
@@ -178,7 +178,7 @@ namespace TermProject.HouseForm
 
             else if (searchval.Equals("PriceAmenities"))
             {
-                WebRequest request = WebRequest.Create("http://localhost:48362/HomesAPI/GetByPriceAmenities/" + txtBoxPriceMin.Text + "/" + textBoxPriceMax.Text + "/" + txtBoxAmenities.Text);
+                WebRequest request = WebRequest.Create("http://localhost:21148/api/TermProject/GetByPriceAmenities/" + txtBoxPriceMin.Text + "/" + textBoxPriceMax.Text + "/" + txtBoxAmenities.Text);
                 WebResponse response = request.GetResponse();
                 // Read the data from the Web Response, which requires working with streams.
 
@@ -201,7 +201,7 @@ namespace TermProject.HouseForm
 
             else if (searchval.Equals("StateAmentities"))
             {
-                WebRequest request = WebRequest.Create("http://localhost:48362/HomesAPI/GetByLocationAmenities/" + txtBoxState.Text+ "/" + txtBoxAmenities.Text);
+                WebRequest request = WebRequest.Create("http://localhost:21148/api/TermProject/GetByLocationAmenities/" + txtBoxState.Text+ "/" + txtBoxAmenities.Text);
                 WebResponse response = request.GetResponse();
                 // Read the data from the Web Response, which requires working with streams.
 
@@ -224,7 +224,7 @@ namespace TermProject.HouseForm
 
             else if (searchval.Equals("StatePricePropertyTypeAmentities"))
             {
-                WebRequest request = WebRequest.Create("http://localhost:48362/HomesAPI/GetByLocationPriceRoomsAmenities/" + txtBoxState.Text + "/" + txtBoxPriceMin.Text + "/" + textBoxPriceMax.Text + "/" + txtBoxRooms.Text + "/" + txtBoxAmenities.Text);
+                WebRequest request = WebRequest.Create("http://localhost:21148/api/TermProject/GetByLocationPriceRoomsAmenities/" + txtBoxState.Text + "/" + txtBoxPriceMin.Text + "/" + textBoxPriceMax.Text + "/" + txtBoxRooms.Text + "/" + txtBoxAmenities.Text);
                 WebResponse response = request.GetResponse();
                 // Read the data from the Web Response, which requires working with streams.
 
