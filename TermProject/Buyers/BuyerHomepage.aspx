@@ -131,6 +131,16 @@
             </div>
         </div>
 
+        <h3> Accepted Offers</h3>
+        <asp:GridView runat="server" ID="grdViewAcceptedOffers" AutoGenerateColumns="false">
+            <Columns>
+                <asp:BoundField DataField="HomeAddress" HeaderText="Address" />
+                <asp:BoundField DataField="OfferValue" HeaderText="Offer Value" />
+                <asp:BoundField DataField="Contingencies" HeaderText="Contingencies" />
+                <asp:BoundField DataField="Date" HeaderText="Date" />
+            </Columns>
+        </asp:GridView>
+
         <div>
             <p> Need to be able to schedule a showing for a home they wish to look at</p>
             <p> Should be able to leave feedback about a home, which should be the questionaire</p>

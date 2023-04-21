@@ -104,7 +104,7 @@ namespace TermProject.HouseForm
 
             if (searchval.Equals("StatePrice"))
             {
-                WebRequest request = WebRequest.Create("http://localhost:3977/HomesAPI/GetByLocationPrice/" + txtBoxState.Text+"/"+txtBoxPriceMin.Text + "/" + textBoxPriceMax.Text);
+                WebRequest request = WebRequest.Create("http://localhost:21148/api/TermProject/GetByLocationPrice/" + txtBoxState.Text+"/"+txtBoxPriceMin.Text + "/" + textBoxPriceMax.Text);
                 WebResponse response = request.GetResponse();
                 // Read the data from the Web Response, which requires working with streams.
 
@@ -178,7 +178,7 @@ namespace TermProject.HouseForm
 
             else if (searchval.Equals("PriceAmenities"))
             {
-                WebRequest request = WebRequest.Create("http://localhost:48362/HomesAPI/GetByPriceAmenities/" + txtBoxPriceMin.Text + "/" + textBoxPriceMax.Text + "/" + txtBoxAmenities.Text);
+                WebRequest request = WebRequest.Create("http://localhost:21148/api/TermProject/GetByPriceAmenities/" + txtBoxPriceMin.Text + "/" + textBoxPriceMax.Text + "/" + txtBoxAmenities.Text);
                 WebResponse response = request.GetResponse();
                 // Read the data from the Web Response, which requires working with streams.
 

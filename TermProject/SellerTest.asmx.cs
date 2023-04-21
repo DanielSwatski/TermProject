@@ -281,6 +281,7 @@ namespace TermProject
             SqlParameter input = new SqlParameter("@address", address);
             input.Direction = ParameterDirection.Input;
             input.SqlDbType = SqlDbType.VarChar;
+            
             objCommand.Parameters.Add(input);
 
 
