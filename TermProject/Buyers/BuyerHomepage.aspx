@@ -23,7 +23,7 @@
                             <asp:HyperLink class="nav-link mx-2" ID="hplShowings" runat="server" NavigateUrl="">Profile</asp:HyperLink>
                         </li>
                         <li class="nav-item">
-                            <asp:HyperLink class="nav-link mx-2" ID="hplLogin" runat="server" NavigateUrl="~/UserCreateLogin/Login.aspx">Logout</asp:HyperLink>
+                            <asp:LinkButton CssClass="nav-link mx-2" ID="lnkLogout" runat="server" OnClick="lnkLogout_Click" Text="Logout"></asp:LinkButton>
                         </li>
                     </ul>
                 </div>

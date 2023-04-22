@@ -16,9 +16,9 @@
 
         <h2>House Information</h2>
         <div class="table-responsive">
-            <asp:GridView ID="grdHouseInfo" runat="server" AutoGenerateColumns="False" OnRowUpdating="grdHouseInfo_RowUpdating" OnRowUpdated="grdHouseInfo_RowUpdated" OnRowEditing="grdHouseInfo_RowEditing" CssClass="table table-striped table-bordered" OnRowCancelingEdit="grdHouseInfo_RowCancelingEdit" AutoGenerateEditButton="true"> 
+            <asp:GridView ID="grdHouseInfo" runat="server" AutoGenerateColumns="False" OnRowUpdating="grdHouseInfo_RowUpdating" OnRowUpdated="grdHouseInfo_RowUpdated" OnRowEditing="grdHouseInfo_RowEditing" CssClass="table table-striped table-bordered" OnRowCancelingEdit="grdHouseInfo_RowCancelingEdit" AutoGenerateEditButton="True"> 
                 <Columns>
-                    <asp:TemplateField HeaderText="Photo">
+                    <asp:TemplateField HeaderText="Photo" >
                         <ItemTemplate>
                             <img src='<%# Eval("Photo") %>' class="img-fluid" alt="House photo">
                         </ItemTemplate>
