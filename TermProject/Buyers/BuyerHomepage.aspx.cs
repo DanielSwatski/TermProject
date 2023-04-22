@@ -11,14 +11,14 @@ namespace TermProject.Buyers
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            /*
             Session["username"] = "DanielSwatski";
 
             // checks to see if any of your offers have been accepted when notify buyer becomes true
             SellerTest cur = new SellerTest();
             grdViewAcceptedOffers.DataSource = cur.NotifyBuyer(Session["username"].ToString());
             grdViewAcceptedOffers.DataBind();
-              
+              */
         }
 
         protected void ddlSearch_SelectedIndexChanged(object sender, EventArgs e)
@@ -28,6 +28,18 @@ namespace TermProject.Buyers
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+        // logouts of the application
+        protected void lnkLogout_Click(object sender, EventArgs e)
+        {
+            
+            //Response.Cookies.Remove("LoginSave");
+            HttpCookie deletable = Response.Cookies.Get("LoginSave");
+            deletable.Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Add(deletable);
+            Response.Redirect("../UserCreateLogin/Login.aspx");
         }
     }
 }

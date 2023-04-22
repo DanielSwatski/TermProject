@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="NotifyBuyer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buyer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotifyBuyerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NotifyBuyerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcceptOffer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="house" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcceptOfferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AcceptOfferResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewOffers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sellerUsername" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewOffersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewOffersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewShowings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sellerUsername" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewShowingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewShowingsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSellerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sellerUsername" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSellerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSellerInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSurvery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSurveryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSurveryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRooms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoomsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoomsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHouse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="realestate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHouseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHouseResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHousePrice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHousePriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHousePriceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShowings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShowingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShowingsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOffers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOffersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOffersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateHouse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="photo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateHouseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateHouseResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteHouse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteHouseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteHouseResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetComments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCommentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCommentsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloWorld">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="NotifyBuyerSoapIn">
+    <wsdl:part name="parameters" element="tns:NotifyBuyer" />
+  </wsdl:message>
+  <wsdl:message name="NotifyBuyerSoapOut">
+    <wsdl:part name="parameters" element="tns:NotifyBuyerResponse" />
+  </wsdl:message>
+  <wsdl:message name="AcceptOfferSoapIn">
+    <wsdl:part name="parameters" element="tns:AcceptOffer" />
+  </wsdl:message>
+  <wsdl:message name="AcceptOfferSoapOut">
+    <wsdl:part name="parameters" element="tns:AcceptOfferResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewOffersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewOffers" />
+  </wsdl:message>
+  <wsdl:message name="GetNewOffersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewOffersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewShowingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewShowings" />
+  </wsdl:message>
+  <wsdl:message name="GetNewShowingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewShowingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSellerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSellerInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetSellerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSellerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSurverySoapIn">
+    <wsdl:part name="parameters" element="tns:GetSurvery" />
+  </wsdl:message>
+  <wsdl:message name="GetSurverySoapOut">
+    <wsdl:part name="parameters" element="tns:GetSurveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRoomsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRooms" />
+  </wsdl:message>
+  <wsdl:message name="GetRoomsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoomsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHouseSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHouse" />
+  </wsdl:message>
+  <wsdl:message name="GetHouseSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHousePriceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHousePrice" />
+  </wsdl:message>
+  <wsdl:message name="GetHousePriceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHousePriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShowingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShowings" />
+  </wsdl:message>
+  <wsdl:message name="GetShowingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShowingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOffersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOffers" />
+  </wsdl:message>
+  <wsdl:message name="GetOffersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOffersResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateHouseSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateHouse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateHouseSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateHouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHouseSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteHouse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHouseSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteHouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCommentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetComments" />
+  </wsdl:message>
+  <wsdl:message name="GetCommentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SellerTestSoap">
+    <wsdl:operation name="NotifyBuyer">
+      <wsdl:input message="tns:NotifyBuyerSoapIn" />
+      <wsdl:output message="tns:NotifyBuyerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptOffer">
+      <wsdl:input message="tns:AcceptOfferSoapIn" />
+      <wsdl:output message="tns:AcceptOfferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewOffers">
+      <wsdl:input message="tns:GetNewOffersSoapIn" />
+      <wsdl:output message="tns:GetNewOffersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShowings">
+      <wsdl:input message="tns:GetNewShowingsSoapIn" />
+      <wsdl:output message="tns:GetNewShowingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSellerInfo">
+      <wsdl:input message="tns:GetSellerInfoSoapIn" />
+      <wsdl:output message="tns:GetSellerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSurvery">
+      <wsdl:input message="tns:GetSurverySoapIn" />
+      <wsdl:output message="tns:GetSurverySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRooms">
+      <wsdl:input message="tns:GetRoomsSoapIn" />
+      <wsdl:output message="tns:GetRoomsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHouse">
+      <wsdl:input message="tns:GetHouseSoapIn" />
+      <wsdl:output message="tns:GetHouseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHousePrice">
+      <wsdl:input message="tns:GetHousePriceSoapIn" />
+      <wsdl:output message="tns:GetHousePriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShowings">
+      <wsdl:input message="tns:GetShowingsSoapIn" />
+      <wsdl:output message="tns:GetShowingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOffers">
+      <wsdl:input message="tns:GetOffersSoapIn" />
+      <wsdl:output message="tns:GetOffersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateHouse">
+      <wsdl:input message="tns:UpdateHouseSoapIn" />
+      <wsdl:output message="tns:UpdateHouseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHouse">
+      <wsdl:input message="tns:DeleteHouseSoapIn" />
+      <wsdl:output message="tns:DeleteHouseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComments">
+      <wsdl:input message="tns:GetCommentsSoapIn" />
+      <wsdl:output message="tns:GetCommentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SellerTestSoap" type="tns:SellerTestSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NotifyBuyer">
+      <soap:operation soapAction="http://tempuri.org/NotifyBuyer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptOffer">
+      <soap:operation soapAction="http://tempuri.org/AcceptOffer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewOffers">
+      <soap:operation soapAction="http://tempuri.org/GetNewOffers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShowings">
+      <soap:operation soapAction="http://tempuri.org/GetNewShowings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSellerInfo">
+      <soap:operation soapAction="http://tempuri.org/GetSellerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSurvery">
+      <soap:operation soapAction="http://tempuri.org/GetSurvery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRooms">
+      <soap:operation soapAction="http://tempuri.org/GetRooms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHouse">
+      <soap:operation soapAction="http://tempuri.org/GetHouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHousePrice">
+      <soap:operation soapAction="http://tempuri.org/GetHousePrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShowings">
+      <soap:operation soapAction="http://tempuri.org/GetShowings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOffers">
+      <soap:operation soapAction="http://tempuri.org/GetOffers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateHouse">
+      <soap:operation soapAction="http://tempuri.org/UpdateHouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHouse">
+      <soap:operation soapAction="http://tempuri.org/DeleteHouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComments">
+      <soap:operation soapAction="http://tempuri.org/GetComments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SellerTestSoap12" type="tns:SellerTestSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NotifyBuyer">
+      <soap12:operation soapAction="http://tempuri.org/NotifyBuyer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptOffer">
+      <soap12:operation soapAction="http://tempuri.org/AcceptOffer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewOffers">
+      <soap12:operation soapAction="http://tempuri.org/GetNewOffers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewShowings">
+      <soap12:operation soapAction="http://tempuri.org/GetNewShowings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSellerInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetSellerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSurvery">
+      <soap12:operation soapAction="http://tempuri.org/GetSurvery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRooms">
+      <soap12:operation soapAction="http://tempuri.org/GetRooms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHouse">
+      <soap12:operation soapAction="http://tempuri.org/GetHouse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHousePrice">
+      <soap12:operation soapAction="http://tempuri.org/GetHousePrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShowings">
+      <soap12:operation soapAction="http://tempuri.org/GetShowings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOffers">
+      <soap12:operation soapAction="http://tempuri.org/GetOffers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateHouse">
+      <soap12:operation soapAction="http://tempuri.org/UpdateHouse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHouse">
+      <soap12:operation soapAction="http://tempuri.org/DeleteHouse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComments">
+      <soap12:operation soapAction="http://tempuri.org/GetComments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SellerTest">
+    <wsdl:port name="SellerTestSoap" binding="tns:SellerTestSoap">
+      <soap:address location="http://localhost:53859/SellerTest.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SellerTestSoap12" binding="tns:SellerTestSoap12">
+      <soap12:address location="http://localhost:53859/SellerTest.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
