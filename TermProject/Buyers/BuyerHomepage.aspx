@@ -58,30 +58,64 @@
                 // Show the appropriate modal based on the selected option
                 switch (selectedOption) {
                     case "StatePrice":
+                        //add the required statements
                         document.getElementById("states").style.display = "block";
                         document.getElementById("min").style.display = "block";
                         document.getElementById("max").style.display = "block";
-                        modal = new bootstrap.Modal(document.getElementById('mdlStatePrice'));
+                        document.getElementById("propertyType").style.display = "none";
+                        document.getElementById("room").style.display = "none";
+                        document.getElementById("amenities").style.display = "none";
+                        modal = new bootstrap.Modal(document.getElementById('mdlSearch'));
                         modal.show();
                         break;
                     case "StatePropertyTypePrice":
-                        modal = new bootstrap.Modal(document.getElementById('mdlStatePrice'));
+                        document.getElementById("states").style.display = "block";
+                        document.getElementById("min").style.display = "block";
+                        document.getElementById("max").style.display = "block";
+                        document.getElementById("propertyType").style.display = "block";
+                        document.getElementById("room").style.display = "none";
+                        document.getElementById("amenities").style.display = "none";
+                        modal = new bootstrap.Modal(document.getElementById('mdlSearch'));
                         modal.show();
                         break;
                     case "StatePriceRooms":
-                        modal = new bootstrap.Modal(document.getElementById('mdlStatePrice'));
+                        document.getElementById("states").style.display = "block";
+                        document.getElementById("min").style.display = "block";
+                        document.getElementById("max").style.display = "block";
+                        document.getElementById("propertyType").style.display = "none";
+                        document.getElementById("room").style.display = "block";
+                        document.getElementById("amenities").style.display = "none";
+                        modal = new bootstrap.Modal(document.getElementById('mdlSearch'));
                         modal.show();
                         break;
                     case "PriceAmenities":
-                        modal = new bootstrap.Modal(document.getElementById('mdlStatePrice'));
+                        document.getElementById("states").style.display = "none";
+                        document.getElementById("min").style.display = "block";
+                        document.getElementById("max").style.display = "block";
+                        document.getElementById("propertyType").style.display = "none";
+                        document.getElementById("room").style.display = "none";
+                        document.getElementById("amenities").style.display = "block";
+                        modal = new bootstrap.Modal(document.getElementById('mdlSearch'));
                         modal.show();
                         break;
                     case "StateAmentities":
-                        modal = new bootstrap.Modal(document.getElementById('mdlStatePrice'));
+                        document.getElementById("states").style.display = "block";
+                        document.getElementById("min").style.display = "none";
+                        document.getElementById("max").style.display = "none";
+                        document.getElementById("propertyType").style.display = "none";
+                        document.getElementById("room").style.display = "none";
+                        document.getElementById("amenities").style.display = "block";
+                        modal = new bootstrap.Modal(document.getElementById('mdlSearch'));
                         modal.show();
                         break;
                     case "StatePricePropertyTypeAmentities":
-                        modal = new bootstrap.Modal(document.getElementById('mdlStatePrice'));
+                        document.getElementById("states").style.display = "block";
+                        document.getElementById("min").style.display = "block";
+                        document.getElementById("max").style.display = "block";
+                        document.getElementById("propertyType").style.display = "block";
+                        document.getElementById("room").style.display = "none";
+                        document.getElementById("amenities").style.display = "block";
+                        modal = new bootstrap.Modal(document.getElementById('mdlSearch'));
                         modal.show();
                         break;
                 }
@@ -110,7 +144,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="mdlStatePriceLabel">State Price Search</h5>
+                        <h5 class="modal-title" id="mdlStatePriceLabel">Search</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -131,13 +165,28 @@
                                         <asp:Label ID="lblMax" runat="server" Text="Max" class="form-label"></asp:Label>
                                         <asp:TextBox ID="txtMax" runat="server" Text="500" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                     </div>
+
+                                    <div id="propertyType" class="col-md-12" style="display:none;">
+                                        <asp:Label ID="lblPropertyType" runat="server" Text="Property Type" class="form-label"></asp:Label>
+                                        <asp:TextBox ID="txtPropertyType" runat="server" Text="Test" CssClass="form-control"></asp:TextBox>
+                                    </div>
+
+                                    <div id="room" class="col-md-12" style="display:none;">
+                                        <asp:Label ID="lblRoom" runat="server" Text="Bedrooms" class="form-label"></asp:Label>
+                                        <asp:TextBox ID="txtBoxRooms" runat="server" Text="1" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                                    </div>
+
+                                    <div id="amenities" class="col-md-12" style="display:none;">
+                                        <asp:Label ID="lblAmenities" runat="server" Text="Amenities" class="form-label"></asp:Label>
+                                        <asp:TextBox ID="txtBoxAmenities" runat="server" Text="Test" CssClass="form-control"></asp:TextBox>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <asp:Button ID="Button1" runat="server" Text="Submit" class="btn btn-primary" OnClick="btnSubmit_Click" />
                     </div>
                 </div>
             </div>
