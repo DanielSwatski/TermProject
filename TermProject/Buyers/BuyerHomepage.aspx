@@ -20,7 +20,7 @@
                             <asp:HyperLink class="nav-link mx-2" ID="hplHouse" runat="server" NavigateUrl="~/Buyers/BuyerHomepage.aspx.cs">Home</asp:HyperLink>
                         </li>
                         <li class="nav-item">
-                            <asp:HyperLink class="nav-link mx-2" ID="hplShowings" runat="server" NavigateUrl="">Profile</asp:HyperLink>
+                            <asp:HyperLink class="nav-link mx-2" ID="hplShowings" runat="server" NavigateUrl="">Showings</asp:HyperLink>
                         </li>
                         <li class="nav-item">
                             <asp:LinkButton CssClass="nav-link mx-2" ID="lnkLogout" runat="server" OnClick="lnkLogout_Click" Text="Logout"></asp:LinkButton>
@@ -129,7 +129,7 @@
                 <asp:BoundField DataField="HomeAddress" HeaderText="Address" />
                 <asp:BoundField DataField="State" HeaderText="State" />
                 <asp:BoundField DataField="ZipCode" HeaderText="Zip" />
-                <asp:BoundField DataField="Price" HeaderText="Price" />
+                <asp:BoundField DataField="AskingPrice" HeaderText="Price" />
                 <asp:BoundField DataField="BedRoomNumber" HeaderText="Bed Rooms" />
             </Columns>
         </asp:GridView>
@@ -153,7 +153,7 @@
                                 <div class="row g-3">
                                     <div id="states" class="col-md-12" style="display:none;">
                                         <asp:Label ID="lblStates" runat="server" Text="States" class="form-label"></asp:Label>
-                                        <asp:TextBox ID="TextBox3" runat="server" Text="PA" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txtState" runat="server" Text="PA" CssClass="form-control"></asp:TextBox>
                                     </div>
 
                                     <div id="min" class="col-md-6" style="display:none;">
@@ -173,12 +173,12 @@
 
                                     <div id="room" class="col-md-12" style="display:none;">
                                         <asp:Label ID="lblRoom" runat="server" Text="Bedrooms" class="form-label"></asp:Label>
-                                        <asp:TextBox ID="txtBoxRooms" runat="server" Text="1" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                                        <asp:TextBox ID="txtRooms" runat="server" Text="1" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                     </div>
 
                                     <div id="amenities" class="col-md-12" style="display:none;">
                                         <asp:Label ID="lblAmenities" runat="server" Text="Amenities" class="form-label"></asp:Label>
-                                        <asp:TextBox ID="txtBoxAmenities" runat="server" Text="Test" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txtAmenities" runat="server" Text="Test" CssClass="form-control"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>

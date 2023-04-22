@@ -96,13 +96,13 @@ namespace TermProject.Buyers
         protected global::System.Web.UI.WebControls.Label lblStates;
 
         /// <summary>
-        /// TextBox3 control.
+        /// txtState control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox txtState;
 
         /// <summary>
         /// lblMin control.
@@ -168,13 +168,13 @@ namespace TermProject.Buyers
         protected global::System.Web.UI.WebControls.Label lblRoom;
 
         /// <summary>
-        /// txtBoxRooms control.
+        /// txtRooms control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBoxRooms;
+        protected global::System.Web.UI.WebControls.TextBox txtRooms;
 
         /// <summary>
         /// lblAmenities control.
@@ -186,13 +186,13 @@ namespace TermProject.Buyers
         protected global::System.Web.UI.WebControls.Label lblAmenities;
 
         /// <summary>
-        /// txtBoxAmenities control.
+        /// txtAmenities control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBoxAmenities;
+        protected global::System.Web.UI.WebControls.TextBox txtAmenities;
 
         /// <summary>
         /// Button1 control.
