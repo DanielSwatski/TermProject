@@ -31,6 +31,8 @@
             </asp:GridView>
         </div>
 
+            <asp:Button ID="txtAddRoom" runat="server" Text="Add Room" OnClick="txtAddRoom_Click" />
+
         <h2 class="mt-4">Showing Information</h2>
         <div class="table-responsive">
             <asp:GridView ID="grdViewShowing" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered">

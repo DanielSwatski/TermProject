@@ -135,11 +135,11 @@
         </asp:GridView>
 
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdlSearch">
             Launch demo modal
         </button>
 
-        <!-- Modal StatePrice -->
+        <!-- Modal Search -->
         <div class="modal fade" id="mdlSearch" tabindex="-1" aria-labelledby="mdlSearchLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">

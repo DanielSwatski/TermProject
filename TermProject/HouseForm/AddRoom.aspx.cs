@@ -13,7 +13,7 @@ namespace TermProject.HouseForm
 {
     public partial class AddRoom : System.Web.UI.Page
     {
-        String webApiUrl = "http://localhost:21148/api/TermProject/";
+        String webApiUrl = "https://cis-iis2.temple.edu/spring2023/CIS3342_tug87965/WebAPI/api/TermProject/";
         protected void Page_Load(object sender, EventArgs e)
         {
 

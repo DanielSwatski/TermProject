@@ -16,9 +16,6 @@ namespace TermProject.HouseForm
                 showHouses();
             }
 
-
-
-
         }
 
         public void showHouses()
@@ -112,6 +109,11 @@ namespace TermProject.HouseForm
         protected void btnReject_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void txtAddRoom_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddRoom.aspx");
         }
     }
 }
