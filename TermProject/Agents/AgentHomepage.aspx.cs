@@ -1,9 +1,12 @@
-﻿using System;
+﻿using SoapAPITest;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+//using TermProject.ServiceReference3;
+
 
 namespace TermProject.Agents
 {
@@ -17,6 +20,8 @@ namespace TermProject.Agents
             // check to see if multiples need to be done for the showings
 
             // need to be checked for two types realestate and seller
+
+            //SellerTestSoapClient cur = new SellerTestSoapClient();
             SellerTest cur = new SellerTest();
             grdViewNewShowings.DataSource = cur.GetNewShowings(Session["username"].ToString()); // gets the showsings
             grdViewNewShowings.DataBind();
@@ -45,10 +50,10 @@ namespace TermProject.Agents
 
         protected void showHouses()
         {
-            
 
+
+            // SellerTestSoapClient cur = new SellerTestSoapClient();
             SellerTest cur = new SellerTest();
-
             grdViewHouses.DataSource = cur.GetHouse(Session["username"].ToString());
             grdViewHouses.DataBind();
         }
@@ -60,6 +65,7 @@ namespace TermProject.Agents
             Button btn = (Button)sender;
             GridViewRow gvr = (GridViewRow)btn.NamingContainer;
 
+            //SellerTestSoapClient cur = new SellerTestSoapClient();
             SellerTest cur = new SellerTest();
             cur.DeleteHouse(grdViewHouses.Rows[gvr.RowIndex].Cells[1].Text);
             showHouses();
