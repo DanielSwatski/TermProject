@@ -1,9 +1,11 @@
-﻿using System;
+﻿using SoapAPITest;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+//using TermProject.ServiceReference3;
 
 namespace TermProject.HouseForm
 {
@@ -28,6 +30,7 @@ namespace TermProject.HouseForm
 
             // Displays info about the house
             // We need to make it editable somehow
+            //SellerTestSoapClient cur = new SellerTestSoapClient();
             SellerTest cur = new SellerTest();
             grdHouseInfo.DataSource = cur.GetHousePrice(address);
             grdHouseInfo.DataBind();
@@ -68,6 +71,7 @@ namespace TermProject.HouseForm
             //lblTest.Text = e.NewValues["Photo"].ToString();
             grdHouseInfo.EditIndex = -1;
 
+            //SellerTestSoapClient cur = new SellerTestSoapClient();
             SellerTest cur = new SellerTest();
             cur.UpdateHouse(e.NewValues["HomeAddress"].ToString(), e.NewValues["Description"].ToString(), e.NewValues["Status"].ToString(), e.NewValues["Photo"].ToString(), int.Parse(e.NewValues["AskingPrice"].ToString()));
 
@@ -90,6 +94,7 @@ namespace TermProject.HouseForm
 
             // Update the contents of the update panel
             //lbl.Text += "NEWER";
+            //SellerTestSoapClient cur = new SellerTestSoapClient();
             SellerTest cur = new SellerTest();
             lstViewComments.DataSource = cur.GetComments(Request.Cookies["House"].Values["HomeAddress"]);
             lstViewComments.DataBind();
@@ -103,6 +108,7 @@ namespace TermProject.HouseForm
         // acepts an offer
         protected void btnAccept_Click(object sender, EventArgs e)
         {
+            //SellerTestSoapClient cur = new SellerTestSoapClient();
             SellerTest cur = new SellerTest();
             cur.AcceptOffer(Request.Cookies["House"].Values["HomeAddress"]);
 

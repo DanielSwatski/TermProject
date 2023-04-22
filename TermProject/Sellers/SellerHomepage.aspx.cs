@@ -1,9 +1,11 @@
-﻿using System;
+﻿using SoapAPITest;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+//using TermProject.ServiceReference3;
 
 namespace TermProject.Sellers
 {
@@ -18,8 +20,8 @@ namespace TermProject.Sellers
             {
                 Session["username"] = "Daniel";
 
+                //SellerTestSoapClient cur = new SellerTestSoapClient();
                 SellerTest cur = new SellerTest();
-
                 grdViewHouses.DataSource = cur.GetHouse(Session["username"].ToString());
                 grdViewHouses.DataBind();
             }

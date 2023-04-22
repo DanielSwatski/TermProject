@@ -114,19 +114,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\ServiceReference3\SellerTest.disco" />
-    <None Include="Connected Services\ServiceReference3\configuration91.svcinfo" />
-    <None Include="Connected Services\ServiceReference3\configuration.svcinfo" />
-    <None Include="Connected Services\ServiceReference3\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="HouseForm\AddHouse.aspx" />
     <Content Include="HouseForm\AddRoom.aspx" />
     <Content Include="HouseForm\ManageHouse.aspx" />
     <Content Include="HouseForm\SearchForHome.aspx" />
     <Content Include="Sellers\SellerHomepage.aspx" />
     <Content Include="Sellers\SellersUserCreation.aspx" />
+    <Content Include="SellerTest.asmx" />
     <Content Include="Styles\TermProjectStyles.css" />
     <Content Include="UserCreateLogin\Login.aspx" />
     <Content Include="Web.config" />
@@ -166,11 +160,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\ServiceReference2\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\ServiceReference3\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -224,6 +213,10 @@
     <Compile Include="Sellers\SellersUserCreation.aspx.designer.cs">
       <DependentUpon>SellersUserCreation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SellerTest.asmx.cs">
+      <DependentUpon>SellerTest.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserCreateLogin\ForgottenPassword.aspx.cs">
       <DependentUpon>ForgottenPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -252,7 +245,6 @@
     <Content Include="Connected Services\ServiceReference2\TermProject.ServiceReference2.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\ServiceReference3\SellerTest.wsdl" />
     <None Include="packages.config" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Web.Debug.config">
@@ -278,7 +270,6 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReference2\" />
-    <WCFMetadataStorage Include="Connected Services\ServiceReference3\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Storage\" />

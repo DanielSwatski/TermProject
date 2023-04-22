@@ -1,10 +1,12 @@
-﻿using System;
+﻿using SoapAPITest;
+using System;
 using System.Data;
 using System.IO;
 using System.Net;
 using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+//using TermProject.ServiceReference3;
 
 namespace TermProject.HouseForm
 {
@@ -72,6 +74,7 @@ namespace TermProject.HouseForm
 
 
             // put the soap stuff her
+            //SellerTestSoapClient cur = new SellerTestSoapClient();
             SellerTest cur = new SellerTest();
             //lblTest.Text =  cur.HelloWorld("ididiot");
 
