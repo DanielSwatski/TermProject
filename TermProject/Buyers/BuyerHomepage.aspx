@@ -122,17 +122,28 @@
             });
         </script>
 
-        <asp:GridView ID="grdHomePage" runat="server" AutoGenerateColumns="False">
-            <Columns>
-                <asp:ImageField HeaderText="Image">
-                </asp:ImageField>
-                <asp:BoundField DataField="HomeAddress" HeaderText="Address" />
-                <asp:BoundField DataField="State" HeaderText="State" />
-                <asp:BoundField DataField="ZipCode" HeaderText="Zip" />
-                <asp:BoundField DataField="AskingPrice" HeaderText="Price" />
-                <asp:BoundField DataField="BedRoomNumber" HeaderText="Bed Rooms" />
-            </Columns>
-        </asp:GridView>
+        <div class="bg-body d-flex align-items-center justify-content-center">
+            <div class="h-auto w-75 mx-auto p-3">
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <asp:GridView class="table table-striped rounded bg-light shadow p-5" ID="grdHomePage" runat="server" AutoGenerateColumns="False">
+                            <Columns>
+                                <asp:TemplateField HeaderText="Image">
+                                    <ItemTemplate>
+                                        <asp:Image ID="imgHouse" runat="server" Width="100px" />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:BoundField DataField="HomeAddress" HeaderText="Address" />
+                                <asp:BoundField DataField="State" HeaderText="State" />
+                                <asp:BoundField DataField="ZipCode" HeaderText="Zip" />
+                                <asp:BoundField DataField="AskingPrice" HeaderText="Price" />
+                                <asp:BoundField DataField="BedRoomNumber" HeaderText="Bed Rooms" />
+                            </Columns>
+                        </asp:GridView>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdlSearch">

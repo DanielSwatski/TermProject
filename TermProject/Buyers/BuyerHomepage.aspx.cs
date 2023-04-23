@@ -9,6 +9,7 @@ using System.IO;
 using System.Net;
 using System.Data;
 using TermProject.HouseForm;
+using System.Data.SqlClient;
 
 namespace TermProject.Buyers
 {
@@ -81,6 +82,15 @@ namespace TermProject.Buyers
 
             grdHomePage.DataSource = homelist;
             grdHomePage.DataBind();
+
+            for (int row = 0; row < grdHomePage.Rows.Count; row++)
+            {
+                string imageData = homelist[row].Photos;
+
+                Image profileImage = (Image)grdHomePage.Rows[row].FindControl("imgHouse");
+
+                profileImage.ImageUrl = imageData;
+            }
         }
 
 
