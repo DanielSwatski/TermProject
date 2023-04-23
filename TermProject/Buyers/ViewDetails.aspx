@@ -11,6 +11,25 @@
      <form id="form1" runat="server">
         <div class="container">
 
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+            <div class="container-fluid">
+                <asp:HyperLink class="navbar-brand" ID="hplHome" runat="server" NavigateUrl="">Zillup</asp:HyperLink>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto ">
+                        <li class="nav-item">
+                            <asp:HyperLink class="nav-link mx-2" ID="hplHouse" runat="server" NavigateUrl="">Houses</asp:HyperLink>
+                        </li>
+                        <li class="nav-item">
+                            <asp:HyperLink class="nav-link mx-2" ID="hplShowings" runat="server" NavigateUrl="">Showings</asp:HyperLink>
+                        </li>
+                        <li class="nav-item">
+                            <asp:HyperLink class="nav-link mx-2" ID="hplLogin" runat="server" NavigateUrl="~/UserCreateLogin/Login.aspx">Logout</asp:HyperLink>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
              <h3 class="mb-4">Home Info</h3>
           <div class="table-responsive">
