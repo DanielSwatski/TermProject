@@ -22,6 +22,55 @@ namespace SoapAPITest
 
 
         [WebMethod]
+        public int CreateOffer(string address, string username, int value, string type, string contingencies, bool prevhome, string Date)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_CREATEOFFER";
+
+            SqlParameter input = new SqlParameter("@address", address);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            input = new SqlParameter("@username", username);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            input = new SqlParameter("@offer", value);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.Int;
+            objCommand.Parameters.Add(input);
+
+            input = new SqlParameter("@type", type);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            input = new SqlParameter("@contingencies", contingencies);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            input = new SqlParameter("@prevhome", prevhome);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            input = new SqlParameter("@date", Date);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            return objDB.DoUpdate(objCommand);
+        }
+
+
+
+        [WebMethod]
         public int CreateShowing(String address, String buyer, String Date)
         {
             DBConnect objDB = new DBConnect();
