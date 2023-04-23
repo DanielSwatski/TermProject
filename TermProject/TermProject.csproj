@@ -94,6 +94,9 @@
     <Content Include="Agents\AgentUserCreation.aspx" />
     <Content Include="Buyers\BuyerHomepage.aspx" />
     <Content Include="Buyers\BuyersUserCreation.aspx" />
+    <Content Include="Buyers\MakeOffer.aspx" />
+    <Content Include="Buyers\ScheduleShowing.aspx" />
+    <Content Include="Buyers\ViewDetails.aspx" />
     <Content Include="Connected Services\ServiceReference1\TermProject.ServiceReference1.GetTimeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -153,6 +156,27 @@
     </Compile>
     <Compile Include="Buyers\BuyersUserCreation.aspx.designer.cs">
       <DependentUpon>BuyersUserCreation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Buyers\MakeOffer.aspx.cs">
+      <DependentUpon>MakeOffer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buyers\MakeOffer.aspx.designer.cs">
+      <DependentUpon>MakeOffer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Buyers\ScheduleShowing.aspx.cs">
+      <DependentUpon>ScheduleShowing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buyers\ScheduleShowing.aspx.designer.cs">
+      <DependentUpon>ScheduleShowing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Buyers\ViewDetails.aspx.cs">
+      <DependentUpon>ViewDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buyers\ViewDetails.aspx.designer.cs">
+      <DependentUpon>ViewDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
