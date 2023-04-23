@@ -135,5 +135,11 @@ namespace TermProject.Buyers
         {
             Response.Redirect("MakeOffer.aspx");
         }
+
+        // leave a survey and a comment if they want to here
+        protected void btnSurveyComment_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SurveyComments.aspx");
+        }
     }
 }
