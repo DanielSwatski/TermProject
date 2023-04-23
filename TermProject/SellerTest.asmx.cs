@@ -22,6 +22,34 @@ namespace SoapAPITest
 
 
         [WebMethod]
+        public int CreateShowing(String address, String buyer, String Date)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_CREATESHOWING";
+
+            SqlParameter input = new SqlParameter("@HomeAddress", address);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            input = new SqlParameter("@HomeBuyerUsername", buyer);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            input = new SqlParameter("@DateOfShowing", Date);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+
+            return objDB.DoUpdate(objCommand);
+        }
+
+        [WebMethod]
         public DataSet HomeDetails(String address)
         {
             DBConnect objDB = new DBConnect();

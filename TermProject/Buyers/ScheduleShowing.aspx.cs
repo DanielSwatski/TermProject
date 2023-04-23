@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SoapAPITest;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,16 @@ namespace TermProject.Buyers
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+
+            SellerTest cur = new SellerTest();
+            cur.CreateShowing(Request.Cookies["House"].Values["HomeAddress"], Session["username"].ToString(), txtDate.Text);
+
+            // takes you back to the search page
+            Response.Redirect("../Buyers/BuyerHomepage.aspx");
         }
     }
 }

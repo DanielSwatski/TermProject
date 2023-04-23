@@ -114,12 +114,19 @@ namespace TermProject.Buyers
 
             HttpCookie addable = new HttpCookie("House");
             addable.Values["HomeAddress"] = grdHomePage.Rows[gvr.RowIndex].Cells[1].Text;
+            Response.Cookies.Add(addable);
             Response.Redirect("ViewDetails.aspx");
         }
 
         // takes user to make showing page
         protected void btnShowing_Click(object sender, EventArgs e)
         {
+            Button btn = (Button)sender;
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+
+            HttpCookie addable = new HttpCookie("House");
+            addable.Values["HomeAddress"] = grdHomePage.Rows[gvr.RowIndex].Cells[1].Text;
+            Response.Cookies.Add(addable);
             Response.Redirect("ScheduleShowing.aspx");
         }
 
