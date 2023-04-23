@@ -10,8 +10,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-        </div>
+
 
          <h1 class="text-center mt-5">Schedule your showing</h1>
 
@@ -33,8 +32,6 @@
             </div>
         </div>
 
-
-        <p> Where do you want to make the comment page? We have to find a good spot for it. I think here might be good</p>
     </form>
 </body>
 </html>

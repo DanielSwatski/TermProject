@@ -154,6 +154,11 @@
                                         <asp:Button ID="btnOffer" runat="server" CausesValidation="false" CommandName="" Text="Make Offer" OnClick="btnOffer_Click" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Give Survey" ShowHeader="False">
+                                    <ItemTemplate>
+                                        <asp:Button ID="btnSurveyComment" runat="server" CausesValidation="false" CommandName="" Text="Make Survey" OnClick="btnSurveyComment_Click" />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 
                             </Columns>
                         </asp:GridView>

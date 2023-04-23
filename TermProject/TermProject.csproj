@@ -96,6 +96,7 @@
     <Content Include="Buyers\BuyersUserCreation.aspx" />
     <Content Include="Buyers\MakeOffer.aspx" />
     <Content Include="Buyers\ScheduleShowing.aspx" />
+    <Content Include="Buyers\SurveyComments.aspx" />
     <Content Include="Buyers\ViewDetails.aspx" />
     <Content Include="Connected Services\ServiceReference1\TermProject.ServiceReference1.GetTimeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -170,6 +171,13 @@
     </Compile>
     <Compile Include="Buyers\ScheduleShowing.aspx.designer.cs">
       <DependentUpon>ScheduleShowing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Buyers\SurveyComments.aspx.cs">
+      <DependentUpon>SurveyComments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buyers\SurveyComments.aspx.designer.cs">
+      <DependentUpon>SurveyComments.aspx</DependentUpon>
     </Compile>
     <Compile Include="Buyers\ViewDetails.aspx.cs">
       <DependentUpon>ViewDetails.aspx</DependentUpon>
