@@ -51,6 +51,15 @@ namespace TermProject.Buyers
         protected global::System.Web.UI.WebControls.Label lblSaleType;
 
         /// <summary>
+        /// ddlSaleTypes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSaleTypes;
+
+        /// <summary>
         /// lblContigencies control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace TermProject.Buyers
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSell;
+
+        /// <summary>
+        /// chkBoxPrevHome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkBoxPrevHome;
 
         /// <summary>
         /// Label2 control.

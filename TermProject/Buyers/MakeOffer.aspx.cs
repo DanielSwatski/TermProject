@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SoapAPITest;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,6 +19,12 @@ namespace TermProject.Buyers
         // submits the offer
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+
+            SellerTest cur = new SellerTest();
+            cur.CreateOffer(Request.Cookies["House"].Values["HomeAddress"], Session["username"].ToString(), int.Parse(txtOffer.Text), ddlSaleTypes.SelectedValue, txtBoxContigencies.Text, chkBoxPrevHome.Checked, txtBoxDate.Text);
+
+
+            Response.Redirect("BuyerHomepage.aspx");
 
         }
     }

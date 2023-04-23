@@ -18,23 +18,26 @@
                     <div class="col-md-6">
 
                     <div class="col-md-6">
-                        <asp:Label ID="lblOffer" runat="server" Text="Date of Showing" class="form-label"></asp:Label>
-                        <asp:TextBox ID="txtOffer" class="form-control" runat="server" TextMode="Number" ></asp:TextBox>
+                        <asp:Label ID="lblOffer" runat="server" Text="Offer Vlue" class="form-label"></asp:Label>
+                        <asp:TextBox ID="txtOffer" runat="server" TextMode="Number"  ></asp:TextBox>
                     </div>
 
                     <div class="col-md-6">
                         <asp:Label ID="lblSaleType" runat="server" Text="SaleType" class="form-label"></asp:Label>
-                        <p> ddl here</p>
+                        <asp:DropDownList runat="server" ID="ddlSaleTypes" class="dropdown-item-text">
+                            <asp:ListItem>Mortgage</asp:ListItem>
+                            <asp:ListItem>Cash</asp:ListItem>
+                        </asp:DropDownList>
                     </div>
 
                     <div class="col-md-6">
                         <asp:Label ID="lblContigencies" runat="server" Text="Contigencies" class="form-label"></asp:Label>
-                        <asp:TextBox ID="txtBoxContigencies" class="form-control" runat="server" ></asp:TextBox>
+                        <asp:TextBox ID="txtBoxContigencies"  runat="server" ></asp:TextBox>
                     </div>
 
                     <div class="col-md-6">
-                        <asp:Label ID="lblSell" runat="server" Text="Sell a previous house" class="form-label"></asp:Label>
-                        <p> Checkbox if sell or not sell</p>
+                        <asp:Label ID="lblSell" runat="server" Text="Selling old home" class="form-label"></asp:Label>
+                        <asp:CheckBox ID="chkBoxPrevHome" runat="server" />
                     </div>
 
                     <div class="col-md-6">

@@ -133,12 +133,26 @@ namespace TermProject.Buyers
         // takes user to make offer page
         protected void btnOffer_Click(object sender, EventArgs e)
         {
+            Button btn = (Button)sender;
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+
+            HttpCookie addable = new HttpCookie("House");
+            addable.Values["HomeAddress"] = grdHomePage.Rows[gvr.RowIndex].Cells[1].Text;
+            Response.Cookies.Add(addable);
+
             Response.Redirect("MakeOffer.aspx");
         }
 
         // leave a survey and a comment if they want to here
         protected void btnSurveyComment_Click(object sender, EventArgs e)
         {
+            Button btn = (Button)sender;
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+
+            HttpCookie addable = new HttpCookie("House");
+            addable.Values["HomeAddress"] = grdHomePage.Rows[gvr.RowIndex].Cells[1].Text;
+            Response.Cookies.Add(addable);
+
             Response.Redirect("SurveyComments.aspx");
         }
     }
