@@ -103,5 +103,30 @@ namespace TermProject.Buyers
             Response.Cookies.Add(deletable);
             Response.Redirect("../UserCreateLogin/Login.aspx");
         }
+
+
+        // takes user to view details page
+
+        protected void btnDetails_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+
+            HttpCookie addable = new HttpCookie("House");
+            addable.Values["HomeAddress"] = grdHomePage.Rows[gvr.RowIndex].Cells[1].Text;
+            Response.Redirect("ViewDetails.aspx");
+        }
+
+        // takes user to make showing page
+        protected void btnShowing_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ScheduleShowing.aspx");
+        }
+
+        // takes user to make offer page
+        protected void btnOffer_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MakeOffer.aspx");
+        }
     }
 }

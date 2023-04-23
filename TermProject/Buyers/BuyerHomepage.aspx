@@ -138,6 +138,23 @@
                                 <asp:BoundField DataField="ZipCode" HeaderText="Zip" />
                                 <asp:BoundField DataField="AskingPrice" HeaderText="Price" />
                                 <asp:BoundField DataField="BedRoomNumber" HeaderText="Bed Rooms" />
+                                
+                                <asp:TemplateField HeaderText="View Details" ShowHeader="False">
+                                    <ItemTemplate>
+                                        <asp:Button ID="btnDetails" runat="server" CausesValidation="false" CommandName="" Text="View Details" OnClick="btnDetails_Click" />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Schedule Showing" ShowHeader="False">
+                                    <ItemTemplate>
+                                        <asp:Button ID="btnShowing" runat="server" CausesValidation="false" CommandName="" Text="Schedule Showing"  OnClick="btnShowing_Click"/>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Make Offer" ShowHeader="False">
+                                    <ItemTemplate>
+                                        <asp:Button ID="btnOffer" runat="server" CausesValidation="false" CommandName="" Text="Make Offer" OnClick="btnOffer_Click" />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                
                             </Columns>
                         </asp:GridView>
                     </div>
@@ -147,8 +164,7 @@
 
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdlSearch">
-            Launch demo modal
-        </button>
+            Launch demo modal</button>
 
         <!-- Modal Search -->
         <div class="modal fade" id="mdlSearch" tabindex="-1" aria-labelledby="mdlSearchLabel" aria-hidden="true">

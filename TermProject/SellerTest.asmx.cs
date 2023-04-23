@@ -21,6 +21,23 @@ namespace SoapAPITest
     {
 
 
+        [WebMethod]
+        public DataSet HomeDetails(String address)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_HOMEDETAILS";
+
+            SqlParameter input = new SqlParameter("@address", address);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            return objDB.GetDataSet(objCommand);
+        }
+
 
         // reject offer
         // just delete record
