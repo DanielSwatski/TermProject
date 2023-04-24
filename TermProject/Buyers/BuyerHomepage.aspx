@@ -36,7 +36,7 @@
                     <div class="col-md-12">
                         <asp:Label ID="lblSearch" runat="server" Text="Search By:" class="form-label"></asp:Label>
                         <asp:DropDownList runat="server" ID="ddlSearch" CssClass="form-select" OnSelectedIndexChanged="ddlSearch_SelectedIndexChanged">
-                            <asp:ListItem disabled selected>Search...</asp:ListItem>
+                            <asp:ListItem disabled Selected>Search...</asp:ListItem>
                             <asp:ListItem>StatePrice</asp:ListItem>
                             <asp:ListItem>StatePropertyTypePrice</asp:ListItem>
                             <asp:ListItem>StatePriceRooms</asp:ListItem>
@@ -138,7 +138,7 @@
                                 <asp:BoundField DataField="ZipCode" HeaderText="Zip" />
                                 <asp:BoundField DataField="AskingPrice" HeaderText="Price" />
                                 <asp:BoundField DataField="BedRoomNumber" HeaderText="Bed Rooms" />
-                                
+
                                 <asp:TemplateField HeaderText="View Details" ShowHeader="False">
                                     <ItemTemplate>
                                         <asp:Button ID="btnDetails" runat="server" CausesValidation="false" CommandName="" Text="View Details" OnClick="btnDetails_Click" />
@@ -146,7 +146,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Schedule Showing" ShowHeader="False">
                                     <ItemTemplate>
-                                        <asp:Button ID="btnShowing" runat="server" CausesValidation="false" CommandName="" Text="Schedule Showing"  OnClick="btnShowing_Click"/>
+                                        <asp:Button ID="btnShowing" runat="server" CausesValidation="false" CommandName="" Text="Schedule Showing" OnClick="btnShowing_Click" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Make Offer" ShowHeader="False">
@@ -159,7 +159,7 @@
                                         <asp:Button ID="btnSurveyComment" runat="server" CausesValidation="false" CommandName="" Text="Make Survey" OnClick="btnSurveyComment_Click" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                
+
                             </Columns>
                         </asp:GridView>
                     </div>
@@ -183,32 +183,32 @@
                         <div class="d-flex align-items-center justify-content-center">
                             <div class="rounded bg-light shadow h-auto w-auto mx-auto p-3">
                                 <div class="row g-3">
-                                    <div id="states" class="col-md-12" style="display:none;">
+                                    <div id="states" class="col-md-12" style="display: none;">
                                         <asp:Label ID="lblStates" runat="server" Text="States" class="form-label"></asp:Label>
                                         <asp:TextBox ID="txtState" runat="server" Text="PA" CssClass="form-control"></asp:TextBox>
                                     </div>
 
-                                    <div id="min" class="col-md-6" style="display:none;">
+                                    <div id="min" class="col-md-6" style="display: none;">
                                         <asp:Label ID="lblMin" runat="server" Text="Min" class="form-label"></asp:Label>
                                         <asp:TextBox ID="txtMin" runat="server" Text="0" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                     </div>
 
-                                    <div id="max" class="col-md-6" style="display:none;">
+                                    <div id="max" class="col-md-6" style="display: none;">
                                         <asp:Label ID="lblMax" runat="server" Text="Max" class="form-label"></asp:Label>
                                         <asp:TextBox ID="txtMax" runat="server" Text="500" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                     </div>
 
-                                    <div id="propertyType" class="col-md-12" style="display:none;">
+                                    <div id="propertyType" class="col-md-12" style="display: none;">
                                         <asp:Label ID="lblPropertyType" runat="server" Text="Property Type" class="form-label"></asp:Label>
                                         <asp:TextBox ID="txtPropertyType" runat="server" Text="Test" CssClass="form-control"></asp:TextBox>
                                     </div>
 
-                                    <div id="room" class="col-md-12" style="display:none;">
+                                    <div id="room" class="col-md-12" style="display: none;">
                                         <asp:Label ID="lblRoom" runat="server" Text="Bedrooms" class="form-label"></asp:Label>
                                         <asp:TextBox ID="txtRooms" runat="server" Text="1" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                     </div>
 
-                                    <div id="amenities" class="col-md-12" style="display:none;">
+                                    <div id="amenities" class="col-md-12" style="display: none;">
                                         <asp:Label ID="lblAmenities" runat="server" Text="Amenities" class="form-label"></asp:Label>
                                         <asp:TextBox ID="txtAmenities" runat="server" Text="Test" CssClass="form-control"></asp:TextBox>
                                     </div>
@@ -224,7 +224,7 @@
             </div>
         </div>
 
-        <h3> Accepted Offers</h3>
+        <h3>Accepted Offers</h3>
         <asp:GridView runat="server" ID="grdViewAcceptedOffers" AutoGenerateColumns="false">
             <Columns>
                 <asp:BoundField DataField="HomeAddress" HeaderText="Address" />
@@ -235,11 +235,11 @@
         </asp:GridView>
 
         <div>
-            <p> Need to be able to schedule a showing for a home they wish to look at</p>
-            <p> Should be able to leave feedback about a home, which should be the questionaire</p>
-            <p> Need to include a dashboard for all potential things a user can do</p>
+            <p>Need to be able to schedule a showing for a home they wish to look at</p>
+            <p>Should be able to leave feedback about a home, which should be the questionaire</p>
+            <p>Need to include a dashboard for all potential things a user can do</p>
 
-            <p> Need to be able to submit an offer which has to include all information</p>
+            <p>Need to be able to submit an offer which has to include all information</p>
         </div>
     </form>
 

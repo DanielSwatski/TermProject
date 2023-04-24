@@ -5,7 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Utilities;
-
+using System.Security.Cryptography;
+using System.Text;
 using System.Net;
 using System.Net.Mail;
 using TermProject.Classes;
@@ -19,6 +20,17 @@ namespace TermProject.UserCreateLogin
         protected static int recoverykey = -1;
         protected static int question = -1;
 
+        private string sha256(string randomString)
+        {
+            var crypt = new SHA256Managed();
+            var hash = new StringBuilder();
+            byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(randomString));
+            foreach (byte theByte in crypto)
+            {
+                hash.Append(theByte.ToString("x2"));
+            }
+            return hash.ToString();
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -67,17 +79,16 @@ namespace TermProject.UserCreateLogin
             // checks to see if the code is correct and then tests if the security question answer was correct and then updates the table
 
             try
-            {                                               // calls the stored procedure for the question here
-                //lblEmailSent.Text = "RECOVERY KEY :" + txtBoxCode.Text + "    answer" + txtBoxAnswer.Text + "    email" + txtBoxEmail.Text;
-                if (recoverykey != -1 && recoverykey == int.Parse(txtBoxCode.Text) && StoredProceduresClass.securityQuestion(question, txtBoxAnswer.Text, txtBoxEmail.Text, txtBoxNewPassword.Text ))
+            {                                               
+                // calls the stored procedure for the question here
+                // lblEmailSent.Text = "RECOVERY KEY :" + txtBoxCode.Text + "    answer" + txtBoxAnswer.Text + "    email" + txtBoxEmail.Text;
+                if (recoverykey != -1 && recoverykey == int.Parse(txtBoxCode.Text) && StoredProceduresClass.securityQuestion(question, txtBoxAnswer.Text, txtBoxEmail.Text, sha256(txtBoxNewPassword.Text)))
                 {
                     // resets the password
-                    //inside the stored procedure
+                    // inside the stored procedure
                 }
-                    
 
             }
-
             catch(Exception ex)
             {
 
