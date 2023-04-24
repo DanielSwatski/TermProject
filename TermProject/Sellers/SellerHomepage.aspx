@@ -67,6 +67,11 @@
             <p>Must receive notifications about offers and showings</p>
             <p>Need to include a dashboard for all potential things a user can do</p>
 
+
+
+
+
+
         </div>
     </form>
 

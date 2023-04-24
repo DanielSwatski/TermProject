@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="col-md-6">
-                        <asp:Label ID="lblRoomSize" runat="server" Text="Room Size" class="form-label"></asp:Label>
+                        <asp:Label ID="lblRoomSize" runat="server" Text="Room Size in square footage" class="form-label"></asp:Label>
                         <asp:TextBox ID="txtRoomSize" class="form-control" runat="server" TextMode="Number" required></asp:TextBox>
                     </div>
 
