@@ -63,6 +63,10 @@ namespace TermProject.HouseForm
             {
                 /*lblDisplay.Text = "Error: " + ex.Message;*/
             }
+
+            
+            Response.Redirect("ManageHouse.aspx");
+
         }
     }
 }

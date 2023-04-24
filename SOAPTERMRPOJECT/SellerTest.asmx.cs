@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Services;
 using Utilities;
 
-namespace SoapAPITest
+namespace SOAPTERMRPOJECT
 {
     /// <summary>
     /// Summary description for SellerTest
@@ -16,7 +16,7 @@ namespace SoapAPITest
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
-    [System.Web.Script.Services.ScriptService]
+    // [System.Web.Script.Services.ScriptService]
     public class SellerTest : System.Web.Services.WebService
     {
 

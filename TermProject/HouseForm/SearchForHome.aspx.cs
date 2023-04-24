@@ -1,10 +1,9 @@
-﻿using SoapAPITest;
+﻿using SOAPTERMRPOJECT;
 using System;
 using System.Data;
 using System.IO;
 using System.Net;
 using System.Web.Script.Serialization;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 //using TermProject.ServiceReference3;
 

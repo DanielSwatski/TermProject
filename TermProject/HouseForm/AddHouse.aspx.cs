@@ -18,7 +18,7 @@ namespace TermProject.HouseForm
         protected void Page_Load(object sender, EventArgs e)
         {
             // remove this later
-            Session["username"] = "Daniel";
+            //Session["username"] = "Daniel";
         }
 
         protected void txtBedRooms_TextChanged(object sender, EventArgs e)
@@ -123,6 +123,19 @@ namespace TermProject.HouseForm
             catch (Exception ex)
             {
                 /*lblDisplay.Text = "Error: " + ex.Message;*/
+            }
+            string currentUserType = Session["usertype"].ToString();
+            switch (currentUserType)
+            {
+                case ("RealEstateAgent"):
+                    Response.Redirect("../Agents/AgentHomepage.aspx");
+                    break;
+                case ("HomeBuyer"):
+                    Response.Redirect("../Buyers/BuyerHomepage.aspx");
+                    break;
+                case ("HomeSeller"):
+                    Response.Redirect("../Sellers/SellerHomepage.aspx");
+                    break;
             }
         }
     }

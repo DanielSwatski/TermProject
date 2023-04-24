@@ -124,7 +124,6 @@
     <Content Include="HouseForm\SearchForHome.aspx" />
     <Content Include="Sellers\SellerHomepage.aspx" />
     <Content Include="Sellers\SellersUserCreation.aspx" />
-    <Content Include="SellerTest.asmx" />
     <Content Include="Styles\TermProjectStyles.css" />
     <Content Include="UserCreateLogin\Login.aspx" />
     <Content Include="Web.config" />
@@ -245,10 +244,6 @@
     <Compile Include="Sellers\SellersUserCreation.aspx.designer.cs">
       <DependentUpon>SellersUserCreation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SellerTest.asmx.cs">
-      <DependentUpon>SellerTest.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="UserCreateLogin\ForgottenPassword.aspx.cs">
       <DependentUpon>ForgottenPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -287,6 +282,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SOAPTERMRPOJECT\SOAPTERMRPOJECT.csproj">
+      <Project>{7770A070-EEEF-4769-90F5-065735136B7F}</Project>
+      <Name>SOAPTERMRPOJECT</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StoredProcedures\ProjectClasses.csproj">
       <Project>{94BA79BA-25C4-4187-AF9F-370C7574BF2F}</Project>
       <Name>ProjectClasses</Name>

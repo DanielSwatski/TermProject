@@ -41,6 +41,12 @@ namespace TermProject
                 {
                     string currentUserType = cookie.Values["usertype"];
 
+                    string currentUsername = cookie.Values["username"];
+
+                    Session["username"] = currentUsername;
+                    Session["usertype"] = currentUserType;
+
+
 
                     switch (currentUserType)
                     {
@@ -63,7 +69,13 @@ namespace TermProject
                 if (cookie != null)
                 {
                     string currentUserType = cookie.Values["usertype"];
-                    
+
+                    string currentUsername = cookie.Values["username"];
+
+                    Session["username"] = currentUsername;
+                    Session["usertype"] = currentUserType;
+
+
 
                     switch (currentUserType)
                     {
@@ -102,7 +114,7 @@ namespace TermProject
 
                     cookie.Values["username"] = currentUsername;
                     cookie.Values["usertype"] = currentUserType;
-
+                    
                     cookie.Expires = DateTime.Now.AddDays(30);
                     Response.Cookies.Add(cookie);
                 }
