@@ -53,6 +53,7 @@ namespace TermProject
                 if (cookie != null)
                 {
                     string currentUserType = cookie.Values["usertype"];
+                    
 
                     switch (currentUserType)
                     {
@@ -119,6 +120,7 @@ namespace TermProject
 
                 Session["username"] = currentUsername;
                 Session["usertype"] = currentUserType;
+
 
                 if (chkSaveInformation.Checked) {
                     HttpCookie cookie = new HttpCookie("LoginSave");

@@ -10,6 +10,7 @@ using System.Net;
 using System.Data;
 using TermProject.HouseForm;
 using System.Data.SqlClient;
+using SoapAPITest;
 
 namespace TermProject.Buyers
 {
@@ -144,6 +145,7 @@ namespace TermProject.Buyers
         }
 
         // leave a survey and a comment if they want to here
+        // how should we let them know that they cannot leave a survey or comment because they havent actually seen the house yet
         protected void btnSurveyComment_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -153,7 +155,17 @@ namespace TermProject.Buyers
             addable.Values["HomeAddress"] = grdHomePage.Rows[gvr.RowIndex].Cells[1].Text;
             Response.Cookies.Add(addable);
 
-            Response.Redirect("SurveyComments.aspx");
+            SellerTest cur = new SellerTest();
+            
+            DataSet ds = cur.ShowingDate(grdHomePage.Rows[gvr.RowIndex].Cells[1].Text, Session["username"].ToString());
+
+            // issue with the date time compariso
+            if(DateTime.Today > DateTime.Parse(ds.Tables[0].Rows[0].ItemArray[0].ToString()) )
+                Response.Redirect("SurveyComments.aspx");
+            else
+            {
+                // not sure what we should here if its before. Should we display an error
+            }
         }
     }
 }
