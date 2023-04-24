@@ -139,6 +139,13 @@ namespace TermProject.HouseForm
             SellerTest cur = new SellerTest();
             cur.RejectOffer(grdViewOffers.Rows[gvr.RowIndex].Cells[0].Text, int.Parse(grdViewOffers.Rows[gvr.RowIndex].Cells[1].Text));
             showHouses();
+
+            /*}
+            catch (Exception ex)
+            {
+                *//*lblDisplay.Text = "Error: " + ex.Message;*//*
+            }*/
+
         }
 
 

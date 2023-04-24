@@ -14,9 +14,19 @@ namespace TermProject
 {
     public partial class Login : System.Web.UI.Page
     {
-        private Byte[] key = { 250, 101, 18, 76, 45, 135, 207, 118, 4, 171, 3, 168, 202, 241, 37, 199 };
-        private Byte[] vector = { 146, 64, 191, 111, 23, 3, 113, 119, 231, 121, 252, 112, 79, 32, 114, 156 };
         protected static int recoverykey = -1;
+
+        private string sha256(string randomString)
+        {
+            var crypt = new System.Security.Cryptography.SHA256Managed();
+            var hash = new System.Text.StringBuilder();
+            byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(randomString));
+            foreach (byte theByte in crypto)
+            {
+                hash.Append(theByte.ToString("x2"));
+            }
+            return hash.ToString();
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -41,7 +51,7 @@ namespace TermProject
                             Response.Redirect("../Buyers/BuyerHomepage.aspx");
                             break;
                         case ("HomeSeller"):
-                            Response.Redirect("../Sellers/SellerHomepage.apsx");
+                            Response.Redirect("../Sellers/SellerHomepage.aspx");
                             break;
                     }
                 }
@@ -73,42 +83,7 @@ namespace TermProject
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            UTF8Encoding encoder = new UTF8Encoding();
-            String password;
-            Byte[] textBytes;
-
-            textBytes = encoder.GetBytes(txtPassword.Text);
-
-            // a memory stream used to store the encrypted data temporarily, and
-
-            // a crypto stream that performs the encryption algorithm.
-
-            RijndaelManaged rmEncryption = new RijndaelManaged();
-
-            MemoryStream myMemoryStream = new MemoryStream();
-
-            CryptoStream myEncryptionStream = new CryptoStream(myMemoryStream, rmEncryption.CreateEncryptor(key, vector), CryptoStreamMode.Write);
-            // Use the crypto stream to perform the encryption on the plain text byte array.
-
-            myEncryptionStream.Write(textBytes, 0, textBytes.Length);
-
-            myEncryptionStream.FlushFinalBlock();
-            // Retrieve the encrypted data from the memory stream, and write it to a separate byte array.
-
-            myMemoryStream.Position = 0;
-
-            Byte[] encryptedBytes = new Byte[myMemoryStream.Length];
-
-            myMemoryStream.Read(encryptedBytes, 0, encryptedBytes.Length);
-
-            // Close all the streams.
-
-            myEncryptionStream.Close();
-
-            myMemoryStream.Close();
-
-
-            password = Convert.ToBase64String(encryptedBytes);
+            string password = sha256(txtPassword.Text);
 
             DataSet checkLogin = StoredProceduresClass.loginCheck(txtUsername.Text, password);
 
@@ -141,9 +116,13 @@ namespace TermProject
                         Response.Redirect("../Buyers/BuyerHomepage.aspx");
                         break;
                     case ("HomeSeller"):
-                        Response.Redirect("../Sellers/SellerHomepage.apsx");
+                        Response.Redirect("../Sellers/SellerHomepage.aspx");
                         break;
                 }
+            }
+            else
+            {
+                lblError.Text = "Username or Password was incorrect!";
             }
 
         }
