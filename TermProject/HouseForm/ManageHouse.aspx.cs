@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 //using TermProject.ServiceReference3;
@@ -114,7 +116,45 @@ namespace TermProject.HouseForm
         // reject offer
         protected void btnReject_Click(object sender, EventArgs e)
         {
+            // deletes the offer from the db using the delete api from jason
+            // reject based on username and value
 
+            // use this string once uploaded to api, otherwise i am using localhost
+            String webApiUrl = "https://cis-iis2.temple.edu/spring2023/CIS3342_tug87965/WebAPI/api/TermProject/";
+
+            String localhost = "";
+            /*
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            try
+            {
+                WebRequest request = WebRequest.Create(webApiUrl + "postHouse/");
+                request.Method = "DELETE";
+                request.ContentLength = jsonCustomer.Length;
+                request.ContentType = "application/json";
+
+                StreamWriter writer = new StreamWriter(request.GetRequestStream());
+                writer.Write(jsonCustomer);
+                writer.Flush();
+                writer.Close();
+
+                WebResponse response = request.GetResponse();
+                Stream theDataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(theDataStream);
+                String data = reader.ReadToEnd();
+                reader.Close();
+                response.Close();
+
+                /*                if (data == "true")
+                                    lblDisplay.Text = "The customer was successfully saved to the database.";
+                                else
+                                    lblDisplay.Text = "A problem occurred while adding the customer to the database. The data wasn't recorded.";*/
+
+            }
+            catch (Exception ex)
+            {
+                /*lblDisplay.Text = "Error: " + ex.Message;*/
+            }
+            */
         }
 
         protected void txtAddRoom_Click(object sender, EventArgs e)
