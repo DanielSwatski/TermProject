@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SoapAPITest;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,5 +14,23 @@ namespace TermProject.Buyers
         {
 
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            // Request.Cookies["House"].Values["HomeAddress"], Session["username"].ToString(
+            string address = Request.Cookies["House"].Values["HomeAddress"];
+            string buyer = Session["username"].ToString();
+
+            SellerTest cur = new SellerTest();
+            // checks to see if the comment textbox is empty
+            if(txtBoxComment.Text.Length != 0)
+            {
+                cur.MakeComment(address, txtBoxComment.Text);
+            }
+
+            cur.MakeSurvey(address,  ddlPrice.SelectedValue, ddlLocation.SelectedValue, ddlHomeOpinion.SelectedValue, int.Parse(txtOffer.Text), buyer); 
+
+        }
+
     }
 }

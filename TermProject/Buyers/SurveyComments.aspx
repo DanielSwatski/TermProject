@@ -14,7 +14,6 @@
 
 
             <h1 class="text-center mt-5">Leave a comment and survey about your experience seeing our house</h1>
-            <p> Jason Im gonna change this later. Im tired now</p>
 
         <div class="d-flex align-items-center justify-content-center m-5">
             <div class="rounded bg-light shadow h-auto w-auto mx-auto p-3">
@@ -22,31 +21,47 @@
                     <div class="col-md-6">
 
                     <div class="col-md-6">
-                        <asp:Label ID="lblOffer" runat="server" Text="Offer Vlue" class="form-label"></asp:Label>
-                        <asp:TextBox ID="txtOffer" runat="server" TextMode="Number"  ></asp:TextBox>
-                    </div>
-
-                    <div class="col-md-6">
-                        <asp:Label ID="lblSaleType" runat="server" Text="SaleType" class="form-label"></asp:Label>
-                        <asp:DropDownList runat="server" ID="ddlSaleTypes" class="dropdown-item-text">
-                            <asp:ListItem>Mortgage</asp:ListItem>
-                            <asp:ListItem>Cash</asp:ListItem>
+                        <asp:Label ID="lblPrice" runat="server" Text="Price Opinion" class="form-label"></asp:Label>
+                        <asp:DropDownList runat="server" ID="ddlPrice" class="dropdown-item-text">
+                            <asp:ListItem>Great</asp:ListItem>
+                            <asp:ListItem>Good</asp:ListItem>
+                            <asp:ListItem>Ok</asp:ListItem>
+                            <asp:ListItem>Bad</asp:ListItem>
+                            <asp:ListItem>Terrible</asp:ListItem>
                         </asp:DropDownList>
                     </div>
 
                     <div class="col-md-6">
-                        <asp:Label ID="lblContigencies" runat="server" Text="Contigencies" class="form-label"></asp:Label>
-                        <asp:TextBox ID="txtBoxContigencies"  runat="server" ></asp:TextBox>
+                        <asp:Label ID="lblLocation" runat="server" Text="Location Opinion" class="form-label"></asp:Label>
+                        <asp:DropDownList runat="server" ID="ddlLocation" class="dropdown-item-text">
+                            <asp:ListItem>Great</asp:ListItem>
+                            <asp:ListItem>Good</asp:ListItem>
+                            <asp:ListItem>Ok</asp:ListItem>
+                            <asp:ListItem>Bad</asp:ListItem>
+                            <asp:ListItem>Terrible</asp:ListItem>
+                        </asp:DropDownList>
                     </div>
 
                     <div class="col-md-6">
-                        <asp:Label ID="lblSell" runat="server" Text="Selling old home" class="form-label"></asp:Label>
-                        <asp:CheckBox ID="chkBoxPrevHome" runat="server" />
+                        <asp:Label ID="lblHome" runat="server" Text="Home Opinion" class="form-label"></asp:Label>
+                        <asp:DropDownList runat="server" ID="ddlHomeOpinion" class="dropdown-item-text">
+                            <asp:ListItem>Great</asp:ListItem>
+                            <asp:ListItem>Good</asp:ListItem>
+                            <asp:ListItem>Ok</asp:ListItem>
+                            <asp:ListItem>Bad</asp:ListItem>
+                            <asp:ListItem>Terrible</asp:ListItem>
+                        </asp:DropDownList>
+                        
                     </div>
 
                     <div class="col-md-6">
-                        <asp:Label ID="Label2" runat="server" Text="Move in date" class="form-label"></asp:Label>
-                        <asp:TextBox ID="txtBoxDate" class="form-control" runat="server" TextMode="Date" ></asp:TextBox>
+                        <asp:Label ID="lblRating" runat="server" Text="Rating" class="form-label"></asp:Label>
+                        <asp:TextBox ID="txtOffer" runat="server" TextMode="Number" Text="10" Max="10"></asp:TextBox>
+                    </div>
+
+                    <div class="col-md-6">
+                        <asp:Label ID="lblComment" runat="server" Text="Leave a comment" class="form-label"></asp:Label>
+                        <asp:TextBox ID="txtBoxComment" class="form-control" runat="server"> </asp:TextBox>
                     </div>
 
 
