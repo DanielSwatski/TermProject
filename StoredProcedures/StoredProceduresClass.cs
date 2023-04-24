@@ -61,8 +61,6 @@ namespace TermProject.Classes
             objCommand.Parameters.Add(input);
 
             objDB.DoUpdate(objCommand);
-
-
         }
 
         public static DataSet loginCheck(String username, String password) 
@@ -101,7 +99,6 @@ namespace TermProject.Classes
             objCommand.Parameters.Add(input);
 
             return objDB.GetDataSet(objCommand);
-
         }
 
 
@@ -113,12 +110,10 @@ namespace TermProject.Classes
             objCommand.CommandType = CommandType.StoredProcedure;
             objCommand.CommandText = "TP_GETUSER";
 
-
             SqlParameter input = new SqlParameter("@email", email);
             input.Direction = ParameterDirection.Input;
             input.SqlDbType = SqlDbType.VarChar;
             objCommand.Parameters.Add(input);
-
 
             DataSet ds = objDB.GetDataSet(objCommand);
 
@@ -133,9 +128,6 @@ namespace TermProject.Classes
             {
                 return false;
             }
-
-
-
         }
 
         public static void updatepassword(string email, string password)
@@ -155,59 +147,6 @@ namespace TermProject.Classes
             input.Direction = ParameterDirection.Input;
             input.SqlDbType = SqlDbType.VarChar;
             objCommand.Parameters.Add(input);
-
-            objDB.DoUpdate(objCommand);
-        }
-
-        public static void addHouse(string address, string username, string propertyType, int homeSize, string amenities, string util, int yearBuilt, string garage, string description, int price, DateTime dateListed, string photo) 
-        {
-            DBConnect objDB = new DBConnect();
-            SqlCommand objCommand = new SqlCommand();
-
-            objCommand.CommandType = CommandType.StoredProcedure;
-            objCommand.CommandText = "TP_AddHouse";
-
-            SqlParameter inputParameter = new SqlParameter("@HomeAddress", address);
-            objCommand.Parameters.Add(inputParameter);
-
-            inputParameter = new SqlParameter("@SellerUsername", username);
-            objCommand.Parameters.Add(inputParameter);
-
-            inputParameter = new SqlParameter("@PropertyType", propertyType);
-            objCommand.Parameters.Add(inputParameter);
-
-            inputParameter = new SqlParameter("@HomeSize", homeSize);
-            objCommand.Parameters.Add(inputParameter);
-
-            inputParameter = new SqlParameter("@BedRoomNumber", 0);
-            objCommand.Parameters.Add(inputParameter);
-
-            inputParameter = new SqlParameter("@BathRoomNumber", 0);
-            objCommand.Parameters.Add(inputParameter);
-
-            inputParameter = new SqlParameter("@Amenities", amenities);
-            objCommand.Parameters.Add(inputParameter);
-
-            inputParameter = new SqlParameter("@Utilities", util);
-            objCommand.Parameters.Add(inputParameter);
-
-            inputParameter = new SqlParameter("@YearBuilt", yearBuilt);
-            objCommand.Parameters.Add(inputParameter);
-
-            inputParameter = new SqlParameter("@Garage", garage);
-            objCommand.Parameters.Add(inputParameter);
-
-            inputParameter = new SqlParameter("@Description", description);
-            objCommand.Parameters.Add(inputParameter);
-
-            inputParameter = new SqlParameter("@AskingPrice", price);
-            objCommand.Parameters.Add(inputParameter);
-
-            inputParameter = new SqlParameter("@DateListed", dateListed);
-            objCommand.Parameters.Add(inputParameter);
-
-            inputParameter = new SqlParameter("@Photo", photo);
-            objCommand.Parameters.Add(inputParameter);
 
             objDB.DoUpdate(objCommand);
         }

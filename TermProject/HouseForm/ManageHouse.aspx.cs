@@ -149,12 +149,12 @@ namespace TermProject.HouseForm
                                 else
                                     lblDisplay.Text = "A problem occurred while adding the customer to the database. The data wasn't recorded.";*/
 
-            }
+            /*}
             catch (Exception ex)
             {
-                /*lblDisplay.Text = "Error: " + ex.Message;*/
-            }
-            */
+                *//*lblDisplay.Text = "Error: " + ex.Message;*//*
+            }*/
+            
         }
 
         protected void txtAddRoom_Click(object sender, EventArgs e)
