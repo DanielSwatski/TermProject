@@ -56,14 +56,14 @@
                     <asp:BoundField DataField="Date" HeaderText="Date for Sale" />
                     <asp:TemplateField HeaderText="Accept" ShowHeader="True">
                     <ItemTemplate>
-                        <asp:Button ID="btnAccept" runat="server" Text="Accept Offer" CssClass="btn btn-primary" onClick="btnAccept_Click" />
+                        <asp:Button ID="btnAccept" runat="server" Text="Accept" CssClass="btn btn-primary" onClick="btnAccept_Click" />
 
                     </ItemTemplate>
                 </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="Reject" ShowHeader="True">
                     <ItemTemplate>
-                        <asp:Button ID="btnReject" runat="server" Text="Accept Offer"  CssClass="btn btn-primary" onClick="btnReject_Click" />
+                        <asp:Button ID="btnReject" runat="server" Text="Reject"  CssClass="btn btn-primary" onClick="btnReject_Click" />
 
                     </ItemTemplate>
                 </asp:TemplateField>

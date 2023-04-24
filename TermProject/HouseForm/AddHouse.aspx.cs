@@ -91,6 +91,7 @@ namespace TermProject.HouseForm
             currentHome.Photos = $"~/Storage/{filename}";
 
 
+            // does this hit the serialization requirement
             JavaScriptSerializer js = new JavaScriptSerializer();
             String jsonCustomer = js.Serialize(currentHome);
 
