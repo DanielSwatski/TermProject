@@ -20,6 +20,28 @@ namespace SoapAPITest
     public class SellerTest : System.Web.Services.WebService
     {
 
+        [WebMethod]
+        public int RejectOffer(String user, int value)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_REJECTOFFER";
+
+            SqlParameter input = new SqlParameter("@user", user);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            input = new SqlParameter("value", value);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.Int;
+            objCommand.Parameters.Add(input);
+
+            return objDB.DoUpdate(objCommand);
+        }
+
 
         [WebMethod]
         public int MakeSurvey(String address, String price, String location, String Home, int rating, String buyer)

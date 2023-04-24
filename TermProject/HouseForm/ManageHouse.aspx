@@ -21,6 +21,7 @@
                     <asp:TemplateField HeaderText="Photo" >
                         <ItemTemplate>
                             <img src='<%# Eval("Photo") %>' class="img-fluid" alt="House photo">
+                             <asp:FileUpload ID="upload" runat="server" text="upload here" Visible="false"/>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="HomeAddress" HeaderText="Address" />
@@ -30,6 +31,17 @@
                 </Columns>
             </asp:GridView>
         </div>
+
+        <h3> Rooms</h3>
+        <asp:GridView runat="server" ID="grpRooms" AutoGenerateColumns="False" CssClass="table table-striped" >
+            <Columns>
+                <asp:BoundField DataField="RoomType" HeaderText="Room Type" ItemStyle-CssClass="text-center" />
+                <asp:BoundField DataField="RoomSize" HeaderText="Room Size" ItemStyle-CssClass="text-center" />
+                <asp:ImageField DataImageUrlField="Photo" HeaderText="Photo" ControlStyle-Width="100">
+                    <ControlStyle CssClass="img-thumbnail" />
+                </asp:ImageField>
+            </Columns>
+        </asp:GridView>
 
             <asp:Button ID="txtAddRoom" runat="server" Text="Add Room" OnClick="txtAddRoom_Click" />
 

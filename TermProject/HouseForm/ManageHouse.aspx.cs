@@ -34,6 +34,9 @@ namespace TermProject.HouseForm
             grdHouseInfo.DataSource = cur.GetHousePrice(address);
             grdHouseInfo.DataBind();
 
+            grpRooms.DataSource = cur.GetRooms(address);
+            grpRooms.DataBind();
+
             grdViewShowing.DataSource = cur.GetShowings(address);
             grdViewShowing.DataBind();
 
@@ -51,8 +54,14 @@ namespace TermProject.HouseForm
         // all of these are used for editing the house
         protected void grdHouseInfo_RowEditing(object sender, GridViewEditEventArgs e)
         {
-
             grdHouseInfo.EditIndex = e.NewEditIndex;
+
+            GridViewRow row = grdHouseInfo.Rows[e.NewEditIndex];
+            FileUpload upload = (FileUpload)row.FindControl("upload");
+
+            // Set the Visible property of the FileUpload control to "true"
+            upload.Visible = true;
+
             showHouses();
         }
 
@@ -83,6 +92,7 @@ namespace TermProject.HouseForm
         protected void grdHouseInfo_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             grdHouseInfo.EditIndex = -1;
+            
             showHouses();
 
         }
@@ -119,43 +129,18 @@ namespace TermProject.HouseForm
             // deletes the offer from the db using the delete api from jason
             // reject based on username and value
 
-            // use this string once uploaded to api, otherwise i am using localhost
-            String webApiUrl = "https://cis-iis2.temple.edu/spring2023/CIS3342_tug87965/WebAPI/api/TermProject/";
+            Button btn = (Button)sender;
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
 
-            String localhost = "";
-            /*
-            JavaScriptSerializer js = new JavaScriptSerializer();
-            try
-            {
-                WebRequest request = WebRequest.Create(webApiUrl + "postHouse/");
-                request.Method = "DELETE";
-                request.ContentLength = jsonCustomer.Length;
-                request.ContentType = "application/json";
+           
 
-                StreamWriter writer = new StreamWriter(request.GetRequestStream());
-                writer.Write(jsonCustomer);
-                writer.Flush();
-                writer.Close();
 
-                WebResponse response = request.GetResponse();
-                Stream theDataStream = response.GetResponseStream();
-                StreamReader reader = new StreamReader(theDataStream);
-                String data = reader.ReadToEnd();
-                reader.Close();
-                response.Close();
-
-                /*                if (data == "true")
-                                    lblDisplay.Text = "The customer was successfully saved to the database.";
-                                else
-                                    lblDisplay.Text = "A problem occurred while adding the customer to the database. The data wasn't recorded.";*/
-
-            }
-            catch (Exception ex)
-            {
-                /*lblDisplay.Text = "Error: " + ex.Message;*/
-            }
-            */
+            // will write this in a minuetes
+            SellerTest cur = new SellerTest();
+            cur.RejectOffer(grdViewOffers.Rows[gvr.RowIndex].Cells[0].Text, int.Parse(grdViewOffers.Rows[gvr.RowIndex].Cells[1].Text));
+            showHouses();
         }
+
 
         protected void txtAddRoom_Click(object sender, EventArgs e)
         {

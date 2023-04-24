@@ -64,7 +64,7 @@ namespace TermProject
                             Response.Redirect("../Buyers/BuyerHomepage.aspx");
                             break;
                         case ("HomeSeller"):
-                            Response.Redirect("../Sellers/SellerHomepage.apsx");
+                            Response.Redirect("../Sellers/SellerHomepage.aspx");
                             break;
                     }
                 }
