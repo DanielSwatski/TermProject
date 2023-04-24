@@ -10,7 +10,8 @@ using System.Net;
 using System.Data;
 using TermProject.HouseForm;
 using System.Data.SqlClient;
-using SoapAPITest;
+
+using SOAPTERMRPOJECT;
 
 namespace TermProject.Buyers
 {

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Util
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectClasses", "StoredProcedures\ProjectClasses.csproj", "{94BA79BA-25C4-4187-AF9F-370C7574BF2F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOAPTERMRPOJECT", "SOAPTERMRPOJECT\SOAPTERMRPOJECT.csproj", "{7770A070-EEEF-4769-90F5-065735136B7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{94BA79BA-25C4-4187-AF9F-370C7574BF2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94BA79BA-25C4-4187-AF9F-370C7574BF2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94BA79BA-25C4-4187-AF9F-370C7574BF2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7770A070-EEEF-4769-90F5-065735136B7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7770A070-EEEF-4769-90F5-065735136B7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7770A070-EEEF-4769-90F5-065735136B7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7770A070-EEEF-4769-90F5-065735136B7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
