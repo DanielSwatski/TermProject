@@ -1,4 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageHouse.aspx.cs" Inherits="TermProject.HouseForm.ManageHouse" %>
+
+<%@ Register src="~/CustomUC/AgentNavBar.ascx" tagname="AgentNavBar" tagprefix="uc1" %>
+<%@ Register src="~/CustomUC/SellerNavBar.ascx" tagname="SellerNav" tagprefix="uc2" %>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -9,6 +13,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
+        <uc2:SellerNav ID="SellerNav" runat="server" Visible="false"></uc2:SellerNav>
+        <uc1:AgentNavBar ID="AgentNav" runat="server" Visible="false"></uc1:AgentNavBar>
+
         <div class="container">
 
 

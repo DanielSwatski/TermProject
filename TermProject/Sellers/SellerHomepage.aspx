@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SellerHomepage.aspx.cs" Inherits="TermProject.Sellers.SellerHomepage" %>
 
+<%@ Register src="~/CustomUC/SellerNavBar.ascx" tagname="SellerNav" tagprefix="uc2" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -10,8 +12,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+            <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
                 <div class="container-fluid">
                     <asp:HyperLink class="navbar-brand" ID="hplHome" runat="server" NavigateUrl="">Zillup</asp:HyperLink>
 
@@ -29,8 +30,9 @@
                         </ul>
                     </div>
                 </div>
-            </nav>
+            </nav> -->
 
+            <uc2:SellerNav ID="SellerNav" runat="server"></uc2:SellerNav>
 
             <h3>Manage the homes you are sellers</h3>
             <asp:GridView ID="grdViewHouses" runat="server" CssClass="table table-bordered table-hover thread-dark" Style="background-color: white;" AutoGenerateColumns="False">
@@ -66,12 +68,6 @@
             <p>Need to be able to see all showings for house from a homebuyer. This should probably be a gridview of all houses the agent might be selling</p>
             <p>Must receive notifications about offers and showings</p>
             <p>Need to include a dashboard for all potential things a user can do</p>
-
-
-
-
-
-
         </div>
     </form>
 

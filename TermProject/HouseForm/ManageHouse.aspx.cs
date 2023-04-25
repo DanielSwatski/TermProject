@@ -16,6 +16,17 @@ namespace TermProject.HouseForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string userType = Session["usertype"].ToString();
+
+            if (userType == "RealEstateAgent")
+            {
+                AgentNav.Visible = true;
+            }
+            else
+            {
+                SellerNav.Visible = true;
+            }
+
             if (!IsPostBack)
             {
                 showHouses();

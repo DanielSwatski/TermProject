@@ -24,6 +24,24 @@ namespace TermProject.HouseForm
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// SellerNav control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TermProject.CustomUC.SellerNavBar SellerNav;
+
+        /// <summary>
+        /// AgentNav control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TermProject.CustomUC.AgentNavBar AgentNav;
+
+        /// <summary>
         /// grdHouseInfo control.
         /// </summary>
         /// <remarks>

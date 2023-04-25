@@ -118,6 +118,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="CustomUC\AgentNavBar.ascx" />
+    <Content Include="CustomUC\BuyerNavBar.ascx" />
+    <Content Include="CustomUC\SellerNavBar.ascx" />
     <Content Include="HouseForm\AddHouse.aspx" />
     <Content Include="HouseForm\AddRoom.aspx" />
     <Content Include="HouseForm\ManageHouse.aspx" />
@@ -194,6 +197,27 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="CustomUC\AgentNavBar.ascx.cs">
+      <DependentUpon>AgentNavBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomUC\AgentNavBar.ascx.designer.cs">
+      <DependentUpon>AgentNavBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomUC\BuyerNavBar.ascx.cs">
+      <DependentUpon>BuyerNavBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomUC\BuyerNavBar.ascx.designer.cs">
+      <DependentUpon>BuyerNavBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomUC\SellerNavBar.ascx.cs">
+      <DependentUpon>SellerNavBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomUC\SellerNavBar.ascx.designer.cs">
+      <DependentUpon>SellerNavBar.ascx</DependentUpon>
     </Compile>
     <Compile Include="HouseForm\AddHouse.aspx.cs">
       <DependentUpon>AddHouse.aspx</DependentUpon>

@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AgentHomepage.aspx.cs" Inherits="TermProject.Agents.AgentHomepage" %>
 
+<%@ Register src="~/CustomUC/AgentNavBar.ascx" tagname="AgentNavBar" tagprefix="uc1" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -12,7 +14,7 @@
 
     <!-- Navbar -->
     <form id="form1" runat="server">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+        <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
             <div class="container-fluid">
                 <asp:HyperLink class="navbar-brand" ID="hplHome" runat="server" NavigateUrl="">Zillup</asp:HyperLink>
 
@@ -30,8 +32,9 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> -->
 
+        <uc1:AgentNavBar ID="AgentNav" runat="server"></uc1:AgentNavBar>
 
         <h3>Manage the homes you are selling</h3>
         <asp:GridView ID="grdViewHouses" runat="server" CssClass="table table-bordered table-hover thread-dark" Style="background-color: white;" AutoGenerateColumns="False">

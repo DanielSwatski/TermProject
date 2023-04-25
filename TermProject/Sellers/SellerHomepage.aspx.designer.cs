@@ -60,6 +60,15 @@ namespace TermProject.Sellers
         protected global::System.Web.UI.WebControls.HyperLink hplLogin;
 
         /// <summary>
+        /// SellerNav control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TermProject.CustomUC.SellerNavBar SellerNav;
+
+        /// <summary>
         /// grdViewHouses control.
         /// </summary>
         /// <remarks>

@@ -60,6 +60,15 @@ namespace TermProject.Agents
         protected global::System.Web.UI.WebControls.HyperLink hplLogin;
 
         /// <summary>
+        /// AgentNav control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::TermProject.CustomUC.AgentNavBar AgentNav;
+
+        /// <summary>
         /// grdViewHouses control.
         /// </summary>
         /// <remarks>
