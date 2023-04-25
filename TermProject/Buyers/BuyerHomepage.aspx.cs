@@ -21,14 +21,14 @@ namespace TermProject.Buyers
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
-            Session["username"] = "DanielSwatski";
+            
+            //Session["username"] = "DanielSwatski";
 
             // checks to see if any of your offers have been accepted when notify buyer becomes true
             SellerTest cur = new SellerTest();
             grdViewAcceptedOffers.DataSource = cur.NotifyBuyer(Session["username"].ToString());
             grdViewAcceptedOffers.DataBind();
-              */
+             
         }
 
         protected void ddlSearch_SelectedIndexChanged(object sender, EventArgs e)
@@ -168,5 +168,25 @@ namespace TermProject.Buyers
                 // not sure what we should here if its before. Should we display an error
             }
         }
+
+
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+            // Perform some server-side processing here
+
+            // Update the contents of the update panel
+            //lbl.Text += "NEWER";
+            //SellerTestSoapClient cur = new SellerTestSoapClient();
+
+            // run the same update here
+
+
+            btnSubmit_Click(sender, e);
+            UpdatePanel1.Update();
+
+            // every 10 seconds it checks the comment grid
+        }
+
+
     }
 }

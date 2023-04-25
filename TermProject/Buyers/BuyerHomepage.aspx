@@ -223,24 +223,37 @@
                 </div>
             </div>
         </div>
-
-        <h3>Accepted Offers</h3>
-        <asp:GridView runat="server" ID="grdViewAcceptedOffers" AutoGenerateColumns="false">
-            <Columns>
-                <asp:BoundField DataField="HomeAddress" HeaderText="Address" />
-                <asp:BoundField DataField="OfferValue" HeaderText="Offer Value" />
-                <asp:BoundField DataField="Contingencies" HeaderText="Contingencies" />
-                <asp:BoundField DataField="Date" HeaderText="Date" />
-            </Columns>
-        </asp:GridView>
-
-        <div>
-            <p>Need to be able to schedule a showing for a home they wish to look at</p>
-            <p>Should be able to leave feedback about a home, which should be the questionaire</p>
-            <p>Need to include a dashboard for all potential things a user can do</p>
-
-            <p>Need to be able to submit an offer which has to include all information</p>
+        <div class="bg-body d-flex align-items-center justify-content-center">
+            <h3>Accepted Offers</h3>
+            <asp:GridView runat="server" ID="grdViewAcceptedOffers" AutoGenerateColumns="false">
+                <Columns>
+                    <asp:BoundField DataField="HomeAddress" HeaderText="Address" />
+                    <asp:BoundField DataField="OfferValue" HeaderText="Offer Value" />
+                    <asp:BoundField DataField="Contingencies" HeaderText="Contingencies" />
+                    <asp:BoundField DataField="Date" HeaderText="Date" />
+                </Columns>
+            </asp:GridView>
         </div>
+
+
+        <p> AJAX Tests</p>
+       <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+       <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+
+           <ContentTemplate>
+               <asp:ListView runat="server" ID="hello"></asp:ListView>
+           </ContentTemplate>
+            
+            <Triggers>
+                    
+                 <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
+            </Triggers>
+        </asp:UpdatePanel>
+        <asp:Timer ID="Timer1" runat="server" Interval="10000" OnTick="Timer1_Tick"></asp:Timer>
+
+
+
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
