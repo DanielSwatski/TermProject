@@ -28,8 +28,8 @@
                 <Columns>
                     <asp:TemplateField HeaderText="Photo" >
                         <ItemTemplate>
-                            <img src='<%# Eval("Photo") %>' class="img-fluid" alt="House photo">
-                             <asp:FileUpload ID="upload" runat="server" text="upload here" Visible="false"/>
+                            <img src='<%# Eval("Photo") %>' class="img-fluid" alt="House photo" id="phtHouse">
+                            <asp:FileUpload ID="fileupload1" runat="server" text="upload here" Visible ="true"/>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="HomeAddress" HeaderText="Address" />

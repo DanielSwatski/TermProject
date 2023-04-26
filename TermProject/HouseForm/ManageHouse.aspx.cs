@@ -69,10 +69,8 @@ namespace TermProject.HouseForm
             grdHouseInfo.EditIndex = e.NewEditIndex;
 
             GridViewRow row = grdHouseInfo.Rows[e.NewEditIndex];
-            FileUpload upload = (FileUpload)row.FindControl("upload");
 
-            // Set the Visible property of the FileUpload control to "true"
-            upload.Visible = true;
+
 
             showHouses();
         }
@@ -91,8 +89,10 @@ namespace TermProject.HouseForm
             //lblTest.Text = e.NewValues["Photo"].ToString();
             grdHouseInfo.EditIndex = -1;
 
+            // maybe do this with rest api update example
             //SellerTestSoapClient cur = new SellerTestSoapClient();
             SellerTest cur = new SellerTest();
+
             cur.UpdateHouse(e.NewValues["HomeAddress"].ToString(), e.NewValues["Description"].ToString(), e.NewValues["Status"].ToString(), e.NewValues["Photo"].ToString(), int.Parse(e.NewValues["AskingPrice"].ToString()));
 
 
