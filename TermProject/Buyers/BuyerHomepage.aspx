@@ -30,6 +30,83 @@
             </div>
         </nav>
 
+
+            <!-- Updates every 30 seconds -->
+           <h3>Recent House added</h3>
+           <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+           <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+
+               <ContentTemplate>
+                   <asp:Repeater ID="rptViewMostRecent" runat="server">
+                    <HeaderTemplate>
+                    <table class="table table-striped rounded bg-light shadow p-5">
+                    <thead>
+                    <tr>
+                    <th>Image</th>
+                    <th>Address</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                    <th>Price</th>
+                    <th>Bed Rooms</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                    <tr>
+                    <td>
+                    <asp:Image ID="imgHouse" runat="server" Width="100px" />
+                    </td>
+                    <td>
+                    <asp:Label ID="lblHomeAddress" runat="server" Text='<%# Eval("HomeAddress") %>' />
+                    </td>
+                    <td>
+                    <asp:Label ID="lblState" runat="server" Text='<%# Eval("State") %>' />
+                    </td>
+                    <td>
+                    <asp:Label ID="lblZipCode" runat="server" Text='<%# Eval("ZipCode") %>' />
+                    </td>
+                    <td>
+                    <asp:Label ID="lblAskingPrice" runat="server" Text='<%# Eval("AskingPrice") %>' />
+                    </td>
+                    <td>
+                    <asp:Label ID="lblBedRoomNumber" runat="server" Text='<%# Eval("BedRoomNumber") %>' />
+                    </td>
+                    <td>
+                    <asp:Button ID="btnDetails" runat="server" CausesValidation="false" CommandName="" Text="View Details" OnClick="btnDetails_Click" />
+                    </td>
+                    <td>
+                    <asp:Button ID="btnShowing" runat="server" CausesValidation="false" CommandName="" Text="Schedule Showing" OnClick="btnShowing_Click" />
+                    </td>
+                    <td>
+                    <asp:Button ID="btnOffer" runat="server" CausesValidation="false" CommandName="" Text="Make Offer" OnClick="btnOffer_Click" />
+                    </td>
+                    <td>
+                    <asp:Button ID="btnSurveyComment" runat="server" CausesValidation="false" CommandName="" Text="Make Survey" OnClick="btnSurveyComment_Click" />
+                    </td>
+                    </tr>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                    </tbody>
+                    </table>
+                    </FooterTemplate>
+                    </asp:Repeater>
+               </ContentTemplate>
+            
+                <Triggers>
+                     <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
+                </Triggers>
+            </asp:UpdatePanel>
+            <asp:Timer ID="Timer1" runat="server" Interval="30000" OnTick="Timer1_Tick"></asp:Timer>
+
+
+
+
         <div class="bg-body d-flex align-items-center justify-content-center" style="background-image: url('https://wallpapers.com/images/hd/modern-cozy-home-garage-autumn-yhdxtarsj79gt4ej.jpg'); background-position: center center; height: 350px;">
             <div class="rounded bg-light shadow h-auto w-75 mx-auto p-3">
                 <div class="row g-3">
@@ -48,6 +125,8 @@
                 </div>
             </div>
         </div>
+
+
 
         <script>
             const myDropdown = document.getElementById("ddlSearch");
@@ -167,10 +246,6 @@
             </div>
         </div>
 
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdlSearch">
-            Launch demo modal</button>
-
         <!-- Modal Search -->
         <div class="modal fade" id="mdlSearch" tabindex="-1" aria-labelledby="mdlSearchLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -223,34 +298,19 @@
                 </div>
             </div>
         </div>
-        <div class="bg-body d-flex align-items-center justify-content-center">
-            <h3>Accepted Offers</h3>
-            <asp:GridView runat="server" ID="grdViewAcceptedOffers" AutoGenerateColumns="false">
-                <Columns>
-                    <asp:BoundField DataField="HomeAddress" HeaderText="Address" />
-                    <asp:BoundField DataField="OfferValue" HeaderText="Offer Value" />
-                    <asp:BoundField DataField="Contingencies" HeaderText="Contingencies" />
-                    <asp:BoundField DataField="Date" HeaderText="Date" />
-                </Columns>
-            </asp:GridView>
-        </div>
 
+        <div class="table-responsive">
+                    <h3>Accepted Offers</h3>
+                    <asp:GridView runat="server" ID="grdViewAcceptedOffers" AutoGenerateColumns="false" CssClass="table table-striped table-bordered">
+                        <Columns>
+                            <asp:BoundField DataField="HomeAddress" HeaderText="Address" />
+                            <asp:BoundField DataField="OfferValue" HeaderText="Offer Value" />
+                            <asp:BoundField DataField="Contingencies" HeaderText="Contingencies" />
+                            <asp:BoundField DataField="Date" HeaderText="Date" />
+                        </Columns>
+                    </asp:GridView>
+                </div>
 
-        <p> AJAX Tests</p>
-       <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-
-       <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
-
-           <ContentTemplate>
-               <asp:ListView runat="server" ID="hello"></asp:ListView>
-           </ContentTemplate>
-            
-            <Triggers>
-                    
-                 <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
-            </Triggers>
-        </asp:UpdatePanel>
-        <asp:Timer ID="Timer1" runat="server" Interval="10000" OnTick="Timer1_Tick"></asp:Timer>
 
 
 

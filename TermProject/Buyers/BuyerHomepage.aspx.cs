@@ -181,7 +181,13 @@ namespace TermProject.Buyers
             // run the same update here
 
 
-            btnSubmit_Click(sender, e);
+            //btnSubmit_Click(sender, e);
+
+
+            // gets the most recently added house
+            SellerTest cur = new SellerTest();
+            rptViewMostRecent.DataSource = cur.GetMostRecentHouse();
+            rptViewMostRecent.DataBind();
             UpdatePanel1.Update();
 
             // every 10 seconds it checks the comment grid
