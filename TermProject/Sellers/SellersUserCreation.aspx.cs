@@ -13,5 +13,10 @@ namespace TermProject.Sellers
         {
 
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            // no button submit
+        }
     }
 }

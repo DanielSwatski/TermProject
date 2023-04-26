@@ -19,7 +19,7 @@ namespace TermProject.Sellers
             // delete this later it should be good to work with 
             if (!IsPostBack)
             {
-                Session["username"] = "Daniel";
+               // Session["username"] = "Daniel";
 
                 //SellerTestSoapClient cur = new SellerTestSoapClient();
                 SellerTest cur = new SellerTest();
