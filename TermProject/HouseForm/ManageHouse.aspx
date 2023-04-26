@@ -29,10 +29,9 @@
                     <asp:TemplateField HeaderText="Photo" >
                         <ItemTemplate>
                             <img src='<%# Eval("Photo") %>' class="img-fluid" alt="House photo" id="phtHouse">
-                            <asp:FileUpload ID="fileupload1" runat="server" text="upload here" Visible ="true"/>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:BoundField DataField="HomeAddress" HeaderText="Address" />
+                    <asp:BoundField DataField="HomeAddress" HeaderText="Address" ReadOnly="true" />
                     <asp:BoundField DataField="AskingPrice" HeaderText="Asking Price" DataFormatString="{0:c}" />
                     <asp:BoundField DataField="Status" HeaderText="Status" />
                     <asp:BoundField DataField="Description" HeaderText="Description" />
