@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="BuyerHomepage.aspx.cs" Inherits="TermProject.Buyers.BuyerHomepage" %>
 
+<%@ Register src="~/CustomUC/BuyerNavBar.ascx" tagname="BuyerNavBar" tagprefix="uc3" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -10,7 +12,7 @@
 <body>
     <form id="form1" runat="server">
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+        <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
             <div class="container-fluid">
                 <asp:HyperLink class="navbar-brand" ID="hplHome" runat="server" NavigateUrl="">Zillup</asp:HyperLink>
 
@@ -28,7 +30,9 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> -->
+
+        <uc3:BuyerNavBar ID="BuyerNav" runat="server"></uc3:BuyerNavBar>
 
 
             <!-- Updates every 30 seconds -->
