@@ -16,9 +16,6 @@ namespace TermProject
     public partial class UserCreation : System.Web.UI.Page
     {
         protected static int recoverykey = -1;
-        private Byte[] key = { 250, 101, 18, 76, 45, 135, 207, 118, 4, 171, 3, 168, 202, 241, 37, 199 };
-
-        private Byte[] vector = { 146, 64, 191, 111, 23, 3, 113, 119, 231, 121, 252, 112, 79, 32, 114, 156 };
 
         private string sha256(string randomString)
         {
@@ -78,6 +75,7 @@ namespace TermProject
 
                 Session["username"] = currentUsername;
                 Session["usertype"] = currentUserType;
+                Session["name"] = fullname;
 
                 HttpCookie cookie = new HttpCookie("LoginSave");
 
