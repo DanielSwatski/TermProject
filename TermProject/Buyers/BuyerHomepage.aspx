@@ -64,7 +64,7 @@
                     <ItemTemplate>
                     <tr>
                     <td>
-                    <asp:Image ID="imgHouse" runat="server" Width="100px" />
+                    <asp:Image ID="imgHouse" runat="server" Width="100px"  ImageUrl='<%# Eval("ImageUrl") %>' /> 
                     </td>
                     <td>
                     <asp:Label ID="lblHomeAddress" runat="server" Text='<%# Eval("HomeAddress") %>' />

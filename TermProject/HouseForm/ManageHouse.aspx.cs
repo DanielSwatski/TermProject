@@ -69,7 +69,7 @@ namespace TermProject.HouseForm
             grdHouseInfo.EditIndex = e.NewEditIndex;
 
             GridViewRow row = grdHouseInfo.Rows[e.NewEditIndex];
-
+           
 
 
             showHouses();
@@ -93,7 +93,7 @@ namespace TermProject.HouseForm
             //SellerTestSoapClient cur = new SellerTestSoapClient();
             SellerTest cur = new SellerTest();
 
-            cur.UpdateHouse(e.NewValues["HomeAddress"].ToString(), e.NewValues["Description"].ToString(), e.NewValues["Status"].ToString(), e.NewValues["Photo"].ToString(), int.Parse(e.NewValues["AskingPrice"].ToString()));
+            cur.UpdateHouse(e.NewValues["HomeAddress"].ToString(), e.NewValues["Description"].ToString(), e.NewValues["Status"].ToString(), int.Parse(e.NewValues["AskingPrice"].ToString()));
 
 
 

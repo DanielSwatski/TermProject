@@ -186,7 +186,7 @@ namespace TermProject.Buyers
 
             // gets the most recently added house
             SellerTest cur = new SellerTest();
-            rptViewMostRecent.DataSource = cur.GetMostRecentHouse();
+            rptViewMostRecent.DataSource = cur.MostRecentHouse();
             rptViewMostRecent.DataBind();
             UpdatePanel1.Update();
 

@@ -21,6 +21,19 @@ namespace SOAPTERMRPOJECT
     {
 
         [WebMethod]
+        public DataSet MostRecentHouse()
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_MOSTRECENT";
+
+
+            return objDB.GetDataSet(objCommand);
+        }
+
+            [WebMethod]
         public int RejectOffer(String user, int value)
         {
             DBConnect objDB = new DBConnect();
@@ -433,7 +446,7 @@ namespace SOAPTERMRPOJECT
 
 
         [WebMethod]
-        public int UpdateHouse(String address, String description, String status, String photo, int price)
+        public int UpdateHouse(String address, String description, String status, int price)
         {
 
             DBConnect objDB = new DBConnect();
@@ -453,11 +466,6 @@ namespace SOAPTERMRPOJECT
             objCommand.Parameters.Add(input);
 
             input = new SqlParameter("@status", status);
-            input.Direction = ParameterDirection.Input;
-            input.SqlDbType = SqlDbType.VarChar;
-            objCommand.Parameters.Add(input);
-
-            input = new SqlParameter("@photo", photo);
             input.Direction = ParameterDirection.Input;
             input.SqlDbType = SqlDbType.VarChar;
             objCommand.Parameters.Add(input);
