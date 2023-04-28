@@ -15,7 +15,7 @@ namespace TermProject.Agents
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["username"] = "Daniel";
+            //Session["username"] = "Daniel";
             // automatically load into the gridview for the house with the stuff from the searching option
 
             // check to see if multiples need to be done for the showings
@@ -23,7 +23,11 @@ namespace TermProject.Agents
             // need to be checked for two types realestate and seller
 
             //SellerTestSoapClient cur = new SellerTestSoapClient();
+
             SellerTest cur = new SellerTest();
+            grdViewHouses.DataSource = cur.GetHouse(Session["username"].ToString());
+            grdViewHouses.DataBind();
+
             grdViewNewShowings.DataSource = cur.GetNewShowings(Session["username"].ToString()); // gets the showsings
             grdViewNewShowings.DataBind();
 
@@ -90,7 +94,7 @@ namespace TermProject.Agents
         // takes you to the add house page
         protected void btnMakeHouse_Click(object sender, EventArgs e)
         {
-            
+            Response.Redirect("../HouseForm/AddHouse.aspx");
         }
     }
 }

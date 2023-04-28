@@ -59,15 +59,33 @@
             </asp:GridView>
 
 
-            <asp:Button runat="server" ID="btnMakeHouse" Text="Make House. Takes you to the add house page " OnClick="btnMakeHouse_Click" />
+            
+        <asp:Button runat="server" ID="Button1" Text="Make House. Takes you to the add house page " OnClick="btnMakeHouse_Click" />
 
-            <p>TO BE DONES FOR THIS PAGE</p>
-            <p>Need to be able to manage a homes profile</p>
-            <p>need to be able to change price, home status(for sale,sold,pending sale)</p>
-            <p>Needs to be able to delete the home</p>
-            <p>Need to be able to see all showings for house from a homebuyer. This should probably be a gridview of all houses the agent might be selling</p>
-            <p>Must receive notifications about offers and showings</p>
-            <p>Need to include a dashboard for all potential things a user can do</p>
+
+        <p>New showings</p>
+        <asp:GridView runat="server" ID="grdViewNewShowings" CssClass="table table-bordered table-hover thread-dark" Style="background-color: white;" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="HomeAddress" HeaderText="HomeAddress" />
+                <asp:BoundField DataField="HomeBuyerUsername" HeaderText="Home Buyer" />
+                <asp:BoundField DataField="DateOfShowing" HeaderText="Showing Date" />
+            </Columns>
+
+        </asp:GridView>
+
+        <p>NEW OFFERS</p>
+        <asp:GridView runat="server" ID="grdViewNewOffers" CssClass="table table-bordered table-hover thread-dark" Style="background-color: white;" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="HomeAddress" HeaderText="HomeAddress" />
+                <asp:BoundField DataField="OfferUsername" HeaderText="Offer Username" />
+                <asp:BoundField DataField="OfferValue" HeaderText="Offer Value" />
+                <asp:BoundField DataField="SaleType" HeaderText="SaleType" />
+                <asp:BoundField DataField="Contingencies" HeaderText="Contigencies" />
+                <asp:BoundField DataField="SellPrevHome" HeaderText="Selling Previous Home" />
+                <asp:BoundField DataField="Date" HeaderText="Date" />
+            </Columns>
+
+        </asp:GridView>
         </div>
     </form>
 

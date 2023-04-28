@@ -78,12 +78,30 @@ namespace TermProject.Sellers
         protected global::System.Web.UI.WebControls.GridView grdViewHouses;
 
         /// <summary>
-        /// btnMakeHouse control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMakeHouse;
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// grdViewNewShowings control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdViewNewShowings;
+
+        /// <summary>
+        /// grdViewNewOffers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdViewNewOffers;
     }
 }

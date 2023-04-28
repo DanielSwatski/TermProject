@@ -93,7 +93,7 @@ namespace TermProject.HouseForm
             //SellerTestSoapClient cur = new SellerTestSoapClient();
             SellerTest cur = new SellerTest();
 
-            cur.UpdateHouse(e.NewValues["HomeAddress"].ToString(), e.NewValues["Description"].ToString(), e.NewValues["Status"].ToString(), int.Parse(e.NewValues["AskingPrice"].ToString()));
+            cur.UpdateHouse(grdHouseInfo.Rows[0].Cells[2].Text, e.NewValues["Description"].ToString(), e.NewValues["Status"].ToString(), int.Parse(e.NewValues["AskingPrice"].ToString()));
 
 
 

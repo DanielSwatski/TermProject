@@ -21,6 +21,25 @@ namespace SOAPTERMRPOJECT
     {
 
         [WebMethod]
+        public DataSet GetNewShowingsSeller(String username)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GETNEWSHOWINGSSELLER";
+
+            SqlParameter input = new SqlParameter("@seller", username);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            return objDB.GetDataSet(objCommand);
+
+
+        }
+
+        [WebMethod]
         public DataSet MostRecentHouse()
         {
             DBConnect objDB = new DBConnect();

@@ -58,7 +58,7 @@ namespace TermProject.Buyers
             // Update the contents of the update panel
             //lbl.Text += "NEWER";
             //SellerTestSoapClient cur = new SellerTestSoapClient();
-            SellerTest cur = new SellerTest();
+            SOAPTERMRPOJECT.SellerTest cur = new SOAPTERMRPOJECT.SellerTest();
             lstViewComments.DataSource = cur.GetComments(Request.Cookies["House"].Values["HomeAddress"]);
             lstViewComments.DataBind();
 

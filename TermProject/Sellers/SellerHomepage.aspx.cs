@@ -25,6 +25,24 @@ namespace TermProject.Sellers
                 SellerTest cur = new SellerTest();
                 grdViewHouses.DataSource = cur.GetHouse(Session["username"].ToString());
                 grdViewHouses.DataBind();
+
+
+                if (Session["usertype"] == "HomeSeller")
+                {
+                    grdViewNewShowings.DataSource = cur.GetNewShowingsSeller(Session["username"].ToString());
+                }
+                else
+                {
+                    grdViewNewShowings.DataSource = cur.GetNewShowings(Session["username"].ToString());
+                    grdViewNewShowings.DataBind();
+
+                    grdViewNewOffers.DataSource = cur.GetNewOffers(Session["username"].ToString());
+                    grdViewNewOffers.DataBind();
+                }
+
+                // do the comments and other things here later on 
+
+                // double check to make sure we are all good
             }
 
 

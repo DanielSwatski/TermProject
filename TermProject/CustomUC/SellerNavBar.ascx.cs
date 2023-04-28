@@ -14,7 +14,7 @@ namespace TermProject.CustomUC
 
         }
 
-        protected void lnkLogout_Click(object sender, EventArgs e)
+        public void lnkLogout_Click(object sender, EventArgs e)
         {
             HttpCookie deletable = Response.Cookies.Get("LoginSave");
             deletable.Expires = DateTime.Now.AddDays(-1);
