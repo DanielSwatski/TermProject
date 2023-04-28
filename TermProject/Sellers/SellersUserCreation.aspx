@@ -23,9 +23,6 @@
                                     <div class="form-group mb-2">
                                         <asp:TextBox runat="server" ID="txtAge" CssClass="form-control" placeholder="Age" TextMode="Number"></asp:TextBox>
                                     </div>
-                                    <div class="form-group mb-2">
-                                        <asp:TextBox runat="server" ID="txtOccupation" CssClass="form-control" placeholder="Occupation"></asp:TextBox>
-                                    </div>
 
                                 </div>
                                 <div class="form-group">

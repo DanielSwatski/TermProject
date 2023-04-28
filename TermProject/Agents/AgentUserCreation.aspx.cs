@@ -14,13 +14,6 @@ namespace TermProject.Agents
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (Session["username"] != null)
-            {
-                txtBoxUsername.Text = Session["username"].ToString();
-                txtBoxUsername.ReadOnly = true;
-            }
-
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -32,7 +25,7 @@ namespace TermProject.Agents
             objCommand.CommandText = "TP_ADDREALESTATEAGENT";
 
 
-            SqlParameter input = new SqlParameter("Username", txtBoxUsername.Text);
+            SqlParameter input = new SqlParameter("Username", Session["username"].ToString());
             input.Direction = ParameterDirection.Input;
             input.SqlDbType = SqlDbType.VarChar;
             objCommand.Parameters.Add(input);
@@ -42,7 +35,7 @@ namespace TermProject.Agents
             input.SqlDbType = SqlDbType.VarChar;
             objCommand.Parameters.Add(input);
 
-            input = new SqlParameter("Name", txtBoxName.Text);
+            input = new SqlParameter("Name", Session["name"].ToString());
             input.Direction = ParameterDirection.Input;
             input.SqlDbType = SqlDbType.VarChar;
             objCommand.Parameters.Add(input);
