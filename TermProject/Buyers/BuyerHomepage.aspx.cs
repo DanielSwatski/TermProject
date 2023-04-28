@@ -186,8 +186,8 @@ namespace TermProject.Buyers
 
             // gets the most recently added house
             SellerTest cur = new SellerTest();
-            rptViewMostRecent.DataSource = cur.MostRecentHouse();
-            rptViewMostRecent.DataBind();
+            rptRecent.DataSource = cur.MostRecentHouse();
+            rptRecent.DataBind();
             UpdatePanel1.Update();
 
             // every 10 seconds it checks the comment grid

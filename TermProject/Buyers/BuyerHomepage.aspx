@@ -42,7 +42,7 @@
            <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
 
                <ContentTemplate>
-                   <asp:Repeater ID="rptViewMostRecent" runat="server">
+                   <asp:Repeater ID="rptRecent" runat="server">
                     <HeaderTemplate>
                     <table class="table table-striped rounded bg-light shadow p-5">
                     <thead>

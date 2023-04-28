@@ -45,4 +45,5 @@
 .login-landing-page {
     background: url(https://wallpapers.com/images/hd/huge-apartment-with-natural-lighting-aa76c2t4bqlxbbg0.jpg) no-repeat center center fixed;
     background-size: cover;
+    background-attachment: fixed;
 }
