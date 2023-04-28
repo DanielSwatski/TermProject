@@ -26,27 +26,22 @@ namespace TermProject.Sellers
                 grdViewHouses.DataSource = cur.GetHouse(Session["username"].ToString());
                 grdViewHouses.DataBind();
 
+                grdViewNewShowings.DataSource = cur.GetNewShowingsSeller(Session["username"].ToString());
+                grdViewNewShowings.DataBind();
 
-                if (Session["usertype"] == "HomeSeller")
-                {
-                    grdViewNewShowings.DataSource = cur.GetNewShowingsSeller(Session["username"].ToString());
-                }
-                else
-                {
-                    grdViewNewShowings.DataSource = cur.GetNewShowings(Session["username"].ToString());
-                    grdViewNewShowings.DataBind();
 
-                    grdViewNewOffers.DataSource = cur.GetNewOffers(Session["username"].ToString());
+                // rework the offers system tow rok right
+                grdViewNewOffers.DataSource = cur.GetNewOffersSellers(Session["username"].ToString());
                     grdViewNewOffers.DataBind();
                 }
 
                 // do the comments and other things here later on 
 
                 // double check to make sure we are all good
+            
+
+
             }
-
-
-        }
 
         // this one can probably be deleted
         protected void btnModal_Click(object sender, EventArgs e)

@@ -20,6 +20,26 @@ namespace SOAPTERMRPOJECT
     public class SellerTest : System.Web.Services.WebService
     {
 
+
+        // something is still wrong with this method
+        [WebMethod]
+        public DataSet GetNewOffersSellers(String username)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GETOFFERSSELLERS";
+
+            SqlParameter input = new SqlParameter("@seller", username);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            return objDB.GetDataSet(objCommand);
+
+        }
+
         [WebMethod]
         public DataSet GetNewShowingsSeller(String username)
         {
@@ -27,7 +47,7 @@ namespace SOAPTERMRPOJECT
             SqlCommand objCommand = new SqlCommand();
 
             objCommand.CommandType = CommandType.StoredProcedure;
-            objCommand.CommandText = "TP_GETNEWSHOWINGSSELLER";
+            objCommand.CommandText = "TP_GETSHOWINGSELLER";
 
             SqlParameter input = new SqlParameter("@seller", username);
             input.Direction = ParameterDirection.Input;
