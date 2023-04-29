@@ -86,6 +86,7 @@ namespace TermProject.UserCreateLogin
                 {
                     // resets the password
                     // inside the stored procedure
+                    Response.Redirect("Login.aspx");
                 }
 
             }

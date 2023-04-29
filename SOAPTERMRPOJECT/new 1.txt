@@ -1,0 +1,13 @@
+Test Notes for term project
+
+Creating real estate agent: worked
+Recovered password: works
+	rewrote the code so it sends them back to login page once they have changed their password
+	
+	
+Will test Real estate stuff later when Jason is finished using it
+
+newsellerher
+
+
+

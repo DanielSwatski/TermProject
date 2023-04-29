@@ -36,7 +36,8 @@ namespace TermProject.HouseForm
             Home currentHome = new Home();
 
             currentHome.Homeaddress = txtAddress.Text;
-            currentHome.SellerUsername = Session["username"].ToString();
+            
+            currentHome.SellerUsername = Session["username"].ToString(); 
             currentHome.State = txtState.Text;
             currentHome.ZipCode = int.Parse(txtZipCode.Text);
             currentHome.PropertyType = ddlPropertyType.SelectedValue;

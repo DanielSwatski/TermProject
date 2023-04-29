@@ -83,5 +83,10 @@ namespace TermProject.UserCreateLogin
             }
 
         }
+
+        protected void btnSendCode_Click(object sender, EventArgs e)
+        {
+            emailer.emailSender(txtBoxEmail.Text, recoverykey);
+        }
     }
 }
