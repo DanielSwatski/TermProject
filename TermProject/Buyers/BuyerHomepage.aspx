@@ -35,78 +35,36 @@
         <uc3:BuyerNavBar ID="BuyerNav" runat="server"></uc3:BuyerNavBar>
 
 
-            <!-- Updates every 30 seconds -->
+            <!-- Updates every 10 seconds -->
            <h3>Recent House added</h3>
            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
            <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
 
-               <ContentTemplate>
-                   <asp:Repeater ID="rptView" runat="server">
-                    <HeaderTemplate>
-                    <table class="table table-striped rounded bg-light shadow p-5">
-                    <thead>
-                    <tr>
-                    <th>Image</th>
-                    <th>Address</th>
-                    <th>State</th>
-                    <th>Zip</th>
-                    <th>Price</th>
-                    <th>Bed Rooms</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    </HeaderTemplate>
-                    <ItemTemplate>
-                    <tr>
-                    <td>
-                    <asp:Image ID="imgHouse" runat="server" Width="100px"  ImageUrl='<%# Eval("ImageUrl") %>' /> 
-                    </td>
-                    <td>
-                    <asp:Label ID="lblHomeAddress" runat="server" Text='<%# Eval("HomeAddress") %>' />
-                    </td>
-                    <td>
-                    <asp:Label ID="lblState" runat="server" Text='<%# Eval("State") %>' />
-                    </td>
-                    <td>
-                    <asp:Label ID="lblZipCode" runat="server" Text='<%# Eval("ZipCode") %>' />
-                    </td>
-                    <td>
-                    <asp:Label ID="lblAskingPrice" runat="server" Text='<%# Eval("AskingPrice") %>' />
-                    </td>
-                    <td>
-                    <asp:Label ID="lblBedRoomNumber" runat="server" Text='<%# Eval("BedRoomNumber") %>' />
-                    </td>
-                    <td>
-                    <asp:Button ID="btnDetails" runat="server" CausesValidation="false" CommandName="" Text="View Details" OnClick="btnDetails_Click" />
-                    </td>
-                    <td>
-                    <asp:Button ID="btnShowing" runat="server" CausesValidation="false" CommandName="" Text="Schedule Showing" OnClick="btnShowing_Click" />
-                    </td>
-                    <td>
-                    <asp:Button ID="btnOffer" runat="server" CausesValidation="false" CommandName="" Text="Make Offer" OnClick="btnOffer_Click" />
-                    </td>
-                    <td>
-                    <asp:Button ID="btnSurveyComment" runat="server" CausesValidation="false" CommandName="" Text="Make Survey" OnClick="btnSurveyComment_Click" />
-                    </td>
-                    </tr>
-                    </ItemTemplate>
-                    <FooterTemplate>
-                    </tbody>
-                    </table>
-                    </FooterTemplate>
-                    </asp:Repeater>
+               <ContentTemplate>    
+                   <asp:GridView class="table table-striped rounded bg-light shadow p-5" ID="grdMostRecent" runat="server" AutoGenerateColumns="False">
+                       <Columns>
+                                <asp:TemplateField HeaderText="Image">
+                                    <ItemTemplate>
+                                        <asp:Image ID="imgHouse" runat="server" Width="100px" />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:BoundField DataField="HomeAddress" HeaderText="Address" />
+                                <asp:BoundField DataField="State" HeaderText="State" />
+                                <asp:BoundField DataField="ZipCode" HeaderText="Zip" />
+                                <asp:BoundField DataField="AskingPrice" HeaderText="Price" />
+                                <asp:BoundField DataField="BedRoomNumber" HeaderText="Bed Rooms" />
+
+
+                            </Columns>
+                   </asp:GridView>
                </ContentTemplate>
             
                 <Triggers>
                      <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
                 </Triggers>
             </asp:UpdatePanel>
-            <asp:Timer ID="Timer1" runat="server" Interval="30000" OnTick="Timer1_Tick"></asp:Timer>
+            <asp:Timer ID="Timer1" runat="server" Interval="10000" OnTick="Timer1_Tick"></asp:Timer>
 
 
 

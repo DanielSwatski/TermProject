@@ -225,10 +225,12 @@ namespace TermProject.Buyers
 
             // gets the most recently added house
             SellerTest cur = new SellerTest();
-            
+
             // not properly working here so fix it later
-            rptView.DataSource = cur.MostRecentHouse();
-            rptView.DataBind();
+            // rptView.DataSource = cur.MostRecentHouse();
+            //rptView.DataBind();
+            grdMostRecent.DataSource = cur.MostRecentHouse();
+            grdMostRecent.DataBind();
             UpdatePanel1.Update();
 
 

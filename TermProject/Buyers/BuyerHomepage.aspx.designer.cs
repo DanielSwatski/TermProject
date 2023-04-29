@@ -87,13 +87,13 @@ namespace TermProject.Buyers
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
 
         /// <summary>
-        /// rptView control.
+        /// grdMostRecent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptView;
+        protected global::System.Web.UI.WebControls.GridView grdMostRecent;
 
         /// <summary>
         /// Timer1 control.
