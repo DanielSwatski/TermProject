@@ -6,12 +6,18 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Script.Serialization;
+using System.IO;
+using System.Net;
+using System.Data;
 //using TermProject.ServiceReference3;
 
 namespace TermProject.Sellers
 {
     public partial class SellerHomepage : System.Web.UI.Page
     {
+        String webApiUrl = "https://cis-iis2.temple.edu/spring2023/CIS3342_tug87965/WebAPI/api/TermProject/";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             // automatically load into the gridview for the house with the stuff from the searching option
@@ -54,7 +60,26 @@ namespace TermProject.Sellers
         // deletes the home
         protected void btnDelete_Click(object sender, EventArgs e)
         {
+            Button btn = (Button)sender;
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
 
+            try
+            {
+                WebRequest request = WebRequest.Create(webApiUrl + "deleteHouse/" + grdViewHouses.Rows[gvr.RowIndex].Cells[1].Text + "/");
+                request.Method = "DELETE";
+
+                WebResponse response = request.GetResponse();
+                Stream theDataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(theDataStream);
+                String data = reader.ReadToEnd();
+
+                reader.Close();
+                response.Close();
+            }
+            catch (Exception ex)
+            {
+                
+            }
         }
 
 
