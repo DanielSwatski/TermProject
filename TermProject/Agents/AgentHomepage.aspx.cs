@@ -34,13 +34,6 @@ namespace TermProject.Agents
             grdViewNewOffers.DataSource = cur.GetNewOffers(Session["username"].ToString());
             grdViewNewOffers.DataBind();
 
-
-
-
-
-            
-
-
             // than update the showings to be true so they have been seen
 
 
@@ -95,6 +88,11 @@ namespace TermProject.Agents
         protected void btnMakeHouse_Click(object sender, EventArgs e)
         {
             Response.Redirect("../HouseForm/AddHouse.aspx");
+        }
+
+        protected void btnAddSeller_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../UserCreateLogin/AgentSellerCreation.aspx");
         }
     }
 }

@@ -13,5 +13,13 @@ namespace TermProject.CustomUC
         {
 
         }
+
+        protected void lnkLogout_Click(object sender, EventArgs e)
+        {
+            HttpCookie deletable = Response.Cookies.Get("LoginSave");
+            deletable.Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Add(deletable);
+            Response.Redirect("../UserCreateLogin/Login.aspx");
+        }
     }
 }
