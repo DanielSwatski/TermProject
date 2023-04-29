@@ -67,7 +67,7 @@
                       <td><%# DataBinder.Eval(Container.DataItem, "HomeSize") %></td>
                       <td><%# DataBinder.Eval(Container.DataItem, "BedRoomNumber") %></td>
                       <td><%# DataBinder.Eval(Container.DataItem, "BathRoomNumber") %></td>
-                        <td><%# DataBinder.Eval(Container.DataItem, "Amenities") %></td>
+                        <td><%# DataBinder.Eval( Container.DataItem, "Amenities") %></td>
                       <td><%# DataBinder.Eval(Container.DataItem, "HVAC") %></td>
                       <td><%# DataBinder.Eval(Container.DataItem, "Utilities") %></td>
                       <td><%# DataBinder.Eval(Container.DataItem, "YearBuilt") %></td>
@@ -126,19 +126,6 @@
         </ItemTemplate>
     </asp:ListView>
 
-            <p> REMOVE THE SURVEY FOR THE HOMEBUYER THEY SHOULD NOT BE ABLE TO SEE THIS ONE. SAVING IT FOR LATER FOR OTHER PAGES</p>
-            <h3> Survey results of the house</h3>
-            <asp:GridView ID="grdViewSurvey" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered">
-
-                <Columns>
-                    <asp:BoundField DataField="BuyerUsernames" HeaderText="Username of Reviewer" />
-                    <asp:BoundField DataField="PriceOpinion" HeaderText="Price Opinion" />
-                    <asp:BoundField DataField="LocationOpinion" HeaderText="Location Opinion" />
-                    <asp:BoundField DataField="HomeOpinion" HeaderText="Home Opinion" />
-                    <asp:BoundField DataField="Rating" HeaderText="Rating" />
-                </Columns>
-
-            </asp:GridView>
 
             <h3> Comments on the House</h3>
 

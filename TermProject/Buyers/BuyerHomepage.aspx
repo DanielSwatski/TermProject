@@ -289,8 +289,16 @@
 
                                     <div id="amenities" class="col-md-12" style="display: none;">
                                         <asp:Label ID="lblAmenities" runat="server" Text="Amenities" class="form-label"></asp:Label>
-                                        <asp:TextBox ID="txtAmenities" runat="server" Text="Test" CssClass="form-control"></asp:TextBox>
+                                            <asp:CheckBox class="form-control" ID="chkFirePlace" runat="server" Text="Fire Place" />
+                                            <asp:CheckBox class="form-control" ID="chkBasement" runat="server" Text="Basement" />
+                                            <asp:CheckBox class="form-control" ID="chkPool" runat="server" Text="Pool" />
+                                            <asp:CheckBox class="form-control" ID="chkGarden" runat="server" Text="Garden" />
+                                            <asp:CheckBox class="form-control" ID="chkBar" runat="server" Text="Bar" />
+                                            <asp:CheckBox class="form-control" ID="chkHotTub" runat="server" Text="Hot Tub" />
                                     </div>
+
+                                    
+
                                 </div>
                             </div>
                         </div>

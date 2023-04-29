@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -32,6 +33,22 @@ namespace TermProject.Buyers
             SellerTest cur = new SellerTest();
 
             DataSet ds = cur.HomeDetails(address);
+
+            // ds.Tables[0].Rows[0].ItemArray
+
+            String amenities =(String)( ds.Tables[0].Rows[0].ItemArray[8]);
+            String[] amenStr = amenities.Split(' ');
+            byte[] byteAmens= new byte[amenStr.Length];
+            for(int i = 0; i < byteAmens.Length; i++)
+            {
+                byteAmens[i] = byte.Parse(amenStr[i]);
+            }
+
+            amenities = Encoding.ASCII.GetString(byteAmens);
+            // Convert.FromBase64String(amenities);
+
+
+            ds.Tables[0].Rows[0][8] = amenities;
             Repeater1.DataSource = ds;
             Repeater1.DataBind();
 
@@ -42,8 +59,8 @@ namespace TermProject.Buyers
             lstViewRealestate.DataSource = cur.GetSellerInfo(ds.Tables[0].Rows[0].ItemArray[3].ToString());
             lstViewRealestate.DataBind();
 
-            grdViewSurvey.DataSource = cur.GetSurvery(address);
-            grdViewSurvey.DataBind();
+            //grdViewSurvey.DataSource = cur.GetSurvery(address);
+            //grdViewSurvey.DataBind();
 
             lstViewComments.DataSource = cur.GetComments(address);
             lstViewComments.DataBind();

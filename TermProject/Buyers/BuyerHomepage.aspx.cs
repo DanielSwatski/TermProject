@@ -12,6 +12,7 @@ using TermProject.HouseForm;
 using System.Data.SqlClient;
 
 using SOAPTERMRPOJECT;
+using System.Text;
 
 namespace TermProject.Buyers
 {
@@ -43,7 +44,45 @@ namespace TermProject.Buyers
             string max = txtMax.Text;
             string propertyType = txtPropertyType.Text;
             string rooms = txtRooms.Text;
-            string amenities = txtAmenities.Text;
+
+            String amenities = "";
+            if (chkFirePlace.Checked)
+            {
+                amenities += chkFirePlace.Text + ",";
+            }
+            if (chkBasement.Checked)
+            {
+                amenities += chkBasement.Text + ",";
+            }
+            if (chkPool.Checked)
+            {
+                amenities += chkPool.Text + ",";
+            }
+            if (chkHotTub.Checked)
+            {
+                amenities += chkHotTub.Text + ",";
+            }
+            if (chkGarden.Checked)
+            {
+                amenities += chkGarden.Text + ",";
+            }
+            if (chkBar.Checked)
+            {
+                amenities += chkBar.Text + ",";
+            }
+            amenities = amenities.TrimEnd(',');
+
+            if (amenities == "")
+            {
+
+                amenities = "None";
+            }
+
+            // serializes the amenities before it is serialized again
+            byte[] byteAmen = Encoding.ASCII.GetBytes(amenities);
+            String strAmen = String.Join(" ", byteAmen);
+
+            amenities = strAmen;
 
             Home[] homelist;
             WebRequest request = null;
@@ -187,7 +226,7 @@ namespace TermProject.Buyers
             // gets the most recently added house
             SellerTest cur = new SellerTest();
             
-
+            // not properly working here so fix it later
             rptView.DataSource = cur.MostRecentHouse();
             rptView.DataBind();
             UpdatePanel1.Update();

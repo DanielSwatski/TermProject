@@ -231,13 +231,58 @@ namespace TermProject.Buyers
         protected global::System.Web.UI.WebControls.Label lblAmenities;
 
         /// <summary>
-        /// txtAmenities control.
+        /// chkFirePlace control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAmenities;
+        protected global::System.Web.UI.WebControls.CheckBox chkFirePlace;
+
+        /// <summary>
+        /// chkBasement control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkBasement;
+
+        /// <summary>
+        /// chkPool control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkPool;
+
+        /// <summary>
+        /// chkGarden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkGarden;
+
+        /// <summary>
+        /// chkBar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkBar;
+
+        /// <summary>
+        /// chkHotTub control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkHotTub;
 
         /// <summary>
         /// Button1 control.

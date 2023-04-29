@@ -8,6 +8,9 @@ using System.Web.Script.Serialization;
 using System.IO;
 using System.Net;
 using System.Data;
+using Newtonsoft.Json;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace TermProject.HouseForm
 {
@@ -73,10 +76,18 @@ namespace TermProject.HouseForm
 
             if (amenities == "") 
             {
+
                 amenities = "None";
             }
 
-            currentHome.Amenities = amenities;
+
+            // serializes the amenities before it is serialized again
+            byte[] byteAmen = Encoding.ASCII.GetBytes(amenities);
+            String strAmen = String.Join(" ", byteAmen);
+
+
+            // currentHome.Amenities = amenities;
+            currentHome.Amenities = strAmen;
             currentHome.HVAC = ddlHVAC.SelectedValue;
             currentHome.Utilities = ddlUtilities.SelectedValue;
             currentHome.Yearbuilt = int.Parse(txtYearBuilt.Text);
