@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MakeOffer.aspx.cs" Inherits="TermProject.Buyers.MakeOffer" %>
 
+<%@ Register src="~/CustomUC/BuyerNavBar.ascx" tagname="BuyerNavBar" tagprefix="uc3" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -9,7 +11,11 @@
 
 </head>
 <body>
+
+       
+
     <form id="form1" runat="server">
+         <uc3:BuyerNavBar ID="BuyerNav" runat="server"></uc3:BuyerNavBar>
         <h1 class="text-center mt-5">Make Your Offer</h1>
 
         <div class="d-flex align-items-center justify-content-center m-5">

@@ -200,11 +200,19 @@ namespace TermProject.Buyers
             DataSet ds = cur.ShowingDate(grdHomePage.Rows[gvr.RowIndex].Cells[1].Text, Session["username"].ToString());
 
             // issue with the date time compariso
-            if(DateTime.Today > DateTime.Parse(ds.Tables[0].Rows[0].ItemArray[0].ToString()) )
-                Response.Redirect("SurveyComments.aspx");
-            else
+            try
             {
-                // not sure what we should here if its before. Should we display an error
+                if (DateTime.Today > DateTime.Parse(ds.Tables[0].Rows[0].ItemArray[0].ToString()))
+                    Response.Redirect("SurveyComments.aspx");
+                else
+                {
+                    // not sure what we should here if its before. Should we display an error
+                }
+            }
+
+            catch(Exception xese)
+            {
+
             }
         }
 

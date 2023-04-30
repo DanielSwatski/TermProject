@@ -55,9 +55,22 @@ namespace TermProject.Buyers
             grpRooms.DataSource = cur.GetRooms(address);
             grpRooms.DataBind();
 
+            DataSet das = cur.GetSellerInfo(ds.Tables[0].Rows[0].ItemArray[3].ToString());
+            if (das.Tables[0].Rows.Count != 0)
+            {
 
-            lstViewRealestate.DataSource = cur.GetSellerInfo(ds.Tables[0].Rows[0].ItemArray[3].ToString());
-            lstViewRealestate.DataBind();
+
+                lstViewRealestate.DataSource = das;
+                lstViewRealestate.DataBind();
+            }
+            else
+            {
+                das = cur.GetSellerInfoSeller(ds.Tables[0].Rows[0].ItemArray[3].ToString());
+               // lstViewRealestate.DataSource = das;
+               // lstViewRealestate.DataBind();
+                lstSeller.DataSource = das;
+                lstSeller.DataBind();
+            }
 
             //grdViewSurvey.DataSource = cur.GetSurvery(address);
             //grdViewSurvey.DataBind();

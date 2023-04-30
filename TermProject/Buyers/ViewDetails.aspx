@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewDetails.aspx.cs" Inherits="TermProject.Buyers.ViewDetails" %>
 
+<%@ Register src="~/CustomUC/BuyerNavBar.ascx" tagname="BuyerNavBar" tagprefix="uc3" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -9,27 +10,7 @@
 <body>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
      <form id="form1" runat="server">
-        <div class="container">
-
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
-            <div class="container-fluid">
-                <asp:HyperLink class="navbar-brand" ID="hplHome" runat="server" NavigateUrl="">Zillup</asp:HyperLink>
-
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav ms-auto ">
-                        <li class="nav-item">
-                            <asp:HyperLink class="nav-link mx-2" ID="hplHouse" runat="server" NavigateUrl="">Houses</asp:HyperLink>
-                        </li>
-                        <li class="nav-item">
-                            <asp:HyperLink class="nav-link mx-2" ID="hplShowings" runat="server" NavigateUrl="">Showings</asp:HyperLink>
-                        </li>
-                        <li class="nav-item">
-                            <asp:HyperLink class="nav-link mx-2" ID="hplLogin" runat="server" NavigateUrl="~/UserCreateLogin/Login.aspx">Logout</asp:HyperLink>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <uc3:BuyerNavBar ID="BuyerNav" runat="server"></uc3:BuyerNavBar>
 
              <h3 class="mb-4">Home Info</h3>
           <div class="table-responsive">
@@ -122,6 +103,32 @@
                 <td><%# Eval("Name") %></td>
                 <td><%# Eval("Age") %></td>
                 <td><%# Eval("Agency") %></td>
+            </tr>
+        </ItemTemplate>
+    </asp:ListView>
+
+            <asp:ListView runat="server" ID="lstSeller" ItemPlaceholderID="itemPlaceholder">
+        <LayoutTemplate>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>AgentID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
+                </tbody>
+            </table>
+        </LayoutTemplate>
+        <ItemTemplate>
+            <tr>
+                <td><%# Eval("Username") %></td>
+                <td><%# Eval("AgentID") %></td>
+                <td><%# Eval("Name") %></td>
+                <td><%# Eval("Age") %></td>
             </tr>
         </ItemTemplate>
     </asp:ListView>
