@@ -36,9 +36,6 @@ namespace TermProject.UserCreateLogin
             {
                 Random q = new Random();
                 recoverykey = q.Next(10000);
-
-                // hide this later
-                lblWarning.Text = recoverykey.ToString();
             }
         }
 

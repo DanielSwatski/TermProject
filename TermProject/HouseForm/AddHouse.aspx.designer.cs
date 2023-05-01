@@ -33,33 +33,6 @@ namespace TermProject.HouseForm
         protected global::System.Web.UI.WebControls.HyperLink hplHome;
 
         /// <summary>
-        /// hplHouse control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplHouse;
-
-        /// <summary>
-        /// hplShowings control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplShowings;
-
-        /// <summary>
-        /// hplLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplLogin;
-
-        /// <summary>
         /// lblAddress control.
         /// </summary>
         /// <remarks>

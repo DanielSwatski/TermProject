@@ -63,7 +63,6 @@ namespace TermProject
                 {
                     if (StoredProceduresClass.CheckUser(username).Tables[0].Rows[0].ItemArray.Length == 0)
                     {
-
                         String fullname = txtBoxFullName.Text;
                         String email = txtBoxEmail.Text;
                         String usertype = ddlUserType.SelectedValue.ToString();
@@ -71,47 +70,98 @@ namespace TermProject
                         String question2 = txtBoxSecurityQuestion2.Text;
                         String question3 = txtBoxSecurityQuestion3.Text;
 
-                String password = sha256(txtBoxPassword.Text);
+                        String password = sha256(txtBoxPassword.Text);
 
 
 
-                StoredProceduresClass.CreateUser(username, fullname, email, password, usertype, question1, question2, question3);
-                lblWarning.Text = "Account Created";
+                        StoredProceduresClass.CreateUser(username, fullname, email, password, usertype, question1, question2, question3);
+                        lblWarning.Text = "Account Created";
 
 
-                String currentUsername = username;
-                String currentUserType = usertype;
+                        String currentUsername = username;
+                        String currentUserType = usertype;
 
 
-                Session["username"] = currentUsername;
-                Session["usertype"] = currentUserType;
-                Session["name"] = fullname;
+                        Session["username"] = currentUsername;
+                        Session["usertype"] = currentUserType;
+                        Session["name"] = fullname;
 
-                HttpCookie cookie = new HttpCookie("LoginSave");
+                        HttpCookie cookie = new HttpCookie("LoginSave");
 
-                cookie.Values["username"] = currentUsername;
-                cookie.Values["usertype"] = currentUserType;
+                        cookie.Values["username"] = currentUsername;
+                        cookie.Values["usertype"] = currentUserType;
 
-                cookie.Expires = DateTime.Now.AddDays(30);
-                Response.Cookies.Add(cookie);
+                        cookie.Expires = DateTime.Now.AddDays(30);
+                        Response.Cookies.Add(cookie);
 
 
-                // add a user agent here
+                        // add a user agent here
 
-                if (usertype == "RealEstateAgent")
-                {
-                    Response.Redirect("../Agents/AgentUserCreation.aspx");
+                        if (usertype == "RealEstateAgent")
+                        {
+                            Response.Redirect("../Agents/AgentUserCreation.aspx");
+                        }
+                        else if (usertype == "HomeBuyer")
+                        {
+                            Response.Redirect("../Buyers/BuyersUserCreation.aspx");
+                        }
+                        else
+                        {
+                            Response.Redirect("../Sellers/SellersUserCreation.aspx");
+                        }
+                    }
                 }
-                else if(usertype == "HomeBuyer")
+                catch (Exception execpt)
                 {
-                    Response.Redirect("../Buyers/BuyersUserCreation.aspx");
-                }
-                else
-                {
-                    Response.Redirect("../Sellers/SellersUserCreation.aspx");
+                    String fullname = txtBoxFullName.Text;
+                    String email = txtBoxEmail.Text;
+                    String usertype = ddlUserType.SelectedValue.ToString();
+                    String question1 = txtBoxSecurityQuestion1.Text;
+                    String question2 = txtBoxSecurityQuestion2.Text;
+                    String question3 = txtBoxSecurityQuestion3.Text;
+
+                    String password = sha256(txtBoxPassword.Text);
+
+
+
+                    StoredProceduresClass.CreateUser(username, fullname, email, password, usertype, question1, question2, question3);
+                    lblWarning.Text = "Account Created";
+
+
+                    String currentUsername = username;
+                    String currentUserType = usertype;
+
+
+                    Session["username"] = currentUsername;
+                    Session["usertype"] = currentUserType;
+                    Session["name"] = fullname;
+
+                    HttpCookie cookie = new HttpCookie("LoginSave");
+
+                    cookie.Values["username"] = currentUsername;
+                    cookie.Values["usertype"] = currentUserType;
+
+                    cookie.Expires = DateTime.Now.AddDays(30);
+                    Response.Cookies.Add(cookie);
+
+
+                    // add a user agent here
+
+                    if (usertype == "RealEstateAgent")
+                    {
+                        Response.Redirect("../Agents/AgentUserCreation.aspx");
+                    }
+                    else if (usertype == "HomeBuyer")
+                    {
+                        Response.Redirect("../Buyers/BuyersUserCreation.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("../Sellers/SellersUserCreation.aspx");
+                    }
+                    lblWarning.Text = "You have an error somewhere. FIX IT!!!!";
                 }
             }
-
             else
             {
                 // display error here later
