@@ -12,6 +12,7 @@ using TermProject.HouseForm;
 using System.Data.SqlClient;
 
 using SOAPTERMRPOJECT;
+using System.Text;
 
 namespace TermProject.Buyers
 {
@@ -43,7 +44,45 @@ namespace TermProject.Buyers
             string max = txtMax.Text;
             string propertyType = txtPropertyType.Text;
             string rooms = txtRooms.Text;
-            string amenities = txtAmenities.Text;
+
+            String amenities = "";
+            if (chkFirePlace.Checked)
+            {
+                amenities += chkFirePlace.Text + ",";
+            }
+            if (chkBasement.Checked)
+            {
+                amenities += chkBasement.Text + ",";
+            }
+            if (chkPool.Checked)
+            {
+                amenities += chkPool.Text + ",";
+            }
+            if (chkHotTub.Checked)
+            {
+                amenities += chkHotTub.Text + ",";
+            }
+            if (chkGarden.Checked)
+            {
+                amenities += chkGarden.Text + ",";
+            }
+            if (chkBar.Checked)
+            {
+                amenities += chkBar.Text + ",";
+            }
+            amenities = amenities.TrimEnd(',');
+
+            if (amenities == "")
+            {
+
+                amenities = "None";
+            }
+
+            // serializes the amenities before it is serialized again
+            byte[] byteAmen = Encoding.ASCII.GetBytes(amenities);
+            String strAmen = String.Join(" ", byteAmen);
+
+            amenities = strAmen;
 
             Home[] homelist;
             WebRequest request = null;
@@ -161,11 +200,19 @@ namespace TermProject.Buyers
             DataSet ds = cur.ShowingDate(grdHomePage.Rows[gvr.RowIndex].Cells[1].Text, Session["username"].ToString());
 
             // issue with the date time compariso
-            if(DateTime.Today > DateTime.Parse(ds.Tables[0].Rows[0].ItemArray[0].ToString()) )
-                Response.Redirect("SurveyComments.aspx");
-            else
+            try
             {
-                // not sure what we should here if its before. Should we display an error
+                if (DateTime.Today > DateTime.Parse(ds.Tables[0].Rows[0].ItemArray[0].ToString()))
+                    Response.Redirect("SurveyComments.aspx");
+                else
+                {
+                    // not sure what we should here if its before. Should we display an error
+                }
+            }
+
+            catch(Exception xese)
+            {
+
             }
         }
 
@@ -186,10 +233,12 @@ namespace TermProject.Buyers
 
             // gets the most recently added house
             SellerTest cur = new SellerTest();
-            
 
-            rptView.DataSource = cur.MostRecentHouse();
-            rptView.DataBind();
+            // not properly working here so fix it later
+            // rptView.DataSource = cur.MostRecentHouse();
+            //rptView.DataBind();
+            grdMostRecent.DataSource = cur.MostRecentHouse();
+            grdMostRecent.DataBind();
             UpdatePanel1.Update();
 
 

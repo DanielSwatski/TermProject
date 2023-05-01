@@ -24,40 +24,13 @@ namespace TermProject.Buyers
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// hplHome control.
+        /// BuyerNav control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplHome;
-
-        /// <summary>
-        /// hplHouse control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplHouse;
-
-        /// <summary>
-        /// hplShowings control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplShowings;
-
-        /// <summary>
-        /// hplLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplLogin;
+        protected global::TermProject.CustomUC.BuyerNavBar BuyerNav;
 
         /// <summary>
         /// Repeater1 control.
@@ -87,13 +60,13 @@ namespace TermProject.Buyers
         protected global::System.Web.UI.WebControls.ListView lstViewRealestate;
 
         /// <summary>
-        /// grdViewSurvey control.
+        /// lstSeller control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdViewSurvey;
+        protected global::System.Web.UI.WebControls.ListView lstSeller;
 
         /// <summary>
         /// ScriptManager1 control.

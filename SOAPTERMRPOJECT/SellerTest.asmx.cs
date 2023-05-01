@@ -20,6 +20,22 @@ namespace SOAPTERMRPOJECT
     public class SellerTest : System.Web.Services.WebService
     {
 
+        [WebMethod]
+        public DataSet GetSellerInfoSeller(string username)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GETSELLERINFOSELLER";
+
+            SqlParameter input = new SqlParameter("@username", username);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            return objDB.GetDataSet(objCommand);
+        }
 
         // something is still wrong with this method
         [WebMethod]

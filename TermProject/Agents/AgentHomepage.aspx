@@ -88,7 +88,7 @@
 
         </asp:GridView>
 
-        <asp:Button runat="server" ID="btnAddSeller" Text="Add Seller" OnClick="btnAddSeller_Click" />
+        <asp:Button runat="server" ID="btnAddSeller" Text="Add Seller" OnClick="btnAddSeller_Click"/>
 
     </form>
 

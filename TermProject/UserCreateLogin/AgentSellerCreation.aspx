@@ -44,7 +44,7 @@
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <asp:Button ID="btnSendCode" runat="server" Text="Send Code" OnClick="btnSendCode_Click" />
+                                    <asp:Button ID="btnSendCode" runat="server" Text="Send Code" OnClick="btnSendCode_Click"/>
                                 </div>
 
                                 <div class="form-outline form-white mb-4">

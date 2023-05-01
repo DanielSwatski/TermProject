@@ -90,6 +90,7 @@ namespace TermProject.Agents
             Response.Redirect("../HouseForm/AddHouse.aspx");
         }
 
+
         protected void btnAddSeller_Click(object sender, EventArgs e)
         {
             Response.Redirect("../UserCreateLogin/AgentSellerCreation.aspx");

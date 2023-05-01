@@ -22,7 +22,7 @@ namespace TermProject.Sellers
         {
             if (Session["usertype"].ToString() == "RealEstateAgent")
             {
-                HttpCookie cookie = Request.Cookies["LoginSave"];
+                HttpCookie cookie = Request.Cookies["AgentAddSeller"];
 
                 string sellerUser = "";
                 string sellerName = "";
