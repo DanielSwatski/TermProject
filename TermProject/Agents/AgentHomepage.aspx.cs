@@ -23,19 +23,20 @@ namespace TermProject.Agents
             // need to be checked for two types realestate and seller
 
             //SellerTestSoapClient cur = new SellerTestSoapClient();
+            if (!Page.IsPostBack)
+            {
+                SellerTest cur = new SellerTest();
+                grdViewHouses.DataSource = cur.GetHouse(Session["username"].ToString());
+                grdViewHouses.DataBind();
 
-            SellerTest cur = new SellerTest();
-            grdViewHouses.DataSource = cur.GetHouse(Session["username"].ToString());
-            grdViewHouses.DataBind();
+                grdViewNewShowings.DataSource = cur.GetNewShowings(Session["username"].ToString()); // gets the showsings
+                grdViewNewShowings.DataBind();
 
-            grdViewNewShowings.DataSource = cur.GetNewShowings(Session["username"].ToString()); // gets the showsings
-            grdViewNewShowings.DataBind();
+                grdViewNewOffers.DataSource = cur.GetNewOffers(Session["username"].ToString());
+                grdViewNewOffers.DataBind();
 
-            grdViewNewOffers.DataSource = cur.GetNewOffers(Session["username"].ToString());
-            grdViewNewOffers.DataBind();
-
-            // than update the showings to be true so they have been seen
-
+                // than update the showings to be true so they have been seen
+            }
 
             // delete this later it should be good to work with 
             if (!IsPostBack)
