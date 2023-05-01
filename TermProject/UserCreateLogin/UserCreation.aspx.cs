@@ -71,66 +71,55 @@ namespace TermProject
                         String question2 = txtBoxSecurityQuestion2.Text;
                         String question3 = txtBoxSecurityQuestion3.Text;
 
-                        String password = sha256(txtBoxPassword.Text);
+                String password = sha256(txtBoxPassword.Text);
 
 
 
-                        StoredProceduresClass.CreateUser(username, fullname, email, password, usertype, question1, question2, question3);
-                        lblWarning.Text = "Account Created";
+                StoredProceduresClass.CreateUser(username, fullname, email, password, usertype, question1, question2, question3);
+                lblWarning.Text = "Account Created";
 
 
-                        String currentUsername = username;
-                        String currentUserType = usertype;
+                String currentUsername = username;
+                String currentUserType = usertype;
 
 
-                        Session["username"] = currentUsername;
-                        Session["usertype"] = currentUserType;
-                        Session["name"] = fullname;
+                Session["username"] = currentUsername;
+                Session["usertype"] = currentUserType;
+                Session["name"] = fullname;
 
-                        HttpCookie cookie = new HttpCookie("LoginSave");
+                HttpCookie cookie = new HttpCookie("LoginSave");
 
-                        cookie.Values["username"] = currentUsername;
-                        cookie.Values["usertype"] = currentUserType;
+                cookie.Values["username"] = currentUsername;
+                cookie.Values["usertype"] = currentUserType;
 
-                        cookie.Expires = DateTime.Now.AddDays(30);
-                        Response.Cookies.Add(cookie);
-
-
-                        // add a user agent here
-
-                        if (usertype == "RealEstateAgent")
-                        {
-                            Response.Redirect("../Agents/AgentUserCreation.aspx");
-                        }
-                        else if (usertype == "HomeBuyer")
-                        {
-                            Response.Redirect("../Buyers/BuyersUserCreation.aspx");
-                        }
-                        else
-                        {
-                            Response.Redirect("../Sellers/SellersUserCreation.aspx");
-                        }
-                    }
+                cookie.Expires = DateTime.Now.AddDays(30);
+                Response.Cookies.Add(cookie);
 
 
+                // add a user agent here
 
-                    else
-                    {
-                        // display error here later
-                        lblWarning.Text = "You have an error somewhere. FIX IT!!!!";
-                    }
-                }
-                catch(Exception exf)
+                if (usertype == "RealEstateAgent")
                 {
-
+                    Response.Redirect("../Agents/AgentUserCreation.aspx");
                 }
-
-                // put redirect to homepage depending upon usertypehere
+                else if(usertype == "HomeBuyer")
+                {
+                    Response.Redirect("../Buyers/BuyersUserCreation.aspx");
+                }
+                else
+                {
+                    Response.Redirect("../Sellers/SellersUserCreation.aspx");
+                }
             }
+
             else
             {
-                lblWarning.Text = "ERROR";
+                // display error here later
+                lblWarning.Text = "You have an error somewhere. FIX IT!!!!";
             }
+
+            // put redirect to homepage depending upon usertypehere
+
         }
 
         protected void Unnamed1_Click(object sender, EventArgs e)
