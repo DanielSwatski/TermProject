@@ -1,11 +1,14 @@
-﻿
-using SOAPTERMRPOJECT;
+﻿using SOAPTERMRPOJECT;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Script.Serialization;
+using System.IO;
+using System.Net;
+using System.Data;
 //using TermProject.ServiceReference3;
 
 
@@ -13,6 +16,8 @@ namespace TermProject.Agents
 {
     public partial class AgentHomepage : System.Web.UI.Page
     {
+        String webApiUrl = "https://cis-iis2.temple.edu/spring2023/CIS3342_tug87965/WebAPI/api/TermProject/";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //Session["username"] = "Daniel";
@@ -48,8 +53,6 @@ namespace TermProject.Agents
 
         protected void showHouses()
         {
-
-
             // SellerTestSoapClient cur = new SellerTestSoapClient();
             SellerTest cur = new SellerTest();
             grdViewHouses.DataSource = cur.GetHouse(Session["username"].ToString());
@@ -60,12 +63,35 @@ namespace TermProject.Agents
         // deletes the home
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
+            /*Button btn = (Button)sender;
             GridViewRow gvr = (GridViewRow)btn.NamingContainer;
 
             //SellerTestSoapClient cur = new SellerTestSoapClient();
             SellerTest cur = new SellerTest();
-            cur.DeleteHouse(grdViewHouses.Rows[gvr.RowIndex].Cells[1].Text);
+            cur.DeleteHouse(grdViewHouses.Rows[gvr.RowIndex].Cells[1].Text);*/
+
+
+            Button btn = (Button)sender;
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+
+            try
+            {
+                WebRequest request = WebRequest.Create(webApiUrl + "deleteHouse/" + grdViewHouses.Rows[gvr.RowIndex].Cells[1].Text + "/");
+                request.Method = "DELETE";
+
+                WebResponse response = request.GetResponse();
+                Stream theDataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(theDataStream);
+                String data = reader.ReadToEnd();
+
+                reader.Close();
+                response.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+
             showHouses();
         }
 
