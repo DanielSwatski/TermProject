@@ -50,7 +50,7 @@
 
                     <div class="col-md-12">
                         <asp:Label ID="lblPhoto" runat="server" Text="Photo" class="form-label"></asp:Label>
-                        <asp:FileUpload ID="fileupload1" runat="server" text="upload here" />
+                        <asp:FileUpload ID="fileupload1" runat="server" text="upload here" required />
                     </div>
 
                     <div class="col-12" style="text-align:center">

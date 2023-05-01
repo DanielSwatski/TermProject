@@ -27,8 +27,11 @@ namespace TermProject.Agents
             }
             else
             {
-                string selectedSeller = Session["MakeHouse"].ToString();
-                lblSelectedSeller.Text = "Selected Seller: " + selectedSeller;
+                if (Session["MakeHouse"] != null)
+                {
+                    string selectedSeller = Session["MakeHouse"].ToString();
+                    lblSelectedSeller.Text = "Selected Seller: " + selectedSeller;
+                }
             }
         }
 

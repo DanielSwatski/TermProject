@@ -12,6 +12,22 @@ namespace TermProject.Classes
     {
         
         // This is used to call the TP_CREATEUSER stored procedure that will take all the below attributes and then it will create the user in the database
+       
+        public static DataSet CheckUser(String username)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_CHECKUSER";
+
+            SqlParameter input = new SqlParameter("@username", username);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            return objDB.GetDataSet(objCommand);
+        }
         public static void CreateUser(String username, String fullname, String email, String password, String usertype, String question1, String question2, String question3)
         {
             DBConnect objDB = new DBConnect();

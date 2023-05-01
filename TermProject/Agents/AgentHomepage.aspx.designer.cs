@@ -78,15 +78,6 @@ namespace TermProject.Agents
         protected global::System.Web.UI.WebControls.GridView grdViewHouses;
 
         /// <summary>
-        /// btnMakeHouse control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMakeHouse;
-
-        /// <summary>
         /// grdViewNewShowings control.
         /// </summary>
         /// <remarks>
@@ -103,14 +94,5 @@ namespace TermProject.Agents
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdViewNewOffers;
-
-        /// <summary>
-        /// btnAddSeller control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddSeller;
     }
 }

@@ -19,7 +19,7 @@
                 <h1>Creation your Account</h1>
 
                 <h4>Send your email a code before creating an account. The application won't let you</h4>
-                <asp:Label ID="lblWarning" runat="server"></asp:Label>
+                <!-- <asp:Label ID="lblWarning" runat="server"></asp:Label> -->
             </div>
 
             <div class="container py-5 h-100">

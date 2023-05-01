@@ -59,6 +59,9 @@ namespace TermProject
                         case ("HomeSeller"):
                             Response.Redirect("../Sellers/SellerHomepage.aspx");
                             break;
+                        default:
+                            Response.Redirect("Login.aspx");
+                            break;
                     }
                 }
             }

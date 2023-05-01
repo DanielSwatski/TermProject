@@ -61,9 +61,6 @@
         </asp:GridView>
 
 
-        <asp:Button runat="server" ID="btnMakeHouse" Text="Make House. Takes you to the add house page " OnClick="btnMakeHouse_Click" />
-
-
         <p>New showings</p>
         <asp:GridView runat="server" ID="grdViewNewShowings" CssClass="table table-bordered table-hover thread-dark" Style="background-color: white;" AutoGenerateColumns="False">
             <Columns>
@@ -87,8 +84,6 @@
             </Columns>
 
         </asp:GridView>
-
-        <asp:Button runat="server" ID="btnAddSeller" Text="Add Seller" OnClick="btnAddSeller_Click"/>
 
     </form>
 

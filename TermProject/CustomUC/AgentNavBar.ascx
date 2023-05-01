@@ -10,8 +10,12 @@
                     <asp:HyperLink class="nav-link mx-2" ID="hplMain" runat="server" NavigateUrl="~/Agents/AgentHomepage.aspx">Home</asp:HyperLink>
                 </li>
                 <li class="nav-item">
+                    <asp:HyperLink class="nav-link mx-2" ID="hplManageSell" runat="server" NavigateUrl="~/Agents/AgentViewSellers.aspx">View Seller</asp:HyperLink>
+                </li>
+                <li class="nav-item">
                     <asp:LinkButton CssClass="nav-link mx-2" ID="lnkLogout" runat="server" OnClick="lnkLogout_Click" Text="Logout"></asp:LinkButton>
                 </li>
+
             </ul>
         </div>
     </div>

@@ -28,7 +28,7 @@
                 <Columns>
                     <asp:TemplateField HeaderText="Photo" >
                         <ItemTemplate>
-                            <img src='<%# Eval("Photo") %>' class="img-fluid" alt="House photo" id="phtHouse">
+                            <img src='<%# Eval("Photo") %>' class="img-fluid" alt="House photo" id="phtHouse" style="width:100px">
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="HomeAddress" HeaderText="Address" ReadOnly="true" />

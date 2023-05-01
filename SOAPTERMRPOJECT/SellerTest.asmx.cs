@@ -21,6 +21,24 @@ namespace SOAPTERMRPOJECT
     {
 
         [WebMethod]
+        public DataSet GetHouseAgent(string username)
+        {
+            
+                DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_HOUSESREAL";
+
+            SqlParameter input = new SqlParameter("@username", username);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            return objDB.GetDataSet(objCommand);
+        }
+
+        [WebMethod]
         public DataSet GetSellerInfoSeller(string username)
         {
             DBConnect objDB = new DBConnect();

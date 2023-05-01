@@ -35,7 +35,7 @@
                 <div class="row g-3">
                     <div class="col-md-12">
                         <asp:Label ID="lblAddress" runat="server" Text="Address" class="form-label"></asp:Label>
-                        <asp:TextBox ID="txtAddress" class="form-control" runat="server" placeholder="1234 Some St"></asp:TextBox>
+                        <asp:TextBox ID="txtAddress" class="form-control" runat="server" placeholder="1234 Some St" required></asp:TextBox>
                     </div>
                     <div class="col-md-6">
                         <asp:Label ID="lblState" runat="server" Text="State" class="form-label"></asp:Label>
@@ -119,12 +119,12 @@
 
                     <div class="col-md-12">
                         <asp:Label ID="lblPhoto" runat="server" Text="Photo" class="form-label"></asp:Label>
-                        <asp:FileUpload ID="fileupload1" runat="server" text="upload here" />
+                        <asp:FileUpload ID="fileupload1" runat="server" text="upload here" required />
                     </div>
 
                     <div class="col-md-12">
                         <asp:Label ID="lblDescription" runat="server" Text="Description" class="form-label"></asp:Label>
-                        <asp:TextBox ID="txtDescription" class="form-control" runat="server" TextMode="MultiLine"></asp:TextBox>
+                        <asp:TextBox ID="txtDescription" class="form-control" runat="server" TextMode="MultiLine" required></asp:TextBox>
                     </div>
 
                     <div class="col-12" style="text-align:center">

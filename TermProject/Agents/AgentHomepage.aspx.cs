@@ -31,7 +31,7 @@ namespace TermProject.Agents
             if (!Page.IsPostBack)
             {
                 SellerTest cur = new SellerTest();
-                grdViewHouses.DataSource = cur.GetHouse(Session["username"].ToString());
+                grdViewHouses.DataSource = cur.GetHouseAgent(Session["username"].ToString());
                 grdViewHouses.DataBind();
 
                 grdViewNewShowings.DataSource = cur.GetNewShowings(Session["username"].ToString()); // gets the showsings
@@ -56,7 +56,7 @@ namespace TermProject.Agents
         {
             // SellerTestSoapClient cur = new SellerTestSoapClient();
             SellerTest cur = new SellerTest();
-            grdViewHouses.DataSource = cur.GetHouse(Session["username"].ToString());
+            grdViewHouses.DataSource = cur.GetHouseAgent(Session["username"].ToString());
             grdViewHouses.DataBind();
         }
 

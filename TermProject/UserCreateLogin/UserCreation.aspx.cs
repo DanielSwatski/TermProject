@@ -31,6 +31,9 @@ namespace TermProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
+
             if (!IsPostBack)
             {
                 Random q = new Random();
@@ -54,62 +57,80 @@ namespace TermProject
             {
                 // creates the account
                 String username = txtBoxUsername.Text;
-                String fullname = txtBoxFullName.Text;
-                String email = txtBoxEmail.Text;
-                String usertype = ddlUserType.SelectedValue.ToString();
-                String question1 = txtBoxSecurityQuestion1.Text;
-                String question2 = txtBoxSecurityQuestion2.Text;
-                String question3 = txtBoxSecurityQuestion3.Text;
-
-                String password = sha256(txtBoxPassword.Text);
 
 
-
-                StoredProceduresClass.CreateUser(username, fullname, email, password, usertype, question1, question2, question3);
-                lblWarning.Text = "Account Created";
-
-
-                String currentUsername = username;
-                String currentUserType = usertype;
-
-
-                Session["username"] = currentUsername;
-                Session["usertype"] = currentUserType;
-                Session["name"] = fullname;
-
-                HttpCookie cookie = new HttpCookie("LoginSave");
-
-                cookie.Values["username"] = currentUsername;
-                cookie.Values["usertype"] = currentUserType;
-
-                cookie.Expires = DateTime.Now.AddDays(30);
-                Response.Cookies.Add(cookie);
-
-
-                // add a user agent here
-
-                if (usertype == "RealEstateAgent")
+                try
                 {
-                    Response.Redirect("../Agents/AgentUserCreation.aspx");
+                    if (StoredProceduresClass.CheckUser(username).Tables[0].Rows[0].ItemArray.Length == 0)
+                    {
+
+                        String fullname = txtBoxFullName.Text;
+                        String email = txtBoxEmail.Text;
+                        String usertype = ddlUserType.SelectedValue.ToString();
+                        String question1 = txtBoxSecurityQuestion1.Text;
+                        String question2 = txtBoxSecurityQuestion2.Text;
+                        String question3 = txtBoxSecurityQuestion3.Text;
+
+                        String password = sha256(txtBoxPassword.Text);
+
+
+
+                        StoredProceduresClass.CreateUser(username, fullname, email, password, usertype, question1, question2, question3);
+                        lblWarning.Text = "Account Created";
+
+
+                        String currentUsername = username;
+                        String currentUserType = usertype;
+
+
+                        Session["username"] = currentUsername;
+                        Session["usertype"] = currentUserType;
+                        Session["name"] = fullname;
+
+                        HttpCookie cookie = new HttpCookie("LoginSave");
+
+                        cookie.Values["username"] = currentUsername;
+                        cookie.Values["usertype"] = currentUserType;
+
+                        cookie.Expires = DateTime.Now.AddDays(30);
+                        Response.Cookies.Add(cookie);
+
+
+                        // add a user agent here
+
+                        if (usertype == "RealEstateAgent")
+                        {
+                            Response.Redirect("../Agents/AgentUserCreation.aspx");
+                        }
+                        else if (usertype == "HomeBuyer")
+                        {
+                            Response.Redirect("../Buyers/BuyersUserCreation.aspx");
+                        }
+                        else
+                        {
+                            Response.Redirect("../Sellers/SellersUserCreation.aspx");
+                        }
+                    }
+
+
+
+                    else
+                    {
+                        // display error here later
+                        lblWarning.Text = "You have an error somewhere. FIX IT!!!!";
+                    }
                 }
-                else if(usertype == "HomeBuyer")
+                catch(Exception exf)
                 {
-                    Response.Redirect("../Buyers/BuyersUserCreation.aspx");
+
                 }
-                else
-                {
-                    Response.Redirect("../Sellers/SellersUserCreation.aspx");
-                }
+
+                // put redirect to homepage depending upon usertypehere
             }
-
             else
             {
-                // display error here later
-                lblWarning.Text = "You have an error somewhere. FIX IT!!!!";
+                lblWarning.Text = "ERROR";
             }
-
-            // put redirect to homepage depending upon usertypehere
-
         }
 
         protected void Unnamed1_Click(object sender, EventArgs e)

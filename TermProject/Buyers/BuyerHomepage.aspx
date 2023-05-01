@@ -36,7 +36,7 @@
 
 
             <!-- Updates every 10 seconds -->
-           <h3>Recent House added</h3>
+           <h3>Most Recent Added House</h3>
            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
            <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
@@ -44,11 +44,9 @@
                <ContentTemplate>    
                    <asp:GridView class="table table-striped rounded bg-light shadow p-5" ID="grdMostRecent" runat="server" AutoGenerateColumns="False">
                        <Columns>
-                                <asp:TemplateField HeaderText="Image">
-                                    <ItemTemplate>
-                                        <asp:Image ID="imgHouse" runat="server" Width="100px" />
-                                    </ItemTemplate>
-                                </asp:TemplateField>
+                                <asp:ImageField DataImageUrlField="Photo" HeaderText="Photo" ControlStyle-Width="100" ControlStyle-Height="100">
+                                    <ControlStyle Height="100px" Width="100px"></ControlStyle>
+                                </asp:ImageField>
                                 <asp:BoundField DataField="HomeAddress" HeaderText="Address" />
                                 <asp:BoundField DataField="State" HeaderText="State" />
                                 <asp:BoundField DataField="ZipCode" HeaderText="Zip" />
