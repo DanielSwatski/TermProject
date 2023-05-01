@@ -229,6 +229,7 @@
   <ItemGroup>
     <Content Include="Agents\AgentHomepage.aspx" />
     <Content Include="Agents\AgentUserCreation.aspx" />
+    <Content Include="Agents\AgentViewSellers.aspx" />
     <Content Include="Buyers\BuyerHomepage.aspx" />
     <Content Include="Buyers\BuyersUserCreation.aspx" />
     <Content Include="Buyers\MakeOffer.aspx" />
@@ -283,6 +284,13 @@
     </Compile>
     <Compile Include="Agents\AgentUserCreation.aspx.designer.cs">
       <DependentUpon>AgentUserCreation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Agents\AgentViewSellers.aspx.cs">
+      <DependentUpon>AgentViewSellers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Agents\AgentViewSellers.aspx.designer.cs">
+      <DependentUpon>AgentViewSellers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Buyers\BuyerHomepage.aspx.cs">
       <DependentUpon>BuyerHomepage.aspx</DependentUpon>

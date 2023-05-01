@@ -99,6 +99,7 @@ namespace TermProject.Sellers
 
         protected void btnMakeHouse_Click(object sender, EventArgs e)
         {
+            Session["MakeHouse"] = Session["username"].ToString();
             Response.Redirect("../HouseForm/AddHouse.aspx");
         }
     }

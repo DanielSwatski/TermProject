@@ -40,7 +40,7 @@ namespace TermProject.HouseForm
 
             currentHome.Homeaddress = txtAddress.Text;
             
-            currentHome.SellerUsername = Session["username"].ToString(); 
+            currentHome.SellerUsername = Session["MakeHouse"].ToString(); 
             currentHome.State = txtState.Text;
             currentHome.ZipCode = int.Parse(txtZipCode.Text);
             currentHome.PropertyType = ddlPropertyType.SelectedValue;

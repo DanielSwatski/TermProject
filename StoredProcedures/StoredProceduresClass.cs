@@ -150,5 +150,21 @@ namespace TermProject.Classes
 
             objDB.DoUpdate(objCommand);
         }
+
+        public static DataSet selectSellers(string agentID) 
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GetSellersByAgent";
+
+            SqlParameter input = new SqlParameter("@agent", agentID);
+            input.Direction = ParameterDirection.Input;
+            input.SqlDbType = SqlDbType.VarChar;
+            objCommand.Parameters.Add(input);
+
+            return objDB.GetDataSet(objCommand);
+        }
     }
 }
